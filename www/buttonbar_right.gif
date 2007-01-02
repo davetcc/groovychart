@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+           
+ 
+ <head>
+ <style type="text/css"> /* <![CDATA[ */
+ @import "/branding/css/tigris.css";
+ @import "/branding/css/inst.css";
+ /* ]]> */</style>
+ <link rel="stylesheet" type="text/css" href="/branding/css/print.css" media="print" />
+ <script src="/branding/scripts/tigris.js" type="text/javascript"></script>
+  
+                                                     <title>
+        javadesktop:        Version control - CVS
+    </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta http-equiv="Content-Style-Type" content="text/css" />
+ <meta name="version" content="3.5.1.19.10" />
+ 
+ 
+
+
+</head>
+ 
+ 
+<body  class="composite">
+ 
+ 
+ <div id="collabnet">
+ <div id="login"> 
+   <div>
+   Logged in:
+   <strong class="username">jimclarke</strong> |    <a href="https://www.dev.java.net/servlets/Logout">Logout</a>   </div>
+ </div>
+ <a href="http://www.collab.net/special/clickpbc0502.html" id="cnlogo">
+<span class="alt">CollabNet Enterprise Edition</span></a>
+</div>
+ 
+ 
+ 
+ 
+ <div class="topline"><div class="topbar"><div id="banner"><table border="0" cellspacing="0" cellpadding="0" width="100%">	<tr>		<td>		  	<div><a href="http://www.java.net"><img src="/branding/images/header_jnet_new.jpg" width="500" height="60" alt="The Source for Java Technology Collaboration" /></a></div>  		</td>	  	<td class="right" style="vertical-align:middle">  			<div id="domainlinks">												<div id="loginbox">								<div>				Logged in:				<strong class="username">jimclarke</strong> |    <a href="https://www.dev.java.net/servlets/Logout">Logout</a>   </div>								</div>											</div>		</td>  	</tr></table></div></div></div> 
+ 
+ 
+ 
+ <div id="toptabs">
+<table cellpadding="4" cellspacing="0" border="0" class="tabs"><tr>
+
+
+<td>   <a href="https://www.dev.java.net/servlets/StartPage">My pages</a> </td>
+
+<th><a href="http://community.java.net/projects/">Projects</a></th>
+
+
+   <td><a href="http://community.java.net/">Communities</a></td>
+
+ <td><a href="http://www.java.net">java.net</a></td>
+
+
+</tr></table>
+</div>
+
+  
+ 
+ <div id="breadcrumbs">
+   <a href="https://www.dev.java.net/servlets/ProjectList">Projects</a>     >
+     
+
+   <strong>   <a href="https://javadesktop.dev.java.net/"
+     >javadesktop</a>
+   </strong>  </div>
+ 
+ 
+ 
+ 
+<table border="0" cellspacing="0" cellpadding="4" width="100%" id="main">
+<tr>
+<td id="navcol">
+ 
+ 
+ <dl class="navgroup">
+ <dt>Get Involved</dt>
+ <dd>
+  <ul>
+   <li><a href="https://java-net.dev.java.net/">java-net Project</a></li>
+   <li><a href="http://www.java.net/request_project.csp">Request a Project</a></li>
+   <li><a href="http://community.java.net/help_wanted/">Project Help Wanted Ads</a></li>
+   <li><a href="http://community.java.net/projects/publicize.csp">Publicize your Project</a></li>
+   <li><a href="http://today.java.net/cs/user/create/bl?x-layout=content">Submit Content</a></li>
+  </ul>
+ </dd>
+ </dl>
+
+
+  <dl id="projecttools" class="navgroup">
+  <dt>Project tools</dt>
+  <dd>
+   <ul>
+    <li>   <a href="https://javadesktop.dev.java.net/servlets/ProjectHome">Project home</a> </li>
+     
+       
+ 
+   </ul>
+</dd>
+ 
+ 
+            
+ 
+ <dd>
+ <ul>   <li>   <a href="https://javadesktop.dev.java.net/servlets/ProjectNewsList">Announcements</a> </li>
+ 
+ 
+            
+ 
+    <li>   <a href="https://javadesktop.dev.java.net/servlets/ProjectForumView">Discussion forums</a> </li>
+  
+ 
+         
+ 
+ <li>   <a href="https://javadesktop.dev.java.net/servlets/ProjectMailingListList">Mailing lists</a> </li>
+</ul></dd>  
+ 
+            
+ 
+ <dd>
+ <ul>  <li>   <a href="https://javadesktop.dev.java.net/servlets/ProjectDocumentList">Documents &amp; files</a> </li>
+ 
+ 
+         
+ 
+ <li><a href="https://javadesktop.dev.java.net/source/browse/javadesktop/">Version control - CVS</a>
+
+
+</li>
+</ul>
+</dd> 
+ 
+               
+ 
+ <dd><ul><li>   <a href="https://javadesktop.dev.java.net/servlets/ProjectIssues">Issue tracker</a> </li>
+ 
+ 
+                       </ul>
+  </dd>
+      
+ </dl>
+ 
+
+
+
+
+<form action="https://javadesktop.dev.java.net/servlets/Search" method="get">
+ <dl id="searchbox" class="navgroup">
+  
+      <dt>Search</dt>
+  <dd>
+   <div>
+       <select name="scope">
+           <option value="project" selected="selected">This project</option>
+                <option value="myprojects">My projects</option>
+          <option value="domain" >All projects</option>
+    </select>
+      </div>
+   <div>
+    <input type="hidden" name="resultsPerPage" value="40" /> 
+    <input type="text" name="query" size="10" /> 
+    <input type="submit" name="Button" value="Go" />
+   </div>
+   <div>
+       <a href="https://javadesktop.dev.java.net/servlets/Search?mode=advanced">Advanced search</a>    </div>
+  </dd>
+
+ </dl>
+</form>
+
+
+<dl id="helptext" class="navgroup">
+ <dt>How do I...</dt>
+ <dd>
+  <ul>
+      
+ 
+      
+ 
+  <li>  <a href="https://www.dev.java.net/scdocs/ProjectSource.html#browsesource" onclick="return launch(this.href, 1)" 
+ title="Note: link may open in new window" class="helplink">
+ 
+ Browse project source code?</a>
+</li>
+ <li>  <a href="https://www.dev.java.net/scdocs/ddUsingCVS_command-line.html#gettingsource" onclick="return launch(this.href, 1)" 
+ title="Note: link may open in new window" class="helplink">
+ 
+ Get a copy of project source files?</a>
+</li>
+ <li>  <a href="https://www.dev.java.net/scdocs/ddCVS.html" onclick="return launch(this.href, 1)" 
+ title="Note: link may open in new window" class="helplink">
+ 
+ Learn more about CVS?</a>
+</li>
+ <li>  <a href="https://www.dev.java.net/scdocs/ProjectSource.html#cvsclients" onclick="return launch(this.href, 1)" 
+ title="Note: link may open in new window" class="helplink">
+ 
+ Find a CVS client?</a>
+</li>
+ <li>  <a href="https://www.dev.java.net/scdocs/ddUsingCVS_command-line.html#cvswatch" onclick="return launch(this.href, 1)" 
+ title="Note: link may open in new window" class="helplink">
+ 
+ Tell CVS to notify me when a specified file changes?</a>
+</li>
+ 
+ 
+ 
+ 
+     
+   <li> <a href="http://www.collab.net/rn/" onclick="return launch(this.href, 1)" 
+ title="Note: link may open in new window" class="helplink">
+ 
+ Get release notes for CollabNet 3.5.1?</a>
+</li>
+   <li><a href="https://javadesktop.dev.java.net/nonav/servlets/HelpTOC" onclick="return launch(this.href, 1)" 
+title="Note: link may open in new window" class="helplink">Get help?</a></li>
+  </ul>
+ </dd>
+</dl>
+
+ 
+ 
+<div class="strut">&nbsp;</div>
+</td>
+<td id="midcol">
+ 
+<div id="bodycol">
+<div id="apphead">
+<h1><small>javadesktop</small><br />         Version control - CVS
+    </h1>
+</div>
+ 
+ 
+ 
+
+        
+                 
+          
+  
+
+ 
+ 
+
+
+
+
+<p class="tasknav">
+Up to <a href="/source/browse/javadesktop/#dirlist">[javadesktop]</a> / <a href="/source/browse/javadesktop/www/#dirlist">www</a> / buttonbar_right.gif
+<br />
+<a href="#diff">Request diff between arbitrary revisions</a>
+
+
+| Direct link to
+
+<a href="/source/browse/javadesktop/www/buttonbar_right.gif?view=markup" title="This link is suitable for use as a bookmark that tracks the latest revision of this file">HEAD</a>
+| (<a href="/source/browse/*checkout*/javadesktop/www/buttonbar_right.gif" onclick="return launch(this.href, 4)">download</a>)
+
+
+</p>
+<div id="sourcelog" class="application">
+
+<table class="axial">
+
+<tr>
+<th>Default branch</th>
+<td>MAIN</td>
+</tr>
+
+
+</table>
+
+
+<div class="h2" id="rev1.1">
+
+<h2>
+Revision
+
+<a href="/source/browse/*checkout*/javadesktop/www/buttonbar_right.gif?rev=1.1" onclick="return launch(this.href, 4)">1.1</a>
+
+</h2>
+<p>
+
+<a href="/source/browse/javadesktop/www/buttonbar_right.gif?rev=1.1&amp;view=markup">view file</a>
+
+
+<a href="/source/browse/*checkout*/javadesktop/www/buttonbar_right.gif?content-type=text%2Fplain&amp;rev=1.1" onclick="return launch(this.href, 4)" title="Internet Explorer may fail to display some files as plain text">(as plain text)</a>
+
+
+| <a href="/source/browse/javadesktop/www/buttonbar_right.gif?annotate=1.1">annotate</a>
+
+
+| <a href="/source/browse/javadesktop/www/buttonbar_right.gif?r1=1.1">select for diffs</a>
+
+
+
+</p>
+<table class="axial">
+<tr>
+<th>Commit info</th>
+<td>2004-06-25 18:46:31+0000 (2 years, 6 months ago) by brinkley</td>
+</tr>
+
+
+
+<tr>
+<th>CVS Tags</th>
+<td>
+<a href="/source/browse/javadesktop/www/buttonbar_right.gif?only_with_tag=HEAD">HEAD</a>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+<tr>
+<th>Commit message</th>
+<td><pre>Issue number:
+Obtained from:
+Submitted by:
+Reviewed by:
+</pre></td>
+</tr>
+</table>
+
+</div>
+
+<div class="h2" id="logdiffrequest">
+<h2 id="diff">Request difference</h2>
+
+<p>This form allows you to request diffs between any
+two revisions of a file. You may select a symbolic revision
+name using the selection box or you may type in a numeric name
+using the type-in text box.</p>
+
+<form method="get" action="/source/browse/javadesktop/www/buttonbar_right.gif">
+<table class="axial"><tr>
+<th>Diff between</th>
+<td>
+<p>
+
+<select name="r1">
+<option value="text" selected="selected">Use Text Field</option>
+
+<option value="1.1:MAIN">MAIN</option>
+
+<option value="1.1:HEAD">HEAD</option>
+
+</select>
+<input type="text" size="12" name="tr1" value="1.1" onchange="document.diff_select.r1.selectedIndex=0" />
+
+and<br />
+
+<select name="r2">
+<option value="text" selected="selected">Use Text Field</option>
+
+<option value="1.1:MAIN">MAIN</option>
+
+<option value="1.1:HEAD">HEAD</option>
+
+</select>
+<input type="text" size="12" name="tr2" value="1.1" onchange="document.diff_select.r1.selectedIndex=0" />
+
+<br />
+Type of Diff should be a
+<select name="diff_format">
+<option value="h" selected="selected">Colored Diff</option>
+<option value="l" >Long Colored Diff</option>
+<option value="u" >Unidiff</option>
+<option value="c" >Context Diff</option>
+<option value="s" >Side by Side</option>
+</select>
+<input type="submit" value=" Get Diffs " />
+</p>
+</td>
+</tr>
+</table>
+</form>
+</div>
+
+<div class="h2" id="sortoptions">
+<h2>Sort options</h2>
+<table class="axial">
+
+<tr>
+<th id="branch">View only Branch</th>
+<td>
+<form method="get" action="/source/browse/javadesktop/www/buttonbar_right.gif">
+<div>
+
+<select name="only_with_tag" onchange="submit()">
+<option value="" selected="selected">Show all branches</option>
+
+<option value="MAIN" >MAIN</option>
+
+</select>
+<input type="submit" value=" View Branch " />
+</div>
+</form>
+</td>
+</tr>
+
+<tr>
+<th><div id="logsort">Sort log by</div></th>
+<td>
+<form method="get" action="/source/browse/javadesktop/www/buttonbar_right.gif">
+<div>
+
+<select name="logsort" onchange="submit()">
+<option value="cvs" >Not sorted</option>
+<option value="date" selected="selected">Commit date</option>
+<option value="rev" >Revision</option>
+</select>
+<input type="submit" value=" Sort " />
+</div>
+</form>
+</td>
+</tr>
+</table>
+</div>
+
+</div>
+
+
+</div>
+</td>
+</tr>
+</table>
+ 
+ 
+   <div id="footer">   <p><a href="http://today.java.net/pub/q/java_net_rss"><img src="/branding/images/xml.gif" width="36" height="14" alt="XML" style="vertical-align:middle"/></a>&nbsp;<b>java.net RSS</b></p>   <table border="0" cellspacing="0" cellpadding="4" width="100%">   	<tr>   		<td><a href="http://www.collab.net/special/clickpbc0502.html" onclick="return launch(this.href, 1)"><img src="/branding/images/poweredby_036.gif" alt="This site is Powered by CollabNet." id="poweredby" width="102" height="38" /></a></td> 		<td><a href="http://java-net.dev.java.net/feedback.html"  onclick="return launch(this.href, 1)" title="Note: link may open in new window" class="helplink">Feedback</a>   | 		<a href="http://java.net/faq.csp">FAQ</a> | 		<a href="http://java.net/presscenter/">Press</a> | 		 		<a href="http://www.collab.net/developers/tools/" onclick="return launch(this.href, 1)" title="Note: link may open in new window">Developer tools</a> 	   <div>  	<a href="http://java.net/terms.csp">Terms of Use</a> |  	<a href="http://www.sun.com/privacy">Privacy</a> | 	<a href="http://www.sun.com/suntrademarks/">Trademarks</a> |  	<a href="https://java-net.dev.java.net/sitemap.html">Site Map</a> </div>	   <p>&#169; 1995 - 2006 CollabNet. CollabNet is a registered trademark of CollabNet, Inc.</p>	    </td>	   <td><a href="http://www.sun.com" onclick="return launch(this.href, 1)"><img src="/branding/images/logo_sun_small.gif" id="logosun" width="61" height="29" alt="Sun" /></a>		<a href="http://www.oreilly.com" onclick="return launch(this.href, 1)"><img src="/branding/images/montague_logo_oreilly.gif" id="logooreilly" width="74" height="19" alt="Oreilly" /></a></td>		</tr></table>				<!-- Begin SiteCatalyst code-->		<script language="JavaScript" 		src="https://www.dev.java.net/branding/images/s_code_remote.txt "></script><!-- End SiteCatalyst code --> 
+ 
+</body>
+</html>
