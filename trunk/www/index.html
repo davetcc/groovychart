@@ -1,45 +1,104 @@
 <html>
-<head>
-<title>Project Home Page</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-</head>
+  <body>
+<!-- Toolbar Begins -->
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="16"><img src="buttonbar_left.gif" alt="" width="16" height="34" /></td>
+<td background="buttonbar_bg.gif" valign="top">
+<table border="0" cellpadding="0" cellspacing="0"  style="margin-top: 6px">
+<tr>
+<!--Edit this section to add or remove sections and to customize your button links. -->
+<!-- link -->
+<td><img src="bullet.gif" alt="*" border="0" hspace="4" /></td><td><a href="http://www.java.net" style="color: white; text-decoration:none; font-family:Arial,sans-serif; font-size:11px; font-weight:bold; white-space:nowrap">java.net</a></td>
+<!-- link -->
+<td><img src="bullet.gif" alt="*" border="0" hspace="4" /></td><td><a href="http://community.java.net/javadesktop/" style="color: white; text-decoration:none; font-family:Arial,sans-serif; font-size:11px; font-weight:bold; white-space:nowrap">javadesktop home</a></td>
+<!-- link -->
+<td><img src="bullet.gif" alt="*" border="0" hspace="4" /></td><td><a href="http://community.java.net/javadesktop/" style="color: white; text-decoration:none; font-family:Arial,sans-serif; font-size:11px; font-weight:bold; white-space:nowrap">forums</a></td>
+<!-- link -->
+<td><img src="bullet.gif" alt="*" border="0" hspace="4" /></td><td><a href="http://weblogs.java.net/weblogs/project/237" style="color: white; text-decoration:none; font-family:Arial,sans-serif; font-size:11px; font-weight:bold; white-space:nowrap">blogs</a></td>
+<!-- link -->
+<td><img src="bullet.gif" alt="*" border="0" hspace="4" /></td><td><a href="http://wiki.java.net/bin/view/Javadesktop/WebHome" style="color: white; text-decoration:none; font-family:Arial,sans-serif; font-size:11px; font-weight:bold; white-space:nowrap">wiki</a></td>
+ <!-- link -->
+<td><img src="bullet.gif" alt="*" border="0" hspace="4" /></td><td><a href="http://www.javadesktop.org/faq/index.html" style="color: white; text-decoration:none; font-family:Arial,sans-serif; font-size:11px; font-weight:bold; white-space:nowrap">faq</a></td>
+</tr></table>
+</td>
+<td width="22"><img src="buttonbar_right.gif" alt="" width="22" height="34" /></td>
+</tr>
+</table>
 
-<body bgcolor="#FFFFFF" text="#000000">
-<h1>Default project home page </h1>
-<p>Congratulations on your new java.net project! </p>
-<p>This page is the home page for your new project. This content is appearing 
-  because you have selected the option <b>Use project index.html</b>. To edit 
-  the information displayed on this page, just use CVS to check out your project's 
-  CVS repository and edit index.html in directory www. You can get more information 
-  on how to set-up your local CVS client, click on <b>Version Control</b> on the 
-  left nav bar. </p>
-<p>If you don't want to use CVS to manage your home page, click on the <b>Edit 
-  project</b> link on this page and unclick the option <b>Use project index.html</b>. 
-  Your project home page contents will be generated from the <b>Edit project</b> 
-  field <b>Description</b>. Edit the text on that field to change your home page 
-  contents. Click on <b>Submit changes</b> to save your edits. </p>
-<p>If you are looking for <a href="https://java-net.dev.java.net/ProjectPages.html#templates">sample 
-  home page templates</a>, check out the <a href="https://java-net.dev.java.net/ProjectPages.html">java.net 
-  Project Starter Kit</a>. Copy either of the templates into your project's html 
-  to get started on your project's home page. </p>
-<p>You can find lots of helpful information in the Starter Kit to get your project 
-  started. Some of the things you will find in there include:</p>
-<ul>
-  <li>Hints on how to <a href="https://java-net.dev.java.net/ProjectPages.html#pages">set-up 
-    your project's</a> home page</li>
-  <li>Ideas on how to <a href="https://java-net.dev.java.net/ProjectPages.html#publicity">publicize 
-    your project</a> including RSS feeds</li>
-  <li>Hints on <a href="https://java-net.dev.java.net/pagedesign.html">project 
-    page HTML</a></li>
-  <li>Setting up project <a href="https://java-net.dev.java.net/ProjectPages.html#wiki">wiki 
-    pages</a></li>
-  <li>And places to go if <a href="https://java-net.dev.java.net/ProjectPages.html#feedback">you 
-    have questions</a>.</li>
-</ul>
-<p>Remember that you will attract more new members and your project team will 
-  work more effectively if you, as the project owner, supply sufficient information 
-  about your project for visitors to your project space. Good luck with your new 
-  project! </p>
+<br>
+<h4>Summary</h4>
+<p> Welcome to GroovyChart Project Home Page.
+GroovyChart's goal is to develop a Groovy Builder to create rich Swing and HTML Charts using JFreeChart. 
+<code></code>
+<h4>Getting Started</h4>
+First, become famliar with the powerful dynamic language for
+for the Java Platform, <a href="http://groovy.codehaus.org/">Groovy</a>,
+and the concepts of <a href="http://groovy.codehaus.org/Builders">GroovyBuilders</a>.
+<p>
+Second, become familiar with <a href="http://www.jfree.org/jfreechart/">JFreeChart</a>.
+A good starting point is to download the JFreeChart DeveloperGuide($$$), but this is not
+necessary to run GroovyChart. (No one connected this project has any financial inteterst in JFreeChart).
+<p>
+One of the goals of this project is to create a demo application, similar to the 
+downloadable demo from JFreeChart, that is totally written using Groovy and GroovyBuilder.
+<p>
+An simple view of GroovyChart is:
+<br>
+<table border="1">
+    <tr>
+      <td>
+      <pre> import net.java.dev.groovy.chart.ChartBuilder
+import org.jfree.chart.plot.PlotOrientation
+import org.jfree.chart.JFreeChart
+import org.jfree.chart.ChartPanel;
+import java.awt.BorderLayout
+import groovy.swing.SwingBuilder;
+import java.awt.Dimension
+
+
+java.sql.Connection conn = null
+
+ChartBuilder builder = new ChartBuilder();
+
+builder.areaChart(title:'This is a title',
+    categoryAxisLabel:'category',
+    valueAxisLabel:'value',
+    orientation:PlotOrientation.HORIZONTAL,
+    legend:true,
+    tooltips:false,
+    urls:false
+) {
+    defaultCategoryDataset(){
+        addValue(1.0, row:'Series 1', column:'Type 1')
+        addValue(4.0, row:'Series 1', column:'Type 2')
+    }
+
+def chart = builder.getChart();
+def chartPanel = new ChartPanel(chart, false);
+chartPanel.setPreferredSize(new Dimension(1000, 500));
+chartPanel.setMouseZoomable(true, false);
+
+SwingBuilder swing = new SwingBuilder();
+
+def frame = swing.frame(
+            title:'This is a Frame',
+            location:[100,100],
+            size:[800,400],
+            defaultCloseOperation:javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+frame.getContentPane().setLayout(new BorderLayout());
+frame.getContentPane().add( chartPanel, java.awt.BorderLayout.CENTER);
+frame.setVisible(true)
+
+</pre>
+      </td>
+    </tr>
+</table>
+<br>
+<h4>How to Contribute</h4>
+Please download the source files here and startusing the framework. 
+Then, please send comments, bugs and fixes to
+Jim.Clarke@sun.com. 
 </body>
 </html>
-
