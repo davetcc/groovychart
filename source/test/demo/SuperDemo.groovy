@@ -168,30 +168,30 @@ private TreeModel createTreeModel() {
 
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.PieChartDemo1", 
-                        "PieChartDemo1.java"));  
+                        "PieChartDemo1.groovy"));  
         DefaultMutableTreeNode n2 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.PieChartDemo2", 
-                        "PieChartDemo2.java"));            
+                        "PieChartDemo2.groovy"));            
         DefaultMutableTreeNode n3 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.PieChartDemo3", 
-                        "PieChartDemo3.java"));
+                        "PieChartDemo3.groovy"));
         DefaultMutableTreeNode n4 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.PieChartDemo8", 
-                        "PieChartDemo8.java"));
+                        "PieChartDemo8.groovy"));
         DefaultMutableTreeNode n5 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.PieChart3DDemo1", 
-                        "PieChart3DDemo1.java"));
+                        "PieChart3DDemo1.groovy"));
         DefaultMutableTreeNode n6 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.PieChart3DDemo2", 
-                        "PieChart3DDemo2.java"));
+                        "PieChart3DDemo2.groovy"));
         DefaultMutableTreeNode n7 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.PieChart3DDemo3", 
-                        "PieChart3DDemo3.java"));  
+                        "PieChart3DDemo3.groovy"));  
         DefaultMutableTreeNode n8 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.MultiplePieChartDemo1", 
-                        "MultiplePieChartDemo1.java"));
+                        "MultiplePieChartDemo1.groovy"));
         DefaultMutableTreeNode n9 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.RingChartDemo1", "RingChartDemo1.java"));
+            new DemoDescription("demo.RingChartDemo1", "RingChartDemo1.groovy"));
                 
         root.add(n1);
         root.add(n2);
@@ -227,58 +227,58 @@ private TreeModel createTreeModel() {
         root = new DefaultMutableTreeNode("CategoryPlot");
         
         n1 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.BarChartDemo1", "BarChartDemo1.java"));                
+                "demo.BarChartDemo1", "BarChartDemo1.groovy"));                
         n2 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.BarChartDemo2", "BarChartDemo2.java"));                
+                "demo.BarChartDemo2", "BarChartDemo2.groovy"));                
         n3 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.BarChartDemo3", "BarChartDemo3.java"));                
+                "demo.BarChartDemo3", "BarChartDemo3.groovy"));                
         n4 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.BarChartDemo4", "BarChartDemo4.java"));                
+                "demo.BarChartDemo4", "BarChartDemo4.groovy"));                
         n5 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.BarChartDemo5", "BarChartDemo5.java"));                
+                "demo.BarChartDemo5", "BarChartDemo5.groovy"));                
         n6 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.BarChartDemo6", "BarChartDemo6.java"));                
+                "demo.BarChartDemo6", "BarChartDemo6.groovy"));                
         n7 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.BarChartDemo7", "BarChartDemo7.java"));                
+                "demo.BarChartDemo7", "BarChartDemo7.groovy"));                
         n8 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.BarChartDemo8", "BarChartDemo8.java"));                
+                "demo.BarChartDemo8", "BarChartDemo8.groovy"));                
         n9 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.BarChartDemo9", "BarChartDemo9.java"));                
+                "demo.BarChartDemo9", "BarChartDemo9.groovy"));                
         n10 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.BarChartDemo10", "BarChartDemo10.java"));                
+                "demo.BarChartDemo10", "BarChartDemo10.groovy"));                
         n11 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.BarChart3DDemo1", "BarChart3DDemo1.java"));                
+                "demo.BarChart3DDemo1", "BarChart3DDemo1.groovy"));                
         n12 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.BarChart3DDemo2", "BarChart3DDemo2.java"));                
+                "demo.BarChart3DDemo2", "BarChart3DDemo2.groovy"));                
         n13 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.BarChart3DDemo3", "BarChart3DDemo3.java"));
+                "demo.BarChart3DDemo3", "BarChart3DDemo3.groovy"));
         n13a = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.BarChart3DDemo4", "BarChart3DDemo4.java"));
+                "demo.BarChart3DDemo4", "BarChart3DDemo4.groovy"));
         n13b = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.CylinderChartDemo1", "CylinderChartDemo1.java"));
+                "demo.CylinderChartDemo1", "CylinderChartDemo1.groovy"));
         n14 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.IntervalBarChartDemo1", "IntervalBarChartDemo1.java"));
+                "demo.IntervalBarChartDemo1", "IntervalBarChartDemo1.groovy"));
         n15 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.LayeredBarChartDemo1", "LayeredBarChartDemo1.java"));
+                "demo.LayeredBarChartDemo1", "LayeredBarChartDemo1.groovy"));
         n16 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.LayeredBarChartDemo2", "LayeredBarChartDemo2.java"));
+                "demo.LayeredBarChartDemo2", "LayeredBarChartDemo2.groovy"));
         n17 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.StackedBarChartDemo1", "StackedBarChartDemo1.java"));
+                "demo.StackedBarChartDemo1", "StackedBarChartDemo1.groovy"));
         n18 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.StackedBarChartDemo2", "StackedBarChartDemo2.java"));
+                "demo.StackedBarChartDemo2", "StackedBarChartDemo2.groovy"));
         n19 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.StackedBarChartDemo3", "StackedBarChartDemo3.java"));
+                "demo.StackedBarChartDemo3", "StackedBarChartDemo3.groovy"));
         n20 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.StackedBarChartDemo4", "StackedBarChartDemo4.java"));
+                "demo.StackedBarChartDemo4", "StackedBarChartDemo4.groovy"));
         n21 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.StackedBarChartDemo5", "StackedBarChartDemo5.java"));
+                "demo.StackedBarChartDemo5", "StackedBarChartDemo5.groovy"));
         n22 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.StackedBarChartDemo6", "StackedBarChartDemo6.java"));
+                "demo.StackedBarChartDemo6", "StackedBarChartDemo6.groovy"));
         n23 = new DefaultMutableTreeNode(new DemoDescription(
                 "demo.StatisticalBarChartDemo1", 
-                "StatisticalBarChartDemo1.java"));
+                "StatisticalBarChartDemo1.groovy"));
         n24 = new DefaultMutableTreeNode(new DemoDescription(
-                "demo.WaterfallChartDemo1", "WaterfallChartDemo1.java"));
+                "demo.WaterfallChartDemo1", "WaterfallChartDemo1.groovy"));
             
         root.add(n1);
         root.add(n2);
@@ -314,19 +314,19 @@ private TreeModel createTreeModel() {
         root = new DefaultMutableTreeNode("XYPlot");
         n1 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.HistogramDemo1", 
-                        "HistogramDemo1.java"));
+                        "HistogramDemo1.groovy"));
         n2 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.XYBarChartDemo1", 
-                        "XYBarChartDemo1.java"));                
+                        "XYBarChartDemo1.groovy"));                
         n3 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.XYBarChartDemo2", 
-                        "XYBarChartDemo2.java"));                
+                        "XYBarChartDemo2.groovy"));                
         n4 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.XYBarChartDemo3", 
-                        "XYBarChartDemo3.java"));                
+                        "XYBarChartDemo3.groovy"));                
         n5 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.XYBarChartDemo4", 
-                        "XYBarChartDemo4.java"));                
+                        "XYBarChartDemo4.groovy"));                
         root.add(n1);
         root.add(n2);
         root.add(n3);
@@ -345,43 +345,43 @@ private TreeModel createTreeModel() {
 
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.AnnotationDemo1", 
-                "AnnotationDemo1.java"));
+                "AnnotationDemo1.groovy"));
         DefaultMutableTreeNode n2 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.LineChartDemo1", 
-                "LineChartDemo1.java"));
+                "LineChartDemo1.groovy"));
         DefaultMutableTreeNode n3 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.LineChartDemo2", 
-                "LineChartDemo2.java"));
+                "LineChartDemo2.groovy"));
         DefaultMutableTreeNode n4 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.LineChartDemo3", 
-                "LineChartDemo3.java"));
+                "LineChartDemo3.groovy"));
         DefaultMutableTreeNode n5 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.LineChartDemo4", 
-                "LineChartDemo4.java"));
+                "LineChartDemo4.groovy"));
         DefaultMutableTreeNode n6 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.LineChartDemo5", 
-                "LineChartDemo5.java"));
+                "LineChartDemo5.groovy"));
         DefaultMutableTreeNode n7 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.LineChartDemo6", 
-                "LineChartDemo6.java"));
+                "LineChartDemo6.groovy"));
         DefaultMutableTreeNode n8 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.LineChartDemo7", 
-                "LineChartDemo7.java"));
+                "LineChartDemo7.groovy"));
         DefaultMutableTreeNode n9 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.LineChartDemo8", 
-                "LineChartDemo8.java"));
+                "LineChartDemo8.groovy"));
         DefaultMutableTreeNode n10 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.NormalDistributionDemo", 
-                "NormalDistributionDemo.java"));
+                "NormalDistributionDemo.groovy"));
         DefaultMutableTreeNode n11 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.StatisticalLineChartDemo1", 
-                "StatisticalLineChartDemo1.java"));
+                "StatisticalLineChartDemo1.groovy"));
         DefaultMutableTreeNode n12 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.XYStepRendererDemo1", 
-                "XYStepRendererDemo1.java"));
+                "XYStepRendererDemo1.groovy"));
         DefaultMutableTreeNode n13 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.XYStepRendererDemo2", 
-                "XYStepRendererDemo2.java"));
+                "XYStepRendererDemo2.groovy"));
         
         root.add(n1);
         root.add(n2);
@@ -409,19 +409,19 @@ private TreeModel createTreeModel() {
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("Area Charts");
 
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.AreaChartDemo1", "AreaChartDemo1.java"));
+            new DemoDescription("demo.AreaChartDemo1", "AreaChartDemo1.groovy"));
         DefaultMutableTreeNode n2 = new DefaultMutableTreeNode(
             new DemoDescription("demo.StackedXYAreaChartDemo1", 
-                "StackedXYAreaChartDemo1.java"));
+                "StackedXYAreaChartDemo1.groovy"));
         DefaultMutableTreeNode n3 = new DefaultMutableTreeNode(
             new DemoDescription("demo.StackedXYAreaChartDemo2", 
-                "StackedXYAreaChartDemo2.java"));
+                "StackedXYAreaChartDemo2.groovy"));
         DefaultMutableTreeNode n4 = new DefaultMutableTreeNode(
             new DemoDescription("demo.XYAreaChartDemo1", 
-                "XYAreaChartDemo1.java"));
+                "XYAreaChartDemo1.groovy"));
         DefaultMutableTreeNode n5 = new DefaultMutableTreeNode(
             new DemoDescription("demo.XYAreaChartDemo2", 
-                "XYAreaChartDemo2.java"));
+                "XYAreaChartDemo2.groovy"));
         
         root.add(n1);
         root.add(n2);
@@ -442,48 +442,48 @@ private TreeModel createTreeModel() {
             "Time Series Charts");
 
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.TimeSeriesDemo1", "TimeSeriesDemo1.java"));
+            new DemoDescription("demo.TimeSeriesDemo1", "TimeSeriesDemo1.groovy"));
         DefaultMutableTreeNode n2 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.TimeSeriesDemo2", "TimeSeriesDemo2.java"));
+            new DemoDescription("demo.TimeSeriesDemo2", "TimeSeriesDemo2.groovy"));
         DefaultMutableTreeNode n3 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.TimeSeriesDemo3", "TimeSeriesDemo3.java"));
+            new DemoDescription("demo.TimeSeriesDemo3", "TimeSeriesDemo3.groovy"));
         DefaultMutableTreeNode n4 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.TimeSeriesDemo4", "TimeSeriesDemo4.java"));
+            new DemoDescription("demo.TimeSeriesDemo4", "TimeSeriesDemo4.groovy"));
         DefaultMutableTreeNode n5 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.TimeSeriesDemo5", "TimeSeriesDemo5.java"));
+            new DemoDescription("demo.TimeSeriesDemo5", "TimeSeriesDemo5.groovy"));
         DefaultMutableTreeNode n6 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.TimeSeriesDemo6", "TimeSeriesDemo6.java"));
+            new DemoDescription("demo.TimeSeriesDemo6", "TimeSeriesDemo6.groovy"));
         DefaultMutableTreeNode n7 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.TimeSeriesDemo7", "TimeSeriesDemo7.java"));
+            new DemoDescription("demo.TimeSeriesDemo7", "TimeSeriesDemo7.groovy"));
         DefaultMutableTreeNode n8 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.TimeSeriesDemo8", "TimeSeriesDemo8.java"));
+            new DemoDescription("demo.TimeSeriesDemo8", "TimeSeriesDemo8.groovy"));
         DefaultMutableTreeNode n9 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.TimeSeriesDemo9", "TimeSeriesDemo9.java"));
+            new DemoDescription("demo.TimeSeriesDemo9", "TimeSeriesDemo9.groovy"));
         DefaultMutableTreeNode n10 = new DefaultMutableTreeNode(
             new DemoDescription("demo.TimeSeriesDemo10", 
-                    "TimeSeriesDemo10.java"));
+                    "TimeSeriesDemo10.groovy"));
         DefaultMutableTreeNode n11 = new DefaultMutableTreeNode(
             new DemoDescription("demo.TimeSeriesDemo11", 
-                    "TimeSeriesDemo11.java"));
+                    "TimeSeriesDemo11.groovy"));
         DefaultMutableTreeNode n12 = new DefaultMutableTreeNode(
             new DemoDescription("demo.TimeSeriesDemo12", 
-                    "TimeSeriesDemo12.java"));
+                    "TimeSeriesDemo12.groovy"));
         DefaultMutableTreeNode n13 = new DefaultMutableTreeNode(
             new DemoDescription("demo.TimeSeriesDemo13", 
-                    "TimeSeriesDemo13.java"));
+                    "TimeSeriesDemo13.groovy"));
         DefaultMutableTreeNode n14 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.PeriodAxisDemo1", "PeriodAxisDemo1.java"));
+            new DemoDescription("demo.PeriodAxisDemo1", "PeriodAxisDemo1.groovy"));
         DefaultMutableTreeNode n15 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.PeriodAxisDemo2", "PeriodAxisDemo2.java"));
+            new DemoDescription("demo.PeriodAxisDemo2", "PeriodAxisDemo2.groovy"));
         DefaultMutableTreeNode n16 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.DynamicDataDemo1", 
-                "DynamicDataDemo1.java"));
+                "DynamicDataDemo1.groovy"));
         DefaultMutableTreeNode n17 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.DynamicDataDemo2", 
-                "DynamicDataDemo2.java"));
+                "DynamicDataDemo2.groovy"));
         DefaultMutableTreeNode n18 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.DynamicDataDemo3", 
-                "DynamicDataDemo3.java"));
+                "DynamicDataDemo3.groovy"));
         
         root.add(n1);
         root.add(n2);
@@ -518,19 +518,19 @@ private TreeModel createTreeModel() {
 
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.CandlestickChartDemo1", 
-                "CandlestickChartDemo1.java"));
+                "CandlestickChartDemo1.groovy"));
         DefaultMutableTreeNode n2 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.HighLowChartDemo1", 
-                "HighLowChartDemo1.java"));
+                "HighLowChartDemo1.groovy"));
         DefaultMutableTreeNode n3 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.HighLowChartDemo2", 
-                "HighLowChartDemo2.java"));
+                "HighLowChartDemo2.groovy"));
         DefaultMutableTreeNode n4 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.PriceVolumeDemo1", 
-                "PriceVolumeDemo1.java"));
+                "PriceVolumeDemo1.groovy"));
         DefaultMutableTreeNode n5 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.YieldCurveDemo", 
-                "YieldCurveDemo.java"));
+                "YieldCurveDemo.groovy"));
         
         root.add(n1);
         root.add(n2);
@@ -545,28 +545,28 @@ private TreeModel createTreeModel() {
         
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.ScatterPlotDemo1", 
-                "ScatterPlotDemo1.java"));
+                "ScatterPlotDemo1.groovy"));
         DefaultMutableTreeNode n2 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.ScatterPlotDemo2", 
-                "ScatterPlotDemo2.java"));
+                "ScatterPlotDemo2.groovy"));
         DefaultMutableTreeNode n3 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.ScatterPlotDemo3", 
-                "ScatterPlotDemo3.java"));
+                "ScatterPlotDemo3.groovy"));
         DefaultMutableTreeNode n4 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.XYLineAndShapeRendererDemo1", 
-                "XYLineAndShapeRendererDemo1.java"));
+                "XYLineAndShapeRendererDemo1.groovy"));
         DefaultMutableTreeNode n5 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.XYSeriesDemo1", 
-                "XYSeriesDemo1.java"));                
+                "XYSeriesDemo1.groovy"));                
         DefaultMutableTreeNode n6 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.XYSeriesDemo2", 
-                "XYSeriesDemo2.java"));                
+                "XYSeriesDemo2.groovy"));                
         DefaultMutableTreeNode n7 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.XYSeriesDemo3", 
-                "XYSeriesDemo3.java"));        
+                "XYSeriesDemo3.groovy"));        
         DefaultMutableTreeNode n8 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.WindChartDemo1", 
-                "WindChartDemo1.java"));                
+                "WindChartDemo1.groovy"));                
         
         root.add(n1);
         root.add(n2);
@@ -591,19 +591,19 @@ private TreeModel createTreeModel() {
 
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.MeterChartDemo1", 
-                "MeterChartDemo1.java"));
+                "MeterChartDemo1.groovy"));
         
         DefaultMutableTreeNode n2 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.MeterChartDemo2", 
-                "MeterChartDemo2.java"));
+                "MeterChartDemo2.groovy"));
         
         DefaultMutableTreeNode n3 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.MeterChartDemo4", 
-                "MeterChartDemo4.java"));
+                "MeterChartDemo4.groovy"));
         
         DefaultMutableTreeNode n4 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.ThermometerDemo1", 
-                "ThermometerDemo1.java"));
+                "ThermometerDemo1.groovy"));
        
         root.add(n1);
         root.add(n2);
@@ -618,25 +618,25 @@ private TreeModel createTreeModel() {
 
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.DualAxisDemo1", 
-                        "DualAxisDemo1.java"));
+                        "DualAxisDemo1.groovy"));
         DefaultMutableTreeNode n2 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.DualAxisDemo2", 
-                        "DualAxisDemo2.java"));
+                        "DualAxisDemo2.groovy"));
         DefaultMutableTreeNode n3 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.DualAxisDemo3", 
-                        "DualAxisDemo3.java"));
+                        "DualAxisDemo3.groovy"));
         DefaultMutableTreeNode n4 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.DualAxisDemo4", 
-                        "DualAxisDemo4.java"));
+                        "DualAxisDemo4.groovy"));
         DefaultMutableTreeNode n5 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.DualAxisDemo5", 
-                        "DualAxisDemo5.java"));
+                        "DualAxisDemo5.groovy"));
         DefaultMutableTreeNode n6 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.MultipleAxisDemo1", 
-                        "MultipleAxisDemo1.java"));
+                        "MultipleAxisDemo1.groovy"));
         DefaultMutableTreeNode n7 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.ParetoChartDemo1", 
-                        "ParetoChartDemo1.java"));
+                        "ParetoChartDemo1.groovy"));
         
         root.add(n1);
         root.add(n2);
@@ -657,43 +657,43 @@ private TreeModel createTreeModel() {
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
             new DemoDescription(
                 "demo.CombinedCategoryPlotDemo1", 
-                "CombinedCategoryPlotDemo1.java"
+                "CombinedCategoryPlotDemo1.groovy"
             )
         );
         DefaultMutableTreeNode n2 = new DefaultMutableTreeNode(
             new DemoDescription(
                 "demo.CombinedCategoryPlotDemo2", 
-                "CombinedCategoryPlotDemo2.java"
+                "CombinedCategoryPlotDemo2.groovy"
             )
         );
         DefaultMutableTreeNode n3 = new DefaultMutableTreeNode(
             new DemoDescription(
                 "demo.CombinedTimeSeriesDemo1", 
-                "CombinedTimeSeriesDemo1.java"
+                "CombinedTimeSeriesDemo1.groovy"
             )
         );
         DefaultMutableTreeNode n4 = new DefaultMutableTreeNode(
             new DemoDescription(
                 "demo.CombinedXYPlotDemo1", 
-                "CombinedXYPlotDemo1.java"
+                "CombinedXYPlotDemo1.groovy"
             )
         );
         DefaultMutableTreeNode n5 = new DefaultMutableTreeNode(
             new DemoDescription(
                 "demo.CombinedXYPlotDemo2", 
-                "CombinedXYPlotDemo2.java"
+                "CombinedXYPlotDemo2.groovy"
             )
         );
         DefaultMutableTreeNode n6 = new DefaultMutableTreeNode(
             new DemoDescription(
                 "demo.CombinedXYPlotDemo3", 
-                "CombinedXYPlotDemo3.java"
+                "CombinedXYPlotDemo3.groovy"
             )
         );
         DefaultMutableTreeNode n7 = new DefaultMutableTreeNode(
             new DemoDescription(
                 "demo.CombinedXYPlotDemo4", 
-                "CombinedXYPlotDemo4.java"
+                "CombinedXYPlotDemo4.groovy"
             )
         );
 
@@ -714,10 +714,10 @@ private TreeModel createTreeModel() {
         );
 
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.GanttDemo1", "GanttDemo1.java")
+            new DemoDescription("demo.GanttDemo1", "GanttDemo1.groovy")
         );
         DefaultMutableTreeNode n2 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.GanttDemo2", "GanttDemo2.java")
+            new DemoDescription("demo.GanttDemo2", "GanttDemo2.groovy")
         );
         
         root.add(n1);
@@ -737,70 +737,70 @@ private TreeModel createTreeModel() {
 
         DefaultMutableTreeNode n0 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.BoxAndWhiskerChartDemo1", 
-                "BoxAndWhiskerChartDemo1.java"));
+                "BoxAndWhiskerChartDemo1.groovy"));
 
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.BubbleChartDemo1", 
-                "BubbleChartDemo1.java"));
+                "BubbleChartDemo1.groovy"));
         
         DefaultMutableTreeNode n2 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.BubbleChartDemo2", 
-                "BubbleChartDemo2.java"));
+                "BubbleChartDemo2.groovy"));
 
         DefaultMutableTreeNode n3 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.CategoryStepChartDemo1", 
-                "CategoryStepChartDemo1.java"));
+                "CategoryStepChartDemo1.groovy"));
         
         DefaultMutableTreeNode n4 = new DefaultMutableTreeNode(
-                new DemoDescription("demo.CompassDemo1", "CompassDemo1.java"));
+                new DemoDescription("demo.CompassDemo1", "CompassDemo1.groovy"));
         
         DefaultMutableTreeNode n5 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.CompassFormatDemo1", 
-                "CompassFormatDemo1.java"));
+                "CompassFormatDemo1.groovy"));
         
         DefaultMutableTreeNode n6 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.CompassFormatDemo2", 
-                "CompassFormatDemo2.java"));
+                "CompassFormatDemo2.groovy"));
         
         DefaultMutableTreeNode n7 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.DifferenceChartDemo1", 
-                "DifferenceChartDemo1.java"));
+                "DifferenceChartDemo1.groovy"));
         
         DefaultMutableTreeNode n8 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.DifferenceChartDemo2", 
-                "DifferenceChartDemo2.java"));
+                "DifferenceChartDemo2.groovy"));
         
         DefaultMutableTreeNode n9 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.EventFrequencyDemo1", 
-                "EventFrequencyDemo1.java"));
+                "EventFrequencyDemo1.groovy"));
 
         DefaultMutableTreeNode n10 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.HideSeriesDemo1", 
-                "HideSeriesDemo1.java"));
+                "HideSeriesDemo1.groovy"));
         
         DefaultMutableTreeNode n11 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.OverlaidBarChartDemo1", 
-                "OverlaidBarChartDemo1.java"));
+                "OverlaidBarChartDemo1.groovy"));
         
         DefaultMutableTreeNode n12 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.OverlaidBarChartDemo2", 
-                "OverlaidBarChartDemo2.java"));
+                "OverlaidBarChartDemo2.groovy"));
         
         DefaultMutableTreeNode n13 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.PolarChartDemo1", 
-                "PolarChartDemo1.java"));
+                "PolarChartDemo1.groovy"));
 
         DefaultMutableTreeNode n14 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.SpiderWebChartDemo1", 
-                "SpiderWebChartDemo1.java"));
+                "SpiderWebChartDemo1.groovy"));
         
         DefaultMutableTreeNode n15 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.SymbolAxisDemo1", 
-                "SymbolAxisDemo1.java"));
+                "SymbolAxisDemo1.groovy"));
         
         DefaultMutableTreeNode n16 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.YIntervalChartDemo1", 
-                "YIntervalChartDemo1.java"));
+                "YIntervalChartDemo1.groovy"));
 
         root.add(createAnnotationsNode());
         root.add(createCrosshairChartsNode());
@@ -834,13 +834,13 @@ private TreeModel createTreeModel() {
 
         DefaultMutableTreeNode n0 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.XYBoxAnnotationDemo1", 
-                "XYBoxAnnotationDemo1.java"));
+                "XYBoxAnnotationDemo1.groovy"));
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.XYPolygonAnnotationDemo1", 
-                "XYPolygonAnnotationDemo1.java"));
+                "XYPolygonAnnotationDemo1.groovy"));
         DefaultMutableTreeNode n2 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.AnnotationDemo2", 
-                "AnnotationDemo2.java"));
+                "AnnotationDemo2.groovy"));
         
         root.add(n0);
         root.add(n1);
@@ -853,16 +853,16 @@ private TreeModel createTreeModel() {
 
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.CrosshairDemo1", 
-                "CrosshairDemo1.java"));
+                "CrosshairDemo1.groovy"));
         DefaultMutableTreeNode n2 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.CrosshairDemo2", 
-                "CrosshairDemo2.java"));
+                "CrosshairDemo2.groovy"));
         DefaultMutableTreeNode n3 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.CrosshairDemo3", 
-                "CrosshairDemo3.java"));
+                "CrosshairDemo3.groovy"));
         DefaultMutableTreeNode n4 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.CrosshairDemo4", 
-                "CrosshairDemo4.java"));
+                "CrosshairDemo4.groovy"));
         
         root.add(n1);
         root.add(n2);
@@ -877,19 +877,19 @@ private TreeModel createTreeModel() {
 
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.ItemLabelDemo1", 
-                "ItemLabelDemo1.java"));
+                "ItemLabelDemo1.groovy"));
         DefaultMutableTreeNode n2 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.ItemLabelDemo2", 
-                "ItemLabelDemo2.java"));
+                "ItemLabelDemo2.groovy"));
         DefaultMutableTreeNode n3 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.ItemLabelDemo3", 
-                "ItemLabelDemo3.java"));
+                "ItemLabelDemo3.groovy"));
         DefaultMutableTreeNode n4 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.ItemLabelDemo4", 
-                "ItemLabelDemo4.java"));
+                "ItemLabelDemo4.groovy"));
         DefaultMutableTreeNode n5 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.ItemLabelDemo5", 
-                "ItemLabelDemo5.java"));
+                "ItemLabelDemo5.groovy"));
         
         root.add(n1);
         root.add(n2);
@@ -905,7 +905,7 @@ private TreeModel createTreeModel() {
 
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
                 new DemoDescription("demo.LegendWrapperDemo1", 
-                        "LegendWrapperDemo1.java"));
+                        "LegendWrapperDemo1.groovy"));
         
         root.add(n1);
         
@@ -916,14 +916,14 @@ private TreeModel createTreeModel() {
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("Markers");
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
             new DemoDescription("demo.CategoryMarkerDemo1", 
-            "CategoryMarkerDemo1.java"));
+            "CategoryMarkerDemo1.groovy"));
         DefaultMutableTreeNode n2 = new DefaultMutableTreeNode(
             new DemoDescription("demo.CategoryMarkerDemo2", 
-            "CategoryMarkerDemo2.java"));
+            "CategoryMarkerDemo2.groovy"));
         DefaultMutableTreeNode n3 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.MarkerDemo1", "MarkerDemo1.java"));
+            new DemoDescription("demo.MarkerDemo1", "MarkerDemo1.groovy"));
         DefaultMutableTreeNode n4 = new DefaultMutableTreeNode(
-            new DemoDescription("demo.MarkerDemo2", "MarkerDemo2.java"));
+            new DemoDescription("demo.MarkerDemo2", "MarkerDemo2.groovy"));
         root.add(n1);
         root.add(n2);
         root.add(n3);
@@ -938,12 +938,12 @@ private TreeModel createTreeModel() {
 
         DefaultMutableTreeNode n1 = new DefaultMutableTreeNode(
             new DemoDescription(
-                "demo.PlotOrientationDemo1", "PlotOrientationDemo1.java"
+                "demo.PlotOrientationDemo1", "PlotOrientationDemo1.groovy"
             )
         );
         DefaultMutableTreeNode n2 = new DefaultMutableTreeNode(
             new DemoDescription(
-                "demo.PlotOrientationDemo2", "PlotOrientationDemo2.java"
+                "demo.PlotOrientationDemo2", "PlotOrientationDemo2.groovy"
             )
         );
        
