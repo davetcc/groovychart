@@ -42,9 +42,11 @@ public class WaferMapChart extends BasicChart {
     }
 
     public JFreeChart getChart() {
-        return ChartFactory.createWaferMapChart(this.getTitle(),
+        JFreeChart chart = ChartFactory.createWaferMapChart(this.getTitle(),
                 (WaferMapDataset)this.getDataset(), this.getOrientation(),
                 this.isLegend(), this.isTooltips(), this.isUrls());
+        return setExtraProperties(chart);
+
     }
 
     /**

@@ -39,10 +39,12 @@ public class LineChart extends CategoryValueChart {
     }
     
     public JFreeChart getChart() {
-        return ChartFactory.createLineChart(getTitle(),
+        JFreeChart chart = ChartFactory.createLineChart(getTitle(),
                 this.getCategoryAxisLabel(),this.getValueAxisLabel(),
                 (CategoryDataset)getDataset(), getOrientation(),
                 isLegend(), isTooltips(), isUrls());
+        return setExtraProperties(chart);
+
     }
     
 }

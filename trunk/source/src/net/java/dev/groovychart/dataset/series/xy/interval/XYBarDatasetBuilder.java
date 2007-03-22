@@ -65,5 +65,10 @@ public class XYBarDatasetBuilder extends BaseDatasetBuilder {
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
+        if(value != null && value instanceof XYBarDataset) {
+            this.xyDataset = (XYBarDataset)value;
+        }else {
+            // TODO
+        }         
     }
 }

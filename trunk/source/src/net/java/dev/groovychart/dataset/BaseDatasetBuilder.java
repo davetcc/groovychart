@@ -32,7 +32,7 @@ import net.java.dev.groovychart.chart.*;
 public abstract class BaseDatasetBuilder implements Buildable, DatasetBuildable {
     
     private ChartBuilder chartBuilder;
-    private Buildable parent;
+    private Object parent;
     private String name;
     
     /** Creates a new instance of BaseDatasetBuilder */
@@ -44,13 +44,17 @@ public abstract class BaseDatasetBuilder implements Buildable, DatasetBuildable 
     }
 
 
-    public Buildable getParent() {
+    public Object getParent() {
         return this.parent;
     }
 
-    public void setParent(Buildable parent) {
+    public void setParent(Object parent) {
         this.parent = parent;
-        if(parent instanceof Chartable) {
+
+    }
+    
+    public void nodeCompleted(Object parent) {
+        if(parent != null && parent instanceof Chartable) {
             ((Chartable)parent).setDataset(this.getDataset());
         }
     }

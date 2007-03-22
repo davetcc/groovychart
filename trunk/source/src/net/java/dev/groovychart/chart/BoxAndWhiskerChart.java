@@ -39,9 +39,10 @@ public class BoxAndWhiskerChart extends BaseChart {
     }
 
     public JFreeChart getChart() {
-        return ChartFactory.createBoxAndWhiskerChart(getTitle(),
+        JFreeChart chart = ChartFactory.createBoxAndWhiskerChart(getTitle(),
                 getTimeAxisLabel(), getValueAxisLabel(), 
                 (BoxAndWhiskerXYDataset)getDataset(),  isLegend());
+        return setExtraProperties(chart); 
     }
 
     /**

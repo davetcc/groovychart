@@ -84,7 +84,9 @@ public class DefaultIntervalCategoryDatasetBuilder extends BaseDatasetBuilder {
 
     public void processNode(Object name, Map map, Object value) throws Exception {
        String method = name.toString();
-       if(method.equalsIgnoreCase("categories")) {
+       if(value != null && value instanceof DefaultIntervalCategoryDataset) {
+           this.intervalCategory = (DefaultIntervalCategoryDataset)value;
+       } else if(method.equalsIgnoreCase("categories")) {
            List valueList = (List)value;
            String[] categoryKeys = (String[])valueList.toArray(new String[valueList.size()]);
            this.intervalCategory.setCategoryKeys(categoryKeys);

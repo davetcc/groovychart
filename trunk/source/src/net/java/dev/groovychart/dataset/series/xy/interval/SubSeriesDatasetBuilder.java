@@ -64,6 +64,11 @@ public class SubSeriesDatasetBuilder extends BaseDatasetBuilder {
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
+        if(value != null && value instanceof SubSeriesDataset) {
+            this.subSeries = (SubSeriesDataset)value;
+        }else {
+            // TODO
+        }             
     }
     
 }

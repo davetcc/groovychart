@@ -65,5 +65,10 @@ public class DefaultHighLowDatasetBuilder extends BaseDatasetBuilder {
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
+        if(value != null && value instanceof DefaultHighLowDataset) {
+            this.xyDataset = (DefaultHighLowDataset)value;
+        }else {
+            // TODO
+        }        
     }
 }

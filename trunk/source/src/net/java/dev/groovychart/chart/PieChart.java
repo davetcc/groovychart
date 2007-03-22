@@ -42,9 +42,11 @@ public class PieChart extends BasicChart {
 
 
     public JFreeChart getChart() {
-        return ChartFactory.createPieChart(getTitle(),
+        JFreeChart chart = ChartFactory.createPieChart(getTitle(),
                 (PieDataset)getDataset(), 
                 isLegend(), isTooltips(), isUrls());
+        return setExtraProperties(chart);
+
     }
     
 }

@@ -26,6 +26,8 @@ package net.java.dev.groovychart.dataset.category;
 
 import java.sql.Connection;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import net.java.dev.groovychart.dataset.*;
 import org.jfree.data.general.Dataset;
 import org.jfree.data.jdbc.JDBCCategoryDataset;
@@ -35,6 +37,7 @@ import org.jfree.data.jdbc.JDBCCategoryDataset;
  * @author jclarke
  */
 public class JDBCCategoryDatasetBuilder extends BaseDatasetBuilder {
+    private static final Logger logger = Logger.getLogger(JDBCCategoryDatasetBuilder.class.getPackage().getName());
     private Connection connection;
     private String url;
     private String driverName;
@@ -48,39 +51,49 @@ public class JDBCCategoryDatasetBuilder extends BaseDatasetBuilder {
     }
     
     public Dataset getDataset() {
-        System.out.println("JDBCCategoryDatasetBuilder: getDataset()");
+        if(logger.isLoggable(Level.FINEST)) {
+            logger.finest("JDBCCategoryDatasetBuilder: getDataset()");
+        }
         return getJDBCCategoryDataset();
     }
     
     public void processNode(Object name, Map map, Object value) throws Exception {
-        System.out.println("JDBCCategoryDatasetBuilder: method=" + name + ", " + map + ", " + value);
-        String method = name.toString();
-        String tmp = (String)map.get("user");
-        if(tmp != null)
-            this.user = tmp;
-        tmp = (String)map.get("passwd");
-        if(tmp != null)
-            this.password = tmp;
-        tmp = (String)map.get("url");
-        if(tmp != null)
-            this.url = tmp;
-        tmp = (String)map.get("driverName");
-        if(tmp != null)
-            this.driverName = tmp;  
-        tmp = (String)map.get("query");
-        if(tmp != null)
-            this.query = tmp; 
-        Boolean bTmp = (Boolean)map.get("transpose");
-        if(bTmp)
-            this.transpose = bTmp.booleanValue();
-        
-        connection = (Connection)map.get("conn");
-        
-        if(method.equalsIgnoreCase("query")) {
-            System.out.println("Query: " + value.toString());
-            this.query = value.toString();
-            if(this.categoryDataset != null) {
-                this.categoryDataset.executeQuery(query);
+        if(logger.isLoggable(Level.FINEST)) {
+            logger.finest("JDBCCategoryDatasetBuilder: method=" + name + ", " + map + ", " + value);
+        }
+        if(value != null) {
+            this.categoryDataset = (JDBCCategoryDataset)value;
+        }else {
+            String method = name.toString();
+            String tmp = (String)map.get("user");
+            if(tmp != null)
+                this.user = tmp;
+            tmp = (String)map.get("passwd");
+            if(tmp != null)
+                this.password = tmp;
+            tmp = (String)map.get("url");
+            if(tmp != null)
+                this.url = tmp;
+            tmp = (String)map.get("driverName");
+            if(tmp != null)
+                this.driverName = tmp;  
+            tmp = (String)map.get("query");
+            if(tmp != null)
+                this.query = tmp; 
+            Boolean bTmp = (Boolean)map.get("transpose");
+            if(bTmp)
+                this.transpose = bTmp.booleanValue();
+
+            connection = (Connection)map.get("conn");
+
+            if(method.equalsIgnoreCase("query")) {
+                if(logger.isLoggable(Level.FINEST)) {
+                    logger.finest("Query: " + value.toString());
+                }
+                this.query = value.toString();
+                if(this.categoryDataset != null) {
+                    this.categoryDataset.executeQuery(query);
+                }
             }
         }
     }    
@@ -106,11 +119,15 @@ public class JDBCCategoryDatasetBuilder extends BaseDatasetBuilder {
                 if(query != null)
                     this.categoryDataset.executeQuery(query);
             } catch (Throwable ex) {
-                ex.printStackTrace();
+                logger.log(Level.WARNING, ex.getMessage(), ex);
             }
-            System.out.println("JDBCCategoryDatasetBuilder: get dataset()");
+            if(logger.isLoggable(Level.FINEST)) {
+                logger.finest("JDBCCategoryDatasetBuilder: get dataset()");
+            }
         }
-        System.out.println ("Dataset = " + categoryDataset);
+        if(logger.isLoggable(Level.FINEST)) {
+            logger.finest ("Dataset = " + categoryDataset);
+        }
         return this.categoryDataset;
     }
 

@@ -65,5 +65,10 @@ public class DefaultContourDatasetBuilder extends BaseDatasetBuilder {
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
+        if(value != null && value instanceof DefaultContourDataset) {
+            this.xyzDataset = (DefaultContourDataset)value;
+        }else {
+            // TODO
+        }          
     }
 }

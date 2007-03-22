@@ -85,7 +85,9 @@ public class TaskSeriesCollectionBuilder extends BaseDatasetBuilder {
         
         String method = name.toString();
         
-        if(method.equalsIgnoreCase("taskSeries")) {
+        if(value != null && value instanceof TaskSeriesCollection) {
+            this.collection = (TaskSeriesCollection)value;
+        } else if(method.equalsIgnoreCase("taskSeries")) {
             currentSeries = new TaskSeries(value.toString());
         }else if(method.equalsIgnoreCase("task")) {
             String description = null;

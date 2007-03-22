@@ -42,18 +42,19 @@ public class HighLowChart extends BaseChart {
     }
 
     public JFreeChart getChart() {
+        JFreeChart chart = null;
         if(this.getTimeline() == null) {
-            return ChartFactory.createHighLowChart(getTitle(),
+            chart = ChartFactory.createHighLowChart(getTitle(),
                     getTimeAxisLabel(), getValueAxisLabel(),
                     (OHLCDataset)getDataset(),
                     isLegend());
         }else {
-            return ChartFactory.createHighLowChart(getTitle(),
+            chart = ChartFactory.createHighLowChart(getTitle(),
                     getTimeAxisLabel(), getValueAxisLabel(),
                     (OHLCDataset)getDataset(), getTimeline(),
                     isLegend());
         }
-                    
+        return setExtraProperties(chart);             
     }
 
     /**

@@ -39,10 +39,12 @@ public class TimeseriesChart extends BasicChart {
     }
 
     public JFreeChart getChart() {
-        return ChartFactory.createTimeSeriesChart(this.getTitle(),
+        JFreeChart chart = ChartFactory.createTimeSeriesChart(this.getTitle(),
                 this.getTimeAxisLabel(), this.getValueAxisLabel(),
                 (XYDataset)this.getDataset(),this.isLegend(),
                 this.isTooltips(), this.isUrls());
+        return setExtraProperties(chart);
+
     }
 
     /**

@@ -65,5 +65,10 @@ public class XYSeriesCollectionBuilder extends BaseDatasetBuilder {
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
+        if(value != null && value instanceof XYSeriesCollection) {
+            this.collection = (XYSeriesCollection)value;
+        }else {
+            // TODO
+        }              
     }
 }

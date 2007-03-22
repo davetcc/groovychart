@@ -67,6 +67,11 @@ public class TimeTableXYDatasetBuilder extends BaseDatasetBuilder {
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
+        if(value != null && value instanceof TimeTableXYDataset) {
+            this.xyDataset = (TimeTableXYDataset)value;
+        }else {
+            // TODO
+        }          
     }
     
 }
