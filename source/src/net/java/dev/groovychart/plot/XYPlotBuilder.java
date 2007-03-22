@@ -88,6 +88,16 @@ public class XYPlotBuilder extends BeanBuilder implements Buildable, Plotable{
                         else
                             this.plot.addDomainMarker(marker);
                     }
+                }else {
+                    Iterator it = map.keySet().iterator();
+                    while(it.hasNext()){
+                        Layer layer = (Layer)it.next();
+                        Marker marker = (Marker)map.get(layer);
+                        if(rangeMarker)
+                            this.plot.addRangeMarker(marker, layer);
+                        else
+                            this.plot.addDomainMarker(marker, layer);
+                    }
                 }
             }
             
