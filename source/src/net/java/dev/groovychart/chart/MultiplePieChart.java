@@ -61,9 +61,11 @@ public class MultiplePieChart extends BasicChart {
     }
 
     public JFreeChart getChart() {
-        return ChartFactory.createMultiplePieChart(getTitle(),
+        JFreeChart chart = ChartFactory.createMultiplePieChart(getTitle(),
                 (CategoryDataset)getDataset(), getOrder(),
                 isLegend(), isTooltips(), isUrls());
+        return setExtraProperties(chart);
+
     }
     
 }

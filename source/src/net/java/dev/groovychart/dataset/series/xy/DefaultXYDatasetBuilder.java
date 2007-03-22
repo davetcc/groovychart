@@ -27,6 +27,8 @@ package net.java.dev.groovychart.dataset.series.xy;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import net.java.dev.groovychart.dataset.*;
 import org.jfree.data.general.Dataset;
 import org.jfree.data.xy.DefaultXYDataset;
@@ -36,6 +38,8 @@ import org.jfree.data.xy.DefaultXYDataset;
  * @author jclarke
  */
 public class DefaultXYDatasetBuilder extends BaseDatasetBuilder  {
+    private static final Logger logger = Logger.getLogger(DefaultXYDatasetBuilder.class.getPackage().getName());
+
     private String seriesTitle;
     private double[] x;
     private double[] y;
@@ -48,11 +52,15 @@ public class DefaultXYDatasetBuilder extends BaseDatasetBuilder  {
         return this.categoryDataset;
     }
     public void processNode(Object name, Map map, Object value) throws Exception {
-        System.out.println("DefaultXYDatasetBuilder: " + name + ", " + map + ", " + value);
-        if(value != null)
-            System.out.println("Value object = " + value.getClass());
+        if(logger.isLoggable(Level.FINE)) {
+            logger.fine("DefaultXYDatasetBuilder: " + name + ", " + map + ", " + value);
+            if(value != null)
+                logger.fine("Value object = " + value.getClass());
+        }
         String method = name.toString();
-        if(method.equalsIgnoreCase("series")) {
+        if(value != null && value instanceof DefaultXYDataset) {
+            this.categoryDataset = (DefaultXYDataset)value;
+        }else if(method.equalsIgnoreCase("series")) {
             if(seriesTitle != null) {
 
                 

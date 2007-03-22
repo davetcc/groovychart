@@ -65,6 +65,11 @@ public class CombinedDatasetBuilder extends BaseDatasetBuilder {
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
+        if(value != null && value instanceof CombinedDataset) {
+            this.xyDataset = (CombinedDataset)value;
+        }else {
+            // TODO
+        }             
     }
     
 }

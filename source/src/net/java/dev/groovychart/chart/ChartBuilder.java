@@ -25,28 +25,33 @@
 package net.java.dev.groovychart.chart;
 
 import groovy.util.BuilderSupport;
-import java.beans.BeanInfo;
-import java.beans.IntrospectionException;
-import java.beans.Introspector;
-import java.beans.PropertyDescriptor;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import net.java.dev.groovychart.axis.CategoryAxisBuilder;
+import net.java.dev.groovychart.axis.DateAxisBuilder;
+import net.java.dev.groovychart.axis.DomainAxisBuilder;
+import net.java.dev.groovychart.axis.NumberAxisBuilder;
+import net.java.dev.groovychart.axis.RangeAxisBuilder;
 import net.java.dev.groovychart.dataset.category.DefaultCategorySetBuilder;
 import net.java.dev.groovychart.dataset.series.xy.DefaultXYDatasetBuilder;
 import net.java.dev.groovychart.dataset.category.JDBCCategoryDatasetBuilder;
-import org.jfree.chart.JFreeChart;
-import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.data.general.Dataset;
+import net.java.dev.groovychart.dataset.series.xy.interval.TimeSeriesBuilder;
+import net.java.dev.groovychart.dataset.series.xy.interval.TimeSeriesCollectionBuilder;
+import net.java.dev.groovychart.plot.CategoryPlotBuilder;
+import net.java.dev.groovychart.plot.XYPlotBuilder;
+import net.java.dev.groovychart.util.BarRendererBuilder;
+import net.java.dev.groovychart.util.StackedBarRendererBuilder;
+import net.java.dev.groovychart.util.TextTitleBuilder;
+import net.java.dev.groovychart.util.XYLineAndShapeRendererBuilder;
 
 /**
  *
  * @author jclarke
  */
 public class ChartBuilder extends BuilderSupport {
-    
+    private static final Logger logger = Logger.getLogger(ChartBuilder.class.getPackage().getName());
     Chartable chartable;
     
     private Buildable lastNode;
@@ -54,6 +59,8 @@ public class ChartBuilder extends BuilderSupport {
     private static HashMap<String, Class> processClasses = new HashMap<String, Class>();
     
     static {
+        //charts, make sure all keys are lower case
+        processClasses.put("chart", Chart.class);
         processClasses.put("areachart", AreaChart.class);
         processClasses.put("barchart", BarChart.class);
         processClasses.put("barchart3d", BarChart3D.class);
@@ -88,10 +95,33 @@ public class ChartBuilder extends BuilderSupport {
         processClasses.put("xystepareachart", XYStepAreaChart.class);
         processClasses.put("xystepchart", XYStepChart.class);
         
+        // data sets
         processClasses.put("defaultcategorydataset", DefaultCategorySetBuilder.class);
         processClasses.put("jdbccategorydataset", JDBCCategoryDatasetBuilder.class);
         processClasses.put("defaultxydataset", DefaultXYDatasetBuilder.class);
+        processClasses.put("timeseriescollection", TimeSeriesCollectionBuilder.class);
+        processClasses.put("timeseries", TimeSeriesBuilder.class);
+        
+        // plots
+        processClasses.put("xyplot", XYPlotBuilder.class);
+        processClasses.put("categoryplot", CategoryPlotBuilder.class);
+        
+        // axis
+        processClasses.put("dateaxis", DateAxisBuilder.class);
+        processClasses.put("numberaxis", NumberAxisBuilder.class);
+        processClasses.put("categoryaxis", CategoryAxisBuilder.class);
+        processClasses.put("domainaxis", DomainAxisBuilder.class);
+        processClasses.put("rangeaxis", RangeAxisBuilder.class);
+        
+        // renderer
+        processClasses.put("xylineandshaperenderer", XYLineAndShapeRendererBuilder.class);
+        processClasses.put("stackedbarrenderer", StackedBarRendererBuilder.class);
+        processClasses.put("barrenderer", BarRendererBuilder.class);
+        
+        // misc.
+        processClasses.put("titletext", TextTitleBuilder.class);
     }
+
     
     /**
      * Creates a new instance of ChartBuilder
@@ -100,44 +130,65 @@ public class ChartBuilder extends BuilderSupport {
         super();
     }
 
+    protected void nodeCompleted(Object parent, Object node) {
+        if(logger.isLoggable(Level.FINEST)) {
+            logger.finest("nodeCompleted, parent=" + parent + " child=" + node);
+        }
+        if(node instanceof Buildable)
+            ((Buildable)node).nodeCompleted(parent);
+        
+    }
     protected void setParent(Object parent, Object child) {
-        System.out.println("ChartBuilder: setParent(parent = " + parent + 
-                            " child = " + child+ ")");
-        if(parent == null || child == null || parent.equals(child) )
-            return;
-        else
-            ((Buildable)child).setParent((Buildable)parent);
+        if(child instanceof Buildable)
+            ((Buildable)child).setParent(parent);
     }
 
     protected Object createNode(Object name) {
-        System.out.println("ChartBuilder: createNode(name=" + name + ")");
+        if(logger.isLoggable(Level.FINEST)) {
+            logger.finest("ChartBuilder: createNode(name="+ name +", " +
+            "map= null, " +
+            "value=null)");
+        }        
         return createNode(name, null, null);  
     }
 
     protected Object createNode(Object name, Object value) {
-        System.out.println("ChartBuilder: createNode(name=" + name + ", " +
-                                        "value=" + value+ ")");
+        if(logger.isLoggable(Level.FINEST)) {
+            logger.finest("ChartBuilder: createNode(name="+ name +", " +
+            "map=null, " +
+            "value=" + value + ")");
+        }
         return createNode(name, null, value);
     }
 
     protected Object createNode(Object name, Map map) {
-        System.out.println("ChartBuilder: createNode(name="+ name +", " +
-                            "map=" + map + ")");
+        if(logger.isLoggable(Level.FINEST)) {
+            logger.finest("ChartBuilder: createNode(name="+ name +", " +
+            "map=" + map + ", " +
+            "value=null)");
+        }        
         return createNode(name, map, null);
     }
     protected Object createNode(Object name, Map map, Object value) {
-        System.out.println("ChartBuilder: createNode(name="+ name +", " +
+        if(logger.isLoggable(Level.FINE)) {
+            logger.fine("ChartBuilder: createNode(name="+ name +", " +
             "map=" + map + ", " +
            "value=" + value + ")");
+        }
         Class processClass = processClasses.get(name.toString().toLowerCase());
         try {
             if(processClass == null) {
-                System.out.println("ChartBuilder: process last node");
+                if(logger.isLoggable(Level.FINEST)) {
+                    logger.finest("ChartBuilder: '" + name.toString() + "' process last node");
+                }
                 lastNode.processNode(name, map, value);
             } else {
                 Buildable processObject = null;
-                System.out.println("ChartBuilder: process = " + processObject);
+                if(logger.isLoggable(Level.FINEST)) {
+                    logger.finest("ChartBuilder: process = " + processClass);
+                }
                 processObject = (Buildable)processClass.newInstance();
+                
                 processObject.setChartBuilder(this);
                 processObject.setName(name.toString());
                 processObject.processNode(name, map, value);
@@ -145,7 +196,7 @@ public class ChartBuilder extends BuilderSupport {
                 
             }
         } catch (Exception ex) {
-            ex.printStackTrace();
+            logger.log(Level.WARNING, ex.getMessage(), ex);
         }
         return lastNode;
     }    
@@ -154,8 +205,5 @@ public class ChartBuilder extends BuilderSupport {
 
     
     
-    public JFreeChart getChart() {
-        return this.chartable.getChart();
-    }
     
 }

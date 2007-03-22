@@ -42,10 +42,12 @@ public class XYAreaChart extends XYChart {
     }
 
     public JFreeChart getChart() {
-        return ChartFactory.createXYStepAreaChart(this.getTitle(),
+        JFreeChart chart = ChartFactory.createXYStepAreaChart(this.getTitle(),
                 this.getXAxisLabel(), this.getYAxisLabel(),
                 (XYDataset)this.getDataset(), this.getOrientation(),
                 this.isLegend(), this.isTooltips(), this.isUrls());
+        return setExtraProperties(chart);
+
     }
     
 }

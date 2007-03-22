@@ -25,6 +25,7 @@
 package net.java.dev.groovychart.chart;
 
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.Plot;
 import org.jfree.data.general.Dataset;
 
 /**
@@ -35,7 +36,10 @@ public interface Chartable {
     
     public JFreeChart getChart();
     
-    
     public void setDataset(Dataset dataset);
+    
+    public Dataset getDataset();
+    
+    public void setPlot(Plot plot);
     
 }

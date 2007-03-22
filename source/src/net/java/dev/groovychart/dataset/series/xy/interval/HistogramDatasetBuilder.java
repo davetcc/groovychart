@@ -65,6 +65,11 @@ public class HistogramDatasetBuilder extends BaseDatasetBuilder {
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
+        if(value != null && value instanceof HistogramDataset) {
+            this.histogram = (HistogramDataset)value;
+        }else {
+            // TODO
+        }          
     }
     
 }

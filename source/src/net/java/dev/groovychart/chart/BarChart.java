@@ -40,9 +40,11 @@ public class BarChart extends CategoryValueChart {
     }
 
     public JFreeChart getChart() {
-        return ChartFactory.createBarChart(getTitle(), getCategoryAxisLabel(),
+        JFreeChart chart = ChartFactory.createBarChart(getTitle(), getCategoryAxisLabel(),
                 getValueAxisLabel(), (CategoryDataset)getDataset(),
                 getOrientation(), isLegend(), isTooltips(), isUrls());
+        return setExtraProperties(chart);
+
     }
     
 }

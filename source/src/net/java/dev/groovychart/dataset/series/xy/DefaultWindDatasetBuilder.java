@@ -64,6 +64,11 @@ public class DefaultWindDatasetBuilder extends BaseDatasetBuilder {
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
+        if(value != null && value instanceof DefaultWindDataset) {
+            this.xyDataset = (DefaultWindDataset)value;
+        }else {
+            // TODO
+        }          
     }
     
 }

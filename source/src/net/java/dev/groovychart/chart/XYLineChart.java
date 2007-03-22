@@ -42,10 +42,12 @@ public class XYLineChart extends XYChart {
     }
 
     public JFreeChart getChart() {
-        return ChartFactory.createXYLineChart(this.getTitle(),
+        JFreeChart chart = ChartFactory.createXYLineChart(this.getTitle(),
                 this.getXAxisLabel(), this.getYAxisLabel(),
                 (XYDataset)this.getDataset(), this.getOrientation(),
                 this.isLegend(), this.isTooltips(), this.isUrls());
+        return setExtraProperties(chart);
+
     }
     
 }

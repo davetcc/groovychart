@@ -65,5 +65,10 @@ public class MatrixSeriesCollectionBuilder extends BaseDatasetBuilder {
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
+        if(value != null && value instanceof MatrixSeriesCollection) {
+            this.collection = (MatrixSeriesCollection)value;
+        }else {
+            // TODO
+        }           
     }
 }

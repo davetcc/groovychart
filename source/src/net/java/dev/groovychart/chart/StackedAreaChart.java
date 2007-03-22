@@ -42,9 +42,11 @@ public class StackedAreaChart extends CategoryValueChart{
     }
 
     public JFreeChart getChart() {
-        return ChartFactory.createStackedAreaChart(getTitle(), getCategoryAxisLabel(),
+        JFreeChart chart = ChartFactory.createStackedAreaChart(getTitle(), getCategoryAxisLabel(),
                 getValueAxisLabel(), (CategoryDataset)getDataset(),
                 getOrientation(), isLegend(), isTooltips(), isUrls());
+        return setExtraProperties(chart);
+
     }
     
 }

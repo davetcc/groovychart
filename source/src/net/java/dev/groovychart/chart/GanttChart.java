@@ -104,10 +104,12 @@ public class GanttChart extends BasicChart {
 
     public JFreeChart getChart() {
         
-        return ChartFactory.createGanttChart(getTitle(),
+        JFreeChart chart = ChartFactory.createGanttChart(getTitle(),
                 getCategoryAxisLabel(), getDateAxisLabel(),
                 (IntervalCategoryDataset)getDataset(),
                 isLegend(), isTooltips(), isUrls());
+        return setExtraProperties(chart);
+
     }
     
 }

@@ -65,6 +65,11 @@ public class TimePeriodValuesCollectionBuilder extends BaseDatasetBuilder {
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
+        if(value != null && value instanceof TimePeriodValuesCollection) {
+            this.collection = (TimePeriodValuesCollection)value;
+        }else {
+            // TODO
+        }         
     }
     
 }

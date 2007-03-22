@@ -36,17 +36,10 @@ public interface Buildable {
     
     public void processNode(Object name, Map map, Object value) throws Exception;
 
-    /**
-     * Getter for property parent.
-     * @return Value of property parent.
-     */
-    public Buildable getParent();
-
-    /**
-     * Setter for property parent.
-     * @param parent New value of property parent.
-     */
-    public void setParent(Buildable parent);
+    
+    public void nodeCompleted(Object parent);
+    
+    public void setParent(Object parent);
 
     /**
      * Getter for property name.
@@ -59,5 +52,6 @@ public interface Buildable {
      * @param name New value of property name.
      */
     public void setName(String name);
+    
     
 }

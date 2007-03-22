@@ -42,10 +42,12 @@ public class WaterfallChart extends CategoryValueChart{
     }
 
     public JFreeChart getChart() {
-        return ChartFactory.createWaterfallChart(this.getTitle(),
+        JFreeChart chart = ChartFactory.createWaterfallChart(this.getTitle(),
                 this.getCategoryAxisLabel(), this.getValueAxisLabel(),
                 (CategoryDataset)this.getDataset(),this.getOrientation(),
                 this.isLegend(), this.isTooltips(), this.isUrls());
+        return setExtraProperties(chart);
+
     }
     
 }

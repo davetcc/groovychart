@@ -39,10 +39,12 @@ public class WindplotChart extends BasicChart {
     }
 
     public JFreeChart getChart() {
-        return ChartFactory.createWindPlot(this.getTitle(),
+        JFreeChart chart = ChartFactory.createWindPlot(this.getTitle(),
                 this.getXAxisLabel(), this.getYAxisLabel(),
                 (WindDataset)this.getDataset(),
                 this.isLegend(), this.isTooltips(), this.isUrls());
+        return setExtraProperties(chart);
+
     }
 
     /**

@@ -41,9 +41,11 @@ public class AreaChart extends CategoryValueChart{
     }
 
     public JFreeChart getChart() {
-        return ChartFactory.createAreaChart(getTitle(), getCategoryAxisLabel(),
+        JFreeChart chart = ChartFactory.createAreaChart(getTitle(), getCategoryAxisLabel(),
                 getValueAxisLabel(), (CategoryDataset)getDataset(),
                 getOrientation(), isLegend(), isTooltips(), isUrls());
+        return setExtraProperties(chart);
+
     }
     
 }

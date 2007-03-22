@@ -27,6 +27,7 @@ package net.java.dev.groovychart.dataset.series.xy.interval;
 import java.util.Map;
 import net.java.dev.groovychart.dataset.BaseDatasetBuilder;
 import org.jfree.data.general.Dataset;
+import org.jfree.data.time.TimeSeries;
 import org.jfree.data.time.TimeSeriesCollection;
 
 /**
@@ -47,7 +48,7 @@ public class TimeSeriesCollectionBuilder extends BaseDatasetBuilder {
     /**
      * Holds value of property collection.
      */
-    private TimeSeriesCollection collection;
+    private TimeSeriesCollection collection = new TimeSeriesCollection();
 
     /**
      * Getter for property collection.
@@ -66,6 +67,15 @@ public class TimeSeriesCollectionBuilder extends BaseDatasetBuilder {
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
+        if(value != null && value instanceof TimeSeriesCollection) {
+            this.collection = (TimeSeriesCollection)value;
+        }else {
+            // TODO
+        }          
+    }
+    
+    public void addSeries(TimeSeries series) {
+        collection.addSeries(series);
     }
     
 }

@@ -39,9 +39,10 @@ public class CandlestickChart extends BaseChart {
     }
 
     public JFreeChart getChart() {
-        return ChartFactory. createCandlestickChart(getTitle(),
+        JFreeChart chart = ChartFactory. createCandlestickChart(getTitle(),
                 getTimeAxisLabel(), getValueAxisLabel(), 
                 (OHLCDataset)getDataset(),  isLegend());
+        return setExtraProperties(chart); 
     }
 
     /**

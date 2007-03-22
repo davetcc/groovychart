@@ -42,9 +42,11 @@ public class StackedXYAreaChart extends XYChart {
     }
 
     public JFreeChart getChart() {
-        return ChartFactory.createStackedXYAreaChart(getTitle(), getXAxisLabel(),
+        JFreeChart chart = ChartFactory.createStackedXYAreaChart(getTitle(), getXAxisLabel(),
                 getYAxisLabel(), (TableXYDataset)getDataset(),
                 getOrientation(), isLegend(), isTooltips(), isUrls());
+        return setExtraProperties(chart);
+
     }
     
 }

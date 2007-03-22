@@ -40,10 +40,12 @@ public class StackedBarChart extends BasicChart  {
     }
 
     public JFreeChart getChart() {
-        return ChartFactory.createStackedBarChart(getTitle(),
+        JFreeChart chart = ChartFactory.createStackedBarChart(getTitle(),
                 this.getDomainAxisLabel(), this.getRangeAxisLabel(),
                 (CategoryDataset)this.getDataset(), this.getOrientation(),
                 this.isLegend(), this.isTooltips(), this.isUrls());
+        return setExtraProperties(chart);
+
     }
 
     /**

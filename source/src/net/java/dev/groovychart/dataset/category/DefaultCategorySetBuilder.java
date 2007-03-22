@@ -25,7 +25,10 @@
 package net.java.dev.groovychart.dataset.category;
 
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import net.java.dev.groovychart.dataset.*;
+import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.Dataset;
 
@@ -34,7 +37,7 @@ import org.jfree.data.general.Dataset;
  * @author jclarke
  */
 public class DefaultCategorySetBuilder extends BaseDatasetBuilder  {
-    
+    private static final Logger logger = Logger.getLogger(DefaultCategorySetBuilder.class.getPackage().getName());
     /** Creates a new instance of DefaultCategorySetBuilder */
     public DefaultCategorySetBuilder() {
     }
@@ -43,25 +46,31 @@ public class DefaultCategorySetBuilder extends BaseDatasetBuilder  {
         return this.categoryDataset;
     }
     public void processNode(Object name, Map map, Object value) throws Exception {
-        System.out.println("DefaultCategorySetBuilder: " + name + ", " + map + ", " + value);
+        if(logger.isLoggable(Level.FINEST)) {
+            logger.finest("DefaultCategorySetBuilder: " + name + ", " + map + ", " + value);
+        }
         String method = name.toString();
-        if(method.equalsIgnoreCase("addValue") || method.equalsIgnoreCase("setValue")) {
-            if(value == null)
-                value = map.get("value");
-            Number valArg = null;
-            if(value != null) {
-                if(value instanceof Number)
-                    valArg = (Number)value;
-                else {
-                    valArg = new Double(value.toString());
+        if(value != null) {
+            this.categoryDataset = (DefaultCategoryDataset)value;
+        }else {
+            if(method.equalsIgnoreCase("addValue") || method.equalsIgnoreCase("setValue")) {
+                if(value == null)
+                    value = map.get("value");
+                Number valArg = null;
+                if(value != null) {
+                    if(value instanceof Number)
+                        valArg = (Number)value;
+                    else {
+                        valArg = new Double(value.toString());
+                    }
                 }
-            }
-            if(method.equalsIgnoreCase("addValue")) {
-                categoryDataset.addValue(valArg, 
-                        (String)map.get("row"), (String)map.get("column"));
-            }else {
-                categoryDataset.setValue(valArg, 
-                        (String)map.get("row"), (String)map.get("column"));
+                if(method.equalsIgnoreCase("addValue")) {
+                    categoryDataset.addValue(valArg, 
+                            (String)map.get("row"), (String)map.get("column"));
+                }else {
+                    categoryDataset.setValue(valArg, 
+                            (String)map.get("row"), (String)map.get("column"));
+                }
             }
         }
     }    
