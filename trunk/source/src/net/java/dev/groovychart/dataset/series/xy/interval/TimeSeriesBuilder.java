@@ -25,6 +25,7 @@
 package net.java.dev.groovychart.dataset.series.xy.interval;
 
 import java.beans.IntrospectionException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -45,6 +46,7 @@ public class TimeSeriesBuilder extends BeanBuilder implements Buildable {
 
     private Object parent;
     private Map beanMap;
+    private Map addValue = null;
     
     /** Creates a new instance of TimePeriodValuesCollectionBuilder */
     public TimeSeriesBuilder() {
@@ -114,12 +116,7 @@ public class TimeSeriesBuilder extends BeanBuilder implements Buildable {
            
        }
        else if(method.equalsIgnoreCase("add")) {
-           TimeSeries s = this.getTimeSeries();
-           boolean notify = false;
-           if(map.containsKey(("notify")))
-               notify = Boolean.valueOf((String)map.get("notify"));
-           
-           s.add((RegularTimePeriod)map.get("period"), ((Number)map.get("value")).doubleValue(), notify);
+           addValue = map;
        }
     }
 
@@ -144,6 +141,14 @@ public class TimeSeriesBuilder extends BeanBuilder implements Buildable {
             if(this.series == null) {
                 this.series = new TimeSeries(name, domain, range, Class.forName(timePeriodClass) );
                 this.setProperties(this.series, beanMap );
+            }
+            if(addValue != null) {
+                   boolean notify = false;
+                   if(addValue.containsKey(("notify")))
+                       notify = Boolean.valueOf((String)addValue.get("notify"));
+                   System.out.println("Seires " + addValue.get("period") + " = " + addValue.get("value"));
+                   this.series.add((RegularTimePeriod)addValue.get("period"), ((Number)addValue.get("value")).doubleValue(), notify);
+                   addValue = null;
             }
             if(tsc != null)
                 tsc.addSeries(this.series);
