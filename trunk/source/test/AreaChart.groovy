@@ -1,4 +1,4 @@
-import net.java.dev.groovy.chart.ChartBuilder
+import net.java.dev.groovychart.chart.ChartBuilder
 import org.jfree.chart.plot.PlotOrientation
 import org.jfree.chart.JFreeChart
 import org.jfree.chart.ChartPanel;
@@ -11,7 +11,7 @@ java.sql.Connection conn = null
 
 ChartBuilder builder = new ChartBuilder();
  
-builder.areaChart(title:'This is a title', 
+def areachart = builder.areaChart(title:'This is a title', 
     categoryAxisLabel:'category',
     valueAxisLabel:'value',
     orientation:PlotOrientation.HORIZONTAL,
@@ -51,11 +51,9 @@ builder.areaChart(title:'This is a title',
         addValue(3.0, row:'Series 3', column:'Type 8')
 
     }
-**/
 }
 
-def chart = builder.getChart();
-def chartPanel = new ChartPanel(chart, false);
+def chartPanel = new ChartPanel(areachart.chart, false);
 chartPanel.setPreferredSize(new Dimension(1000, 500));
 chartPanel.setMouseZoomable(true, false);
 
