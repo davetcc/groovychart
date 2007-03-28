@@ -50,28 +50,27 @@ public class DefaultCategorySetBuilder extends BaseDatasetBuilder  {
             logger.finest("DefaultCategorySetBuilder: " + name + ", " + map + ", " + value);
         }
         String method = name.toString();
-        if(value != null) {
-            this.categoryDataset = (DefaultCategoryDataset)value;
-        }else {
-            if(method.equalsIgnoreCase("addValue") || method.equalsIgnoreCase("setValue")) {
-                if(value == null)
-                    value = map.get("value");
-                Number valArg = null;
-                if(value != null) {
-                    if(value instanceof Number)
-                        valArg = (Number)value;
-                    else {
-                        valArg = new Double(value.toString());
-                    }
-                }
-                if(method.equalsIgnoreCase("addValue")) {
-                    categoryDataset.addValue(valArg, 
-                            (String)map.get("row"), (String)map.get("column"));
-                }else {
-                    categoryDataset.setValue(valArg, 
-                            (String)map.get("row"), (String)map.get("column"));
+        
+        if(method.equalsIgnoreCase("addValue") || method.equalsIgnoreCase("setValue")) {
+            if(value == null)
+                value = map.get("value");
+            Number valArg = null;
+            if(value != null) {
+                if(value instanceof Number)
+                    valArg = (Number)value;
+                else {
+                    valArg = new Double(value.toString());
                 }
             }
+            if(method.equalsIgnoreCase("addValue")) {
+                categoryDataset.addValue(valArg,
+                        (String)map.get("row"), (String)map.get("column"));
+            }else {
+                categoryDataset.setValue(valArg,
+                        (String)map.get("row"), (String)map.get("column"));
+            }
+        }else if(value != null && value instanceof  DefaultCategoryDataset) {
+            this.categoryDataset = (DefaultCategoryDataset)value;
         }
     }    
     /**
