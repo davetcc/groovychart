@@ -44,12 +44,12 @@ public class DefaultXYDatasetBuilder extends BaseDatasetBuilder  {
     private double[] x;
     private double[] y;
     
-    /** Creates a new instance of DefaultCategorySetBuilder */
+    /** Creates a new instance of DefaultXYSetBuilder */
     public DefaultXYDatasetBuilder() {
     }
 
     public Dataset getDataset() {
-        return this.categoryDataset;
+        return this.xyDataset;
     }
     public void processNode(Object name, Map map, Object value) throws Exception {
         if(logger.isLoggable(Level.FINE)) {
@@ -59,7 +59,7 @@ public class DefaultXYDatasetBuilder extends BaseDatasetBuilder  {
         }
         String method = name.toString();
         if(value != null && value instanceof DefaultXYDataset) {
-            this.categoryDataset = (DefaultXYDataset)value;
+            this.xyDataset = (DefaultXYDataset)value;
         }else if(method.equalsIgnoreCase("series")) {
             if(seriesTitle != null) {
 
@@ -94,31 +94,31 @@ public class DefaultXYDatasetBuilder extends BaseDatasetBuilder  {
     
     private void addSeries() {
         double[][] data = {x, y };
-        categoryDataset.addSeries(seriesTitle, data);
+        xyDataset.addSeries(seriesTitle, data);
         seriesTitle = null;
         x = y = null;
     }
     /**
-     * Holds value of property categorySet.
+     * Holds value of property xySet.
      */
-    private DefaultXYDataset categoryDataset = new DefaultXYDataset();
+    private DefaultXYDataset xyDataset = new DefaultXYDataset();
     
 
 
     /**
-     * Getter for property categorySet.
-     * @return Value of property categorySet.
+     * Getter for property xySet.
+     * @return Value of property xySet.
      */
     public DefaultXYDataset getDefaultXYDataset() {
-        return this.categoryDataset;
+        return this.xyDataset;
     }
 
     /**
-     * Setter for property categorySet.
-     * @param categorySet New value of property categorySet.
+     * Setter for property xySet.
+     * @param xySet New value of property xySet.
      */
-    public void setDefaultXYDataset(DefaultXYDataset categoryDataset) {
-        this.categoryDataset = categoryDataset;
+    public void setDefaultXYDataset(DefaultXYDataset xyDataset) {
+        this.xyDataset = xyDataset;
     }
 
 
