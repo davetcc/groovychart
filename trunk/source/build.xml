@@ -11,6 +11,7 @@
     <property name="classes" location="classes-ant"/>
     <property name="src" location="src"/>
     <property name="test-src" location="test"/>
+    <property name="release.dir" location="release/groovychart-${chart-version}"/>
 
     <path id="required.libs">
         <fileset dir="extlib" includes="**/*.jar"/>
@@ -19,19 +20,26 @@
 
     <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc" classpathref="required.libs"/>
 
-    <target name="clean" description="Clean down before build">
+    <target name="clean">
         <delete dir="release"/>
         <delete dir="${classes}"/>
         <delete dir="${classes-test}"/>
     </target>
 
-    <target name="init" description="Setup structure" depends="clean">
+    <target name="init" depends="clean">
         <mkdir dir="release"/>
         <mkdir dir="${classes}"/>
         <mkdir dir="${classes-test}"/>
+
+        <!-- make the distribution directories -->
+        <mkdir dir="release/groovychart-${chart-version}"/>
+        <mkdir dir="${release.dir}/lib"/>
+        <mkdir dir="${release.dir}/examples"/>
+        <mkdir dir="${release.dir}/src"/>
     </target>
 
     <target name="compile" depends="init">
+        <!-- compile all the java and groovy sources together -->
         <groovyc destdir="${classes}" srcdir="${src}">
             <classpath refid="required.libs"/>
             <javac destdir="${classes}" srcdir="${src}" debug="on" debuglevel="line">
@@ -41,23 +49,21 @@
     </target>
 
     <target name="dist" depends="compile">
-        <mkdir dir="release/lib"/>
-        <mkdir dir="release/examples"/>
-        <mkdir dir="release/src"/>
-
-        <copy todir="release/lib">
+        <!-- assemble the distrubution -->
+        <copy todir="${release.dir}/lib">
             <fileset dir="extlib" includes="*"/>
         </copy>
-        <copy file="./extlib/README-GroovyChart.txt" tofile="release/README.txt"/>
-        <jar basedir="${classes}" jarfile="release/lib/groovychart-${chart-version}.jar"/>
-        <copy todir="release/examples">
+        <copy file="./extlib/README-GroovyChart.txt" tofile="${release.dir}/README.txt"/>
+        <jar basedir="${classes}" jarfile="${release.dir}/lib/groovychart-${chart-version}.jar"/>
+        <copy todir="${release.dir}/examples">
             <fileset dir="${test-src}" includes="*.groovy" />
         </copy>
-        <zip file="release/src/src.zip">
+        <zip file="${release.dir}/src/src.zip">
             <zipfileset dir="${test-src}" prefix="test"/>
             <zipfileset dir="${src}" prefix="src"/>
         </zip>
 
+        <!-- and create a zip file with appropriate name -->
         <zip file="groovychart-${chart-version}.zip">
             <zipfileset dir="release"/>
         </zip>
