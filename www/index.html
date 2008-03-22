@@ -24,8 +24,8 @@
        .codeblock p {
            margin: 5px 5px 5px 5px;
            padding: 2px;
-           background-color:blue;
-           color:white;
+           background-color:lightblue;
+           color:black;
            font-weight:bold;
            text-align: center;
        }
@@ -41,39 +41,52 @@
     <a href="http://www.jfree.org">JFreeChart</a> library.
 </p>
 
+<h3>Snapshot releases</h3>
 <p>
-    Presently we only have a source release, as we haven't got far enough to make a binary release yet. However,
-    saying that the current code base covers a considerable amount of JFreeChart functionality.
+    We are glad to present the first snapshot release, this is what it says, a snapshot of CVS, to
+    make it easier to try the product - not a production ready package.
 </p>
+<ul>
+    <li><a href="snapshots/groovychart-080322-snap.zip">08 March 2008 snapshot release</a></li>
+</ul>
 
 <h3>Getting Started</h3>
 <p>In order to get started you will need:</p>
 <ul>
-    <li>An Installation of Groovy (see <a href="http://groovy.codehaus.org">http://groovy.codehaus.org</a>)</li>
-    <li>JFreeChart libraries (see <a href="http://www.jfree.org">http://www.jfree.org</a>)</li>
-    <li>GroovyChart package available from here.</li>
-    <li>An IDE such as IntelliJ, Eclipse or NetBeans with a groovy plugin.</li>
+    <li>A Java runtime, at least version 1.5 (see <a href="http://java.sun.com">http://java.sun.com</a>)</li>
+    <li>An Installation of Groovy - we recommend 1.5 or above(see <a href="http://groovy.codehaus.org">http://groovy.codehaus.org</a>)</li>
+    <li>GroovyChart package available from here, which includes <a href="http://www.jfree.org">JFreeChart</a>.</li>
+    <li><b>Optionally</b> an IDE such as IntelliJ, Eclipse or NetBeans with a groovy plugin.</li>
 </ul>
 
 <p>
-    Once you've got the above packages, I recommend that you add the JFreeChart and GroovyChart libraries to your
-    groovy installation. This will allow you to use the Groovy Console to try a few scripts quickly. In order to do
-    this you can edit the <code>$GROOVY_HOME/conf/groovy-starter.conf</code> to add the extra libraries.
+    Once you've got all the above packages unzip the groovychart snapshot zip into a suitable location.
+    Next open $GROOVY_HOME/conf/groovy-starter.conf and on a new line at the end add the following line:
 </p>
-
+<pre>
+    load $GROOVYCHART_HOME/lib/*.jar
+</pre>
 <p>
-    Although we aim to provide great documentation for GroovyChart, it really is worth understanding what its based on.
-    I can recommend the resources available at <a href="http://www.jfree.org/jfreechart/">JFreeChart</a>. A good
-    starting point is to download the JFreeChart DeveloperGuide($$$), but this is not necessary to run GroovyChart.
+    This will allow you to use the groovychart libraries directly from either the Groovy Console or from
+    the groovy script runner. To run the examples provided, change directory to $GROOVYCHART_HOME/examples
+    and issue the command:
 </p>
-
-<h3>How to use it/ quick start</h3>
-
+<pre>
+    groovy PieChartDemo.groovy
+</pre>
 <p>
-    We're working on making a binary release available, and will get this out as soon as practically possible.
-    However, in the meantime you can access it via <a href="https://groovychart.dev.java.net/source/browse/groovychart/">CVS</a>.
-    <em>In order to retrieve without logging in use guest and the user and password.</em>
+    To load one of the examples into the interactive groovy console UI, simply run <code>groovyConsole</code>
+    and select open from the file menu. Then, you can modify the script and run it directly from here.
 </p>
+<h3>Documentation</h3>
+<p>
+    Although we aim to provide great documentation for GroovyChart, we're not there yet. Anyway, you can get
+    a long way by understanding what its based on. I can recommend the resources available at
+    <a href="http://www.jfree.org/jfreechart/">JFreeChart</a>. A good starting point is to download
+    the JFreeChart DeveloperGuide($$$), but this is not necessary to run GroovyChart.
+</p>
+
+<h3>Example usage of library</h3>
 
 <div class="codeblock">
     <p>Source for a simple pie chart</p>
@@ -126,8 +139,6 @@ fr.show();
 </ul>
 
 <h3>How to Contribute</h3>
-
-<p>Please download the source files here and start using the framework.</p>
 
 <p>
     If you're interested in contributing, you can <a href="https://groovychart.dev.java.net/servlets/ProjectIssues">
