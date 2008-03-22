@@ -1,11 +1,9 @@
-import net.java.dev.groovychart.chart.ChartBuilder
-import org.jfree.chart.plot.PlotOrientation
-import org.jfree.chart.JFreeChart
-import org.jfree.chart.ChartPanel;
+import com.thecoderscorner.groovychart.chart.ChartBuilder
+import groovy.swing.SwingBuilder
 import java.awt.BorderLayout
-import groovy.swing.SwingBuilder;
 import java.awt.Dimension
-
+import org.jfree.chart.ChartPanel
+import org.jfree.chart.plot.PlotOrientation
 
 java.sql.Connection conn = null
 
