@@ -1,102 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
     <title>Groovy support for JFreeChart</title>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <style>#chartpic { margin-left: 10px; }</style>
+    <style type="text/css">
+       .chartpic {
+           margin-left: 10px;
+       }
+
+       .codeblock {
+           margin: 10px 5px 10px 20px;
+       }
+
+       .codeblock pre {
+           margin-left: 50px;
+       }
+
+       .codeblock img {
+           margin-left: 50px;
+       }
+
+       .codeblock p {
+           margin: 5px 5px 5px 5px;
+           padding: 2px;
+           background-color:blue;
+           color:white;
+           font-weight:bold;
+           text-align: center;
+       }
+
+    </style>
   </head>
 
   <body>
-<img id="chartpic" align="right" alt="GroovyChart produced chart"
-	src="images/chart.jpeg">
-<p>The goal of this project is to develop a Groovy Builder to create rich Swing and HTML Charts using JFreeChart. 
-<p>GroovyChart is similar to the SwingBuilder class in Groovy that allows for an easy and intuitive development paradigm for Swing GUI applications. SwingBuilder accomplishes this by providing a simplified api ontop of the Swing API, that mirrors the top down topology of the Swing component tree. 
-<p>GroovyChart expands on this concept to provide a tree structure for laying out the components that make up displayable charts and graphs. 
-
-<p>One of the goals of this project is to create a demo application, similar to the 
-downloadable demo from JFreeChart, that is totally written using Groovy and GroovyBuilder.
-<h3>Getting Started</h3>
-<p>To start, first, become famliar with the dynamic language for
-for the Java Platform, <a href="http://groovy.codehaus.org/">Groovy</a>,
-and the concepts of <a href="http://groovy.codehaus.org/Builders">GroovyBuilders</a>. A good book for understanding Groovy and SwingBuilder is <a href="http://www.manning.com/koenig/">Groovy In Action</a>, <i>by Dierk Koenig with Andrew Glover, Paul King, Guillaume Laforge and Jon Skeet</i>, Manning Publications, 2007.
-
-<p>Second, become familiar with <a href="http://www.jfree.org/jfreechart/">JFreeChart</a>.
-A good starting point is to download the JFreeChart DeveloperGuide($$$), but this is not
-necessary to run GroovyChart. 
-<h3>How to use it/ quick start</h3>
-<p>Right now GroovyChart is in development, but you can download the existing code source by accessing it from <a href="https://groovychart.dev.java.net/source/browse/groovychart/">CVS</a>. GroovyChart is developed as a Netbeans project and can be built by mounting the the source directory as a project.
-<img id="chartpic" align="right" alt="GroovyChart produced chart"
-	src="images/AreaChart.jpeg">
-<p><b>An simple view of GroovyChart is:</b>
-<br>
-<table border="1">
-    <tr>
-      <td>
-      <pre>import net.java.dev.groovy.chart.ChartBuilder
-import org.jfree.chart.plot.PlotOrientation
-import org.jfree.chart.JFreeChart
-import org.jfree.chart.ChartPanel;
-import java.awt.BorderLayout
-import groovy.swing.SwingBuilder;
-import java.awt.Dimension
-
-
-
-ChartBuilder builder = new ChartBuilder();
-
-def areachart = builder.areaChart(title:'This is a title',
-    categoryAxisLabel:'category',
-    valueAxisLabel:'value',
-    orientation:PlotOrientation.HORIZONTAL,
-    legend:true,
-    tooltips:false,
-    urls:false
-) {
-    defaultCategoryDataset(){
-        addValue(1.0, row:'Series 1', column:'Type 1')
-        addValue(4.0, row:'Series 1', column:'Type 2')
-    }
-
-def chartPanel = new ChartPanel(areachart.chart, false);
-chartPanel.setPreferredSize(new Dimension(1000, 500));
-chartPanel.setMouseZoomable(true, false);
-
-SwingBuilder swing = new SwingBuilder();
-
-def frame = swing.frame(
-            title:'This is a Frame',
-            location:[100,100],
-            size:[800,400],
-            defaultCloseOperation:javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-frame.getContentPane().setLayout(new BorderLayout());
-frame.getContentPane().add( chartPanel, java.awt.BorderLayout.CENTER);
-frame.setVisible(true)
-
-</pre>
-      </td>
-    </tr>
-</table>
-<br>
-<h3>To-do list</h3>
-Future development:
-<ul>
-    <li>Add more Plot support classes
-    <li>Add more Dataset support classes
-    <li>Finish demo scripts
-    <li>Documentation
-</ul>
-<h3>How to Contribute</h3>
-Please download the source files here and start using the framework. 
+<img class="chartpic" align="right" alt="Example bar chart" src="images/chart.jpeg">
 <p>
-<p>If you're interested in contributing, you can
-<a href="https://groovychart.dev.java.net/servlets/ProjectIssues">file
-  bugs/RFEs</a> or subscribe to our
-<a href="https://groovychart.dev.java.net/servlets/ProjectMailingListList">
-mailing
-list</a>.
-If you're <em>really</em> interested, we'd welcome any developers
-who wanted to roll up their sleeves and participate; in particular ones who
-already use Groovy and JFreeChart. Check out <a href="https://groovychart.dev.java.net/servlets/ProjectMemberList">Membership</a> to request a role.
+    The goal of this project is to develop a Groovy Builder that simplifies creating charts from the
+    Groovy language. GroovyChart is based on the Groovy builder paradigm, and applies it to the well known
+    <a href="http://www.jfree.org">JFreeChart</a> library.
+</p>
 
+<p>
+    Presently we only have a source release, as we haven't got far enough to make a binary release yet. However,
+    saying that the current code base covers a considerable amount of JFreeChart functionality.
+</p>
+
+<h3>Getting Started</h3>
+<p>In order to get started you will need:</p>
+<ul>
+    <li>An Installation of Groovy (see <a href="http://groovy.codehaus.org">http://groovy.codehaus.org</a>)</li>
+    <li>JFreeChart libraries (see <a href="http://www.jfree.org">http://www.jfree.org</a>)</li>
+    <li>GroovyChart package available from here.</li>
+    <li>An IDE such as IntelliJ, Eclipse or NetBeans with a groovy plugin.</li>
+</ul>
+
+<p>
+    Once you've got the above packages, I recommend that you add the JFreeChart and GroovyChart libraries to your
+    groovy installation. This will allow you to use the Groovy Console to try a few scripts quickly. In order to do
+    this you can edit the <code>$GROOVY_HOME/conf/groovy-starter.conf</code> to add the extra libraries.
+</p>
+
+<p>
+    Although we aim to provide great documentation for GroovyChart, it really is worth understanding what its based on.
+    I can recommend the resources available at <a href="http://www.jfree.org/jfreechart/">JFreeChart</a>. A good
+    starting point is to download the JFreeChart DeveloperGuide($$$), but this is not necessary to run GroovyChart.
+</p>
+
+<h3>How to use it/ quick start</h3>
+
+<p>
+    We're working on making a binary release available, and will get this out as soon as practically possible.
+    However, in the meantime you can access it via <a href="https://groovychart.dev.java.net/source/browse/groovychart/">CVS</a>.
+    <em>In order to retrieve without logging in use guest and the user and password.</em>
+</p>
+
+<div class="codeblock">
+    <p>Source for a simple pie chart</p>
+
+    <!-- code here -->
+
+<pre style="font-family:monospace;background-color:#ffffff"><span style="color:#000080;background-color:#ffffff;font-weight:bold;">import</span><span style="background-color:#ffffff;"> com.thecoderscorner.groovychart.chart.ChartBuilder
+</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">import</span><span style="background-color:#ffffff;"> groovy.swing.SwingBuilder
+</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">import</span><span style="background-color:#ffffff;"> java.awt.BorderLayout </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">as</span><span style="background-color:#ffffff;"> BL
+</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">import</span><span style="background-color:#ffffff;"> javax.swing.JFrame
+</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">import</span><span style="background-color:#ffffff;"> java.awt.Color
+</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">import</span><span style="background-color:#ffffff;"> java.awt.Dimension
+</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">import</span><span style="background-color:#ffffff;"> org.jfree.chart.ChartPanel
+
+ChartBuilder cb = </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">new</span><span style="background-color:#ffffff;"> ChartBuilder();
+</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">def</span><span style="background-color:#ffffff;"> pieChart = cb.piechart3d(title: </span><span style="color:#008000;background-color:#ffffff;font-weight:bold;">"Simple Pie Chart"</span><span style="background-color:#ffffff;">) {
+    defaultPieDataset {
+        Series1(</span><span style="color:#0000ff;background-color:#ffffff;">40.0f</span><span style="background-color:#ffffff;">)
+        Series2(</span><span style="color:#0000ff;background-color:#ffffff;">30.0f</span><span style="background-color:#ffffff;">)
+        Series3(</span><span style="color:#0000ff;background-color:#ffffff;">30.0f</span><span style="background-color:#ffffff;">)
+    }
+    antiAlias = </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">true
+</span><span style="background-color:#ffffff;">    backgroundPaint(Color.</span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">WHITE)
+</span><span style="background-color:#ffffff;">}
+
+</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">def</span><span style="background-color:#ffffff;"> sb = </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">new</span><span style="background-color:#ffffff;"> SwingBuilder()
+</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">def</span><span style="background-color:#ffffff;"> fr = sb.frame( title : </span><span style="color:#008000;background-color:#ffffff;font-weight:bold;">'Simple Pie Chart'</span><span style="background-color:#ffffff;">, size:[</span><span style="color:#0000ff;background-color:#ffffff;">600</span><span style="background-color:#ffffff;">, </span><span style="color:#0000ff;background-color:#ffffff;">400</span><span style="background-color:#ffffff;">],
+                   defaultCloseOperation: JFrame.</span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">EXIT_ON_CLOSE)</span><span style="background-color:#ffffff;"> {
+    widget(</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">new</span><span style="background-color:#ffffff;"> ChartPanel(pieChart.chart), constraints: BL.</span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">CENTER)
+</span><span style="background-color:#ffffff;">}
+fr.pack();
+fr.show();
+
+</span></pre>
+
+    <!-- end code -->
+
+    <p>Image produced from above source on Windows Vista</p>
+    <img align="middle" src="images/first_groovychart.png" alt="PieChart on Vista"/>
+</div>
+
+<h3>To-do list</h3>
+<p>Future development:</p>
+<ul>
+    <li>Complete the implementation such that most chart types are supported</li>
+    <li>Generate a series of Groovy demo scripts</li>
+    <li>Create a full demo similar to the SwingSet demo</li>
+    <li>Focus on stability and making a releasable product</li>
+    <li>Documentation</li>
+</ul>
+
+<h3>How to Contribute</h3>
+
+<p>Please download the source files here and start using the framework.</p>
+
+<p>
+    If you're interested in contributing, you can <a href="https://groovychart.dev.java.net/servlets/ProjectIssues">
+    file bugs/RFEs</a> or subscribe to our <a href="https://groovychart.dev.java.net/servlets/ProjectMailingListList">
+    mailing list</a>. If you're <em>really</em> interested, we'd welcome any developers who wanted to roll up their
+    sleeves and participate; in particular ones who already use Groovy and JFreeChart. Check out
+    <a href="https://groovychart.dev.java.net/servlets/ProjectMemberList">Membership</a> to request a role.
+</p>
 </body>
 </html>
