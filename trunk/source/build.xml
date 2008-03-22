@@ -29,8 +29,19 @@
     </target>
 
     <target name="compile" depends="init">
-        <javac classpath="required.libs" destdir="${classes}" srcdir="${src}" debug="on" debuglevel="line"/>
-        <groovyc classpath="required.libs" destdir="${classes}" srcdir="${src}"/>
+        <groovyc destdir="${classes}" srcdir="${src}">
+            <classpath refid="required.libs"/>
+            <javac destdir="${classes}" srcdir="${src}" debug="on" debuglevel="line">
+                <classpath refid="required.libs"/>
+            </javac>
+        </groovyc>
+
+
+
+        <!--javac destdir="${classes}" srcdir="${src}" debug="on" debuglevel="line" includes="**/ChartBuilder.*">
+            <classpath refid="required.libs"/>
+        </javac-->
+
     </target>
 
     <target name="dist" depends="compile">
