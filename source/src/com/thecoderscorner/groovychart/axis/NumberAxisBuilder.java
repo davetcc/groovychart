@@ -34,7 +34,7 @@ public class NumberAxisBuilder extends BeanBuilder implements Buildable{
      */
     public NumberAxisBuilder() {
         try {
-            setBeanClass(DateAxis.class);
+            setBeanClass(NumberAxis.class);
         } catch (IntrospectionException ex) {
             logger.log(Level.WARNING, ex.getMessage(), ex);
         }
