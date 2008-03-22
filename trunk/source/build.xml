@@ -3,7 +3,10 @@
 
     <property environment="env"/>
 
-    <property name="chart-version" value="0.1"/>
+    <tstamp>
+        <format property="BUILD_TIME" pattern="yyMMdd"/>
+    </tstamp>
+    <property name="chart-version" value="${BUILD_TIME}-snap"/>
     <property name="classes-test" location="classes-testant"/>
     <property name="classes" location="classes-ant"/>
     <property name="src" location="src"/>
@@ -35,22 +38,26 @@
                 <classpath refid="required.libs"/>
             </javac>
         </groovyc>
-
-
-
-        <!--javac destdir="${classes}" srcdir="${src}" debug="on" debuglevel="line" includes="**/ChartBuilder.*">
-            <classpath refid="required.libs"/>
-        </javac-->
-
     </target>
 
     <target name="dist" depends="compile">
         <mkdir dir="release/lib"/>
+        <mkdir dir="release/examples"/>
+        <mkdir dir="release/src"/>
+
         <copy todir="release/lib">
             <fileset dir="extlib" includes="*"/>
         </copy>
         <copy file="./extlib/README-GroovyChart.txt" tofile="release/README.txt"/>
         <jar basedir="${classes}" jarfile="release/lib/groovychart-${chart-version}.jar"/>
+        <copy todir="release/examples">
+            <fileset dir="${test-src}" includes="*.groovy" />
+        </copy>
+        <zip file="release/src/src.zip">
+            <zipfileset dir="${test-src}" prefix="test"/>
+            <zipfileset dir="${src}" prefix="src"/>
+        </zip>
+
         <zip file="groovychart-${chart-version}.zip">
             <zipfileset dir="release"/>
         </zip>

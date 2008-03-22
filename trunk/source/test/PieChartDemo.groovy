@@ -23,4 +23,3 @@ def fr = sb.frame( title : 'Simple Pie Chart', size:[600, 400], defaultCloseOper
 }
 fr.pack();
 fr.show();
-
