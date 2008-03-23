@@ -7,7 +7,7 @@
  * and open the template in the editor.
  */
 
-package com.thecoderscorner.groovychart.util;
+package com.thecoderscorner.groovychart.renderer.category;
 
 import java.beans.IntrospectionException;
 import java.util.Map;
@@ -18,23 +18,23 @@ import com.thecoderscorner.groovychart.chart.Buildable;
 import com.thecoderscorner.groovychart.chart.ChartBuilder;
 import com.thecoderscorner.groovychart.plot.Plotable;
 import org.jfree.chart.plot.CategoryPlot;
-import org.jfree.chart.renderer.category.BarRenderer;
+import org.jfree.chart.renderer.category.StackedBarRenderer;
 
 /**
  *
  * @author jclarke
  */
-public class BarRendererBuilder extends BeanBuilder implements Buildable {
-    private static final Logger logger = Logger.getLogger(BarRendererBuilder.class.getPackage().getName());
+public class StackedBarRendererBuilder extends BeanBuilder implements Buildable {
+    private static final Logger logger = Logger.getLogger(StackedBarRendererBuilder.class.getPackage().getName());
     
-    BarRenderer renderer = new BarRenderer();
+    StackedBarRenderer renderer = new StackedBarRenderer();
     
     /**
      * Creates a new instance of StackedBarRendererBuilder
      */
-    public BarRendererBuilder() {
+    public StackedBarRendererBuilder() {
         try {
-            setBeanClass(BarRenderer.class);
+            setBeanClass(StackedBarRenderer.class);
         } catch (IntrospectionException ex) {
             logger.log(Level.WARNING, ex.getMessage(), ex);
         }         
@@ -45,9 +45,9 @@ public class BarRendererBuilder extends BeanBuilder implements Buildable {
 
     public void processNode(Object name, Map map, Object value) throws Exception {
         String method = name.toString();
-        if(value != null && value instanceof BarRenderer) {
-            this.renderer = (BarRenderer)value;
-        }else if(method.equalsIgnoreCase("BarRenderer")) {
+        if(value != null && value instanceof StackedBarRenderer) {
+            this.renderer = (StackedBarRenderer)value;
+        }else if(method.equalsIgnoreCase("StackedBarRenderer")) {
             this.setProperties(this.renderer, map);
         }        
     }
@@ -79,7 +79,7 @@ public class BarRendererBuilder extends BeanBuilder implements Buildable {
         this.name = name;
     }
     
-    public BarRenderer getRenderer() {
+    public StackedBarRenderer getRenderer() {
         return renderer;
     }
         

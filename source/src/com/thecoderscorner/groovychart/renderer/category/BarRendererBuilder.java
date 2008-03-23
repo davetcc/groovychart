@@ -1,13 +1,13 @@
 /*
- * XYLineAndShapeRendererBuilder.java
+ * StackedBarRendererBuilder.java
  *
- * Created on March 17, 2007, 11:08 PM
+ * Created on March 20, 2007, 1:28 PM
  *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */
 
-package com.thecoderscorner.groovychart.util;
+package com.thecoderscorner.groovychart.renderer.category;
 
 import java.beans.IntrospectionException;
 import java.util.Map;
@@ -17,35 +17,37 @@ import com.thecoderscorner.groovychart.chart.BeanBuilder;
 import com.thecoderscorner.groovychart.chart.Buildable;
 import com.thecoderscorner.groovychart.chart.ChartBuilder;
 import com.thecoderscorner.groovychart.plot.Plotable;
-import org.jfree.chart.plot.XYPlot;
-import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.renderer.category.BarRenderer;
 
 /**
  *
  * @author jclarke
  */
-public class XYLineAndShapeRendererBuilder extends BeanBuilder implements Buildable{ 
-    private static final Logger logger = Logger.getLogger(XYLineAndShapeRendererBuilder.class.getPackage().getName());
+public class BarRendererBuilder extends BeanBuilder implements Buildable {
+    private static final Logger logger = Logger.getLogger(BarRendererBuilder.class.getPackage().getName());
     
-    XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
-
-    /** Creates a new instance of XYLineAndShapeRendererBuilder */
-    public XYLineAndShapeRendererBuilder() {
+    BarRenderer renderer = new BarRenderer();
+    
+    /**
+     * Creates a new instance of StackedBarRendererBuilder
+     */
+    public BarRendererBuilder() {
         try {
-            setBeanClass(XYLineAndShapeRenderer.class);
+            setBeanClass(BarRenderer.class);
         } catch (IntrospectionException ex) {
             logger.log(Level.WARNING, ex.getMessage(), ex);
-        }        
+        }         
     }
-
+    
     public void setChartBuilder(ChartBuilder chartBuilder) {
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
         String method = name.toString();
-        if(value != null && value instanceof XYLineAndShapeRenderer) {
-            this.renderer = (XYLineAndShapeRenderer)value;
-        }else if(method.equalsIgnoreCase("XYLineAndShapeRenderer")) {
+        if(value != null && value instanceof BarRenderer) {
+            this.renderer = (BarRenderer)value;
+        }else if(method.equalsIgnoreCase("BarRenderer")) {
             this.setProperties(this.renderer, map);
         }        
     }
@@ -58,13 +60,15 @@ public class XYLineAndShapeRendererBuilder extends BeanBuilder implements Builda
 
     public void setParent(Object parent) {
         this.parent = parent;
-    }
 
+    }
+    
     public void nodeCompleted(Object parent) {
         if(parent != null && parent instanceof Plotable) {
-            ((XYPlot)((Plotable)parent).getPlot()).setRenderer(renderer);
-        } 
+            ((CategoryPlot)((Plotable)parent).getPlot()).setRenderer(renderer);
+        }     
     }
+
     private String name;
     
     public String getName() {
@@ -75,8 +79,9 @@ public class XYLineAndShapeRendererBuilder extends BeanBuilder implements Builda
         this.name = name;
     }
     
-    public XYLineAndShapeRenderer getRenderer() {
+    public BarRenderer getRenderer() {
         return renderer;
     }
+        
     
 }
