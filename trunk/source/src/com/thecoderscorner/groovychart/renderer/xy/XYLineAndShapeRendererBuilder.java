@@ -1,13 +1,13 @@
 /*
- * StackedBarRendererBuilder.java
+ * XYLineAndShapeRendererBuilder.java
  *
- * Created on March 20, 2007, 1:28 PM
+ * Created on March 17, 2007, 11:08 PM
  *
  * To change this template, choose Tools | Template Manager
  * and open the template in the editor.
  */
 
-package com.thecoderscorner.groovychart.util;
+package com.thecoderscorner.groovychart.renderer.xy;
 
 import java.beans.IntrospectionException;
 import java.util.Map;
@@ -17,37 +17,35 @@ import com.thecoderscorner.groovychart.chart.BeanBuilder;
 import com.thecoderscorner.groovychart.chart.Buildable;
 import com.thecoderscorner.groovychart.chart.ChartBuilder;
 import com.thecoderscorner.groovychart.plot.Plotable;
-import org.jfree.chart.plot.CategoryPlot;
-import org.jfree.chart.renderer.category.StackedBarRenderer;
+import org.jfree.chart.plot.XYPlot;
+import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 
 /**
  *
  * @author jclarke
  */
-public class StackedBarRendererBuilder extends BeanBuilder implements Buildable {
-    private static final Logger logger = Logger.getLogger(StackedBarRendererBuilder.class.getPackage().getName());
+public class XYLineAndShapeRendererBuilder extends BeanBuilder implements Buildable{ 
+    private static final Logger logger = Logger.getLogger(XYLineAndShapeRendererBuilder.class.getPackage().getName());
     
-    StackedBarRenderer renderer = new StackedBarRenderer();
-    
-    /**
-     * Creates a new instance of StackedBarRendererBuilder
-     */
-    public StackedBarRendererBuilder() {
+    XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
+
+    /** Creates a new instance of XYLineAndShapeRendererBuilder */
+    public XYLineAndShapeRendererBuilder() {
         try {
-            setBeanClass(StackedBarRenderer.class);
+            setBeanClass(XYLineAndShapeRenderer.class);
         } catch (IntrospectionException ex) {
             logger.log(Level.WARNING, ex.getMessage(), ex);
-        }         
+        }        
     }
-    
+
     public void setChartBuilder(ChartBuilder chartBuilder) {
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
         String method = name.toString();
-        if(value != null && value instanceof StackedBarRenderer) {
-            this.renderer = (StackedBarRenderer)value;
-        }else if(method.equalsIgnoreCase("StackedBarRenderer")) {
+        if(value != null && value instanceof XYLineAndShapeRenderer) {
+            this.renderer = (XYLineAndShapeRenderer)value;
+        }else if(method.equalsIgnoreCase("XYLineAndShapeRenderer")) {
             this.setProperties(this.renderer, map);
         }        
     }
@@ -60,15 +58,13 @@ public class StackedBarRendererBuilder extends BeanBuilder implements Buildable 
 
     public void setParent(Object parent) {
         this.parent = parent;
-
     }
-    
+
     public void nodeCompleted(Object parent) {
         if(parent != null && parent instanceof Plotable) {
-            ((CategoryPlot)((Plotable)parent).getPlot()).setRenderer(renderer);
-        }     
+            ((XYPlot)((Plotable)parent).getPlot()).setRenderer(renderer);
+        } 
     }
-
     private String name;
     
     public String getName() {
@@ -79,9 +75,8 @@ public class StackedBarRendererBuilder extends BeanBuilder implements Buildable 
         this.name = name;
     }
     
-    public StackedBarRenderer getRenderer() {
+    public XYLineAndShapeRenderer getRenderer() {
         return renderer;
     }
-        
     
 }
