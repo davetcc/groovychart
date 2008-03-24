@@ -3,8 +3,12 @@ import java.awt.BorderLayout as BL
 import com.thecoderscorner.groovychart.chart.ChartBuilder
 import groovy.swing.SwingBuilder
 import java.awt.Color
+import java.awt.Font
 import javax.swing.JFrame
 import org.jfree.chart.ChartPanel
+import org.jfree.chart.labels.PieToolTipGenerator
+
+def largeFont = new Font("Arial", Font.BOLD, 30);
 
 ChartBuilder cb = new ChartBuilder();
 def pieChart = cb.piechart3d(title: "Simple Pie Chart") {
@@ -15,6 +19,10 @@ def pieChart = cb.piechart3d(title: "Simple Pie Chart") {
     }
     antiAlias = true
     backgroundPaint(Color.WHITE)
+
+    piePlot3d ( sectionOutlinesVisible: true, labelFont: largeFont, labelGap: 0.02,
+                toolTipGenerator : { dataset, key -> return "[${dataset} ${key}]" } as PieToolTipGenerator
+    )
 }
 
 def sb = new SwingBuilder()
