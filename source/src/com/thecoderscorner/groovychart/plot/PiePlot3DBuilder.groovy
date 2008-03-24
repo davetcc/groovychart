@@ -1,12 +1,14 @@
 package com.thecoderscorner.groovychart.plot
 
 import org.jfree.chart.labels.PieToolTipGenerator
-import org.jfree.chart.plot.PiePlot
+import org.jfree.chart.plot.PiePlot3D
 
-class PiePlotBuilder extends PlotBuilderGroovyBase {
+class PiePlot3DBuilder extends PlotBuilderGroovyBase {
 
-    public PiePlotBuilder() {
-        super(new PiePlot())
+    String name;
+
+    public PiePlot3DBuilder() {
+        super(new PiePlot3D());
     }
 
     public void processNode(Object name, Map map, Object value)
@@ -15,9 +17,7 @@ class PiePlotBuilder extends PlotBuilderGroovyBase {
             plot.toolTipGenerator = value as PieToolTipGenerator;
         }
         else {
-            super.processNode(name, map, value);    //To change body of overridden methods use File | Settings | File Templates.
+            super.processNode(name, map, value);
         }
     }
-
-
 }

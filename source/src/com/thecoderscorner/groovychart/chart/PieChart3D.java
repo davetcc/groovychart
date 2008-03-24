@@ -34,11 +34,8 @@ import org.jfree.data.general.PieDataset;
  */
 public class PieChart3D extends BasicChart {
     
-    /** Creates a new instance of MultiplePieChart */
     public PieChart3D() {
     }
-
-
 
     public JFreeChart getChart() {
         return ChartFactory.createPieChart3D(getTitle(),

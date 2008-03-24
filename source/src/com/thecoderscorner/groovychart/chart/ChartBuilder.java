@@ -24,38 +24,35 @@
 
 package com.thecoderscorner.groovychart.chart;
 
-import groovy.util.BuilderSupport;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.awt.image.BufferedImage;
-import java.awt.*;
-import java.util.*;
-import java.util.List;
-
-import com.thecoderscorner.groovychart.axis.CategoryAxisBuilder;
-import com.thecoderscorner.groovychart.axis.DateAxisBuilder;
-import com.thecoderscorner.groovychart.axis.DomainAxisBuilder;
-import com.thecoderscorner.groovychart.axis.NumberAxisBuilder;
-import com.thecoderscorner.groovychart.axis.RangeAxisBuilder;
+import com.thecoderscorner.groovychart.axis.*;
 import com.thecoderscorner.groovychart.dataset.category.DefaultCategorySetBuilder;
+import com.thecoderscorner.groovychart.dataset.pie.DefaultPieDatasetBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.DefaultXYDatasetBuilder;
-import com.thecoderscorner.groovychart.dataset.series.xyz.DefaultXYZDatasetBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.interval.TimeSeriesBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.interval.TimeSeriesCollectionBuilder;
-import com.thecoderscorner.groovychart.dataset.pie.DefaultPieDatasetBuilder;
+import com.thecoderscorner.groovychart.dataset.series.xyz.DefaultXYZDatasetBuilder;
 import com.thecoderscorner.groovychart.plot.CategoryPlotBuilder;
+import com.thecoderscorner.groovychart.plot.PiePlot3DBuilder;
+import com.thecoderscorner.groovychart.plot.PiePlotBuilder;
 import com.thecoderscorner.groovychart.plot.XYPlotBuilder;
 import com.thecoderscorner.groovychart.renderer.LookupPaintScaleBuilder;
 import com.thecoderscorner.groovychart.renderer.category.BarRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.category.StackedBarRendererBuilder;
-import com.thecoderscorner.groovychart.renderer.xy.XYLineAndShapeRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.xy.XYBlockRendererBuilder;
+import com.thecoderscorner.groovychart.renderer.xy.XYLineAndShapeRendererBuilder;
 import com.thecoderscorner.groovychart.util.TextTitleBuilder;
+import groovy.util.BuilderSupport;
+import org.jfree.chart.ChartPanel;
 
 import javax.swing.*;
-
-import org.jfree.chart.ChartPanel;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -117,7 +114,9 @@ public class ChartBuilder extends BuilderSupport {
         // plots
         processClasses.put("xyplot", XYPlotBuilder.class);
         processClasses.put("categoryplot", CategoryPlotBuilder.class);
-        
+        processClasses.put("pieplot", PiePlotBuilder.class);
+        processClasses.put("pieplot3d", PiePlot3DBuilder.class);
+
         // axis
         processClasses.put("dateaxis", DateAxisBuilder.class);
         processClasses.put("numberaxis", NumberAxisBuilder.class);
@@ -231,10 +230,12 @@ public class ChartBuilder extends BuilderSupport {
     }
 
     public BufferedImage buildImage(int width, int height) {
+        // TODO, this may be dead code - Idea thinks its not used.
         return chartable.getChart().createBufferedImage(width, height);
     }
 
     public JPanel asPanel(Map parameters) {
+        // TODO, this may be dead code - Idea thinks its not used
         ChartPanel cp = new ChartPanel(chartable.getChart());
         if(parameters.get("size") != null)
         {
