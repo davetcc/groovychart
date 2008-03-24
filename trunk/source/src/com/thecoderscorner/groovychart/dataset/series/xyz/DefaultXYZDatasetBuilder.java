@@ -57,7 +57,7 @@ public class DefaultXYZDatasetBuilder extends BaseDatasetBuilder {
     /**
      * Holds value of property xyzDataset.
      */
-    private DefaultXYZDataset xyzDataset;
+    private DefaultXYZDataset xyzDataset = new DefaultXYZDataset();
 
     /**
      * Getter for property xyzDataset.
@@ -86,11 +86,6 @@ public class DefaultXYZDatasetBuilder extends BaseDatasetBuilder {
         if(value != null && value instanceof DefaultXYZDataset) {
             this.xyzDataset = (DefaultXYZDataset)value;
         }else if(method.equalsIgnoreCase("series")) {
-
-            if(seriesTitle != null) {
-
-                
-            }
             if(value == null)
                 value = map.get("value");
             seriesTitle = value.toString();

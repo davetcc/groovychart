@@ -40,6 +40,7 @@ import com.thecoderscorner.groovychart.axis.NumberAxisBuilder;
 import com.thecoderscorner.groovychart.axis.RangeAxisBuilder;
 import com.thecoderscorner.groovychart.dataset.category.DefaultCategorySetBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.DefaultXYDatasetBuilder;
+import com.thecoderscorner.groovychart.dataset.series.xyz.DefaultXYZDatasetBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.interval.TimeSeriesBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.interval.TimeSeriesCollectionBuilder;
 import com.thecoderscorner.groovychart.dataset.pie.DefaultPieDatasetBuilder;
@@ -107,6 +108,7 @@ public class ChartBuilder extends BuilderSupport {
         // data sets
         processClasses.put("defaultcategorydataset", DefaultCategorySetBuilder.class);
         processClasses.put("defaultxydataset", DefaultXYDatasetBuilder.class);
+        processClasses.put("defaultxyzdataset", DefaultXYZDatasetBuilder.class);
         processClasses.put("defaultpiedataset", DefaultPieDatasetBuilder.class);
         processClasses.put("timeseriescollection", TimeSeriesCollectionBuilder.class);
         processClasses.put("timeseries", TimeSeriesBuilder.class);
