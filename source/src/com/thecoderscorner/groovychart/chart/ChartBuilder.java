@@ -46,11 +46,12 @@ import com.thecoderscorner.groovychart.dataset.series.xy.interval.TimeSeriesColl
 import com.thecoderscorner.groovychart.dataset.pie.DefaultPieDatasetBuilder;
 import com.thecoderscorner.groovychart.plot.CategoryPlotBuilder;
 import com.thecoderscorner.groovychart.plot.XYPlotBuilder;
+import com.thecoderscorner.groovychart.renderer.LookupPaintScaleBuilder;
 import com.thecoderscorner.groovychart.renderer.category.BarRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.category.StackedBarRendererBuilder;
-import com.thecoderscorner.groovychart.util.TextTitleBuilder;
 import com.thecoderscorner.groovychart.renderer.xy.XYLineAndShapeRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.xy.XYBlockRendererBuilder;
+import com.thecoderscorner.groovychart.util.TextTitleBuilder;
 
 import javax.swing.*;
 
@@ -125,6 +126,7 @@ public class ChartBuilder extends BuilderSupport {
         processClasses.put("rangeaxis", RangeAxisBuilder.class);
         
         // renderer
+        processClasses.put("lookuppaintscale", LookupPaintScaleBuilder.class);
         processClasses.put("xyblockrenderer", XYBlockRendererBuilder.class);
         processClasses.put("xylineandshaperenderer", XYLineAndShapeRendererBuilder.class);
         processClasses.put("stackedbarrenderer", StackedBarRendererBuilder.class);
