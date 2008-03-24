@@ -14,12 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * DefaultCategorySetBuilder.java
+ * DefaultXYSetBuilder.java
  *
  * Created on November 12, 2006, 12:00 PM
  *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
  */
 
 package com.thecoderscorner.groovychart.dataset.series.xy;
