@@ -49,6 +49,7 @@ import com.thecoderscorner.groovychart.renderer.category.BarRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.category.StackedBarRendererBuilder;
 import com.thecoderscorner.groovychart.util.TextTitleBuilder;
 import com.thecoderscorner.groovychart.renderer.xy.XYLineAndShapeRendererBuilder;
+import com.thecoderscorner.groovychart.renderer.xy.XYBlockRendererBuilder;
 
 import javax.swing.*;
 
@@ -122,6 +123,7 @@ public class ChartBuilder extends BuilderSupport {
         processClasses.put("rangeaxis", RangeAxisBuilder.class);
         
         // renderer
+        processClasses.put("xyblockrenderer", XYBlockRendererBuilder.class);
         processClasses.put("xylineandshaperenderer", XYLineAndShapeRendererBuilder.class);
         processClasses.put("stackedbarrenderer", StackedBarRendererBuilder.class);
         processClasses.put("barrenderer", BarRendererBuilder.class);
