@@ -18,8 +18,6 @@
  *
  * Created on November 11, 2006, 8:43 PM
  *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
  */
 
 package com.thecoderscorner.groovychart.chart;
@@ -35,6 +33,7 @@ import com.thecoderscorner.groovychart.plot.CategoryPlotBuilder;
 import com.thecoderscorner.groovychart.plot.PiePlot3DBuilder;
 import com.thecoderscorner.groovychart.plot.PiePlotBuilder;
 import com.thecoderscorner.groovychart.plot.XYPlotBuilder;
+import com.thecoderscorner.groovychart.renderer.GrayPaintScaleBuilder;
 import com.thecoderscorner.groovychart.renderer.LookupPaintScaleBuilder;
 import com.thecoderscorner.groovychart.renderer.category.BarRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.category.StackedBarRendererBuilder;
@@ -126,6 +125,7 @@ public class ChartBuilder extends BuilderSupport {
         
         // renderer
         processClasses.put("lookuppaintscale", LookupPaintScaleBuilder.class);
+        processClasses.put("graypaintscale", GrayPaintScaleBuilder.class);
         processClasses.put("xyblockrenderer", XYBlockRendererBuilder.class);
         processClasses.put("xylineandshaperenderer", XYLineAndShapeRendererBuilder.class);
         processClasses.put("stackedbarrenderer", StackedBarRendererBuilder.class);
