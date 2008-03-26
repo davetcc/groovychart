@@ -25,6 +25,7 @@ package com.thecoderscorner.groovychart.chart;
 import com.thecoderscorner.groovychart.axis.*;
 import com.thecoderscorner.groovychart.dataset.category.DefaultCategorySetBuilder;
 import com.thecoderscorner.groovychart.dataset.pie.DefaultPieDatasetBuilder;
+import com.thecoderscorner.groovychart.dataset.statistics.DefaultBoxAndWhiskerCategoryDatasetBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.DefaultXYDatasetBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.interval.TimeSeriesBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.interval.TimeSeriesCollectionBuilder;
@@ -36,6 +37,7 @@ import com.thecoderscorner.groovychart.plot.XYPlotBuilder;
 import com.thecoderscorner.groovychart.renderer.GrayPaintScaleBuilder;
 import com.thecoderscorner.groovychart.renderer.LookupPaintScaleBuilder;
 import com.thecoderscorner.groovychart.renderer.category.BarRendererBuilder;
+import com.thecoderscorner.groovychart.renderer.category.BoxAndWhiskerRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.category.StackedBarRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.xy.XYBlockRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.xy.XYLineAndShapeRendererBuilder;
@@ -103,6 +105,7 @@ public class ChartBuilder extends BuilderSupport {
         processClasses.put("xystepchart", XYStepChart.class);
         
         // data sets
+        processClasses.put("defaultboxandwhiskercategorydataset", DefaultBoxAndWhiskerCategoryDatasetBuilder.class);
         processClasses.put("defaultcategorydataset", DefaultCategorySetBuilder.class);
         processClasses.put("defaultxydataset", DefaultXYDatasetBuilder.class);
         processClasses.put("defaultxyzdataset", DefaultXYZDatasetBuilder.class);
@@ -130,7 +133,7 @@ public class ChartBuilder extends BuilderSupport {
         processClasses.put("xylineandshaperenderer", XYLineAndShapeRendererBuilder.class);
         processClasses.put("stackedbarrenderer", StackedBarRendererBuilder.class);
         processClasses.put("barrenderer", BarRendererBuilder.class);
-        
+        processClasses.put("boxandwhiskerrenderer", BoxAndWhiskerRendererBuilder.class);
         // misc.
         processClasses.put("titletext", TextTitleBuilder.class);
     }

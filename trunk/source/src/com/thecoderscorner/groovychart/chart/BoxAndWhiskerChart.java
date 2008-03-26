@@ -26,11 +26,13 @@ package com.thecoderscorner.groovychart.chart;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
+import org.jfree.data.statistics.BoxAndWhiskerCategoryDataset;
 import org.jfree.data.statistics.BoxAndWhiskerXYDataset;
 
 /**
  *
  * @author jclarke
+ * @author Tiago Antao <tiagoantao@gmail.com>
  */
 public class BoxAndWhiskerChart extends BaseChart {
     
@@ -39,9 +41,17 @@ public class BoxAndWhiskerChart extends BaseChart {
     }
 
     public JFreeChart getChart() {
-        JFreeChart chart = ChartFactory.createBoxAndWhiskerChart(getTitle(),
+        JFreeChart chart;
+        if (getDataset() instanceof BoxAndWhiskerXYDataset) {
+            chart = ChartFactory.createBoxAndWhiskerChart(getTitle(),
                 getTimeAxisLabel(), getValueAxisLabel(), 
                 (BoxAndWhiskerXYDataset)getDataset(),  isLegend());
+        }
+        else {
+            chart = ChartFactory.createBoxAndWhiskerChart(getTitle(),
+                getTimeAxisLabel(), getValueAxisLabel(), 
+                (BoxAndWhiskerCategoryDataset)getDataset(),  isLegend());            
+        }
         return setExtraProperties(chart); 
     }
 
