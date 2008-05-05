@@ -25,11 +25,11 @@ package com.thecoderscorner.groovychart.chart;
 import com.thecoderscorner.groovychart.axis.*;
 import com.thecoderscorner.groovychart.dataset.category.DefaultCategorySetBuilder;
 import com.thecoderscorner.groovychart.dataset.pie.DefaultPieDatasetBuilder;
-import com.thecoderscorner.groovychart.dataset.statistics.DefaultBoxAndWhiskerCategoryDatasetBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.DefaultXYDatasetBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.interval.TimeSeriesBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.interval.TimeSeriesCollectionBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xyz.DefaultXYZDatasetBuilder;
+import com.thecoderscorner.groovychart.dataset.statistics.DefaultBoxAndWhiskerDatasetBuilder;
 import com.thecoderscorner.groovychart.plot.CategoryPlotBuilder;
 import com.thecoderscorner.groovychart.plot.PiePlot3DBuilder;
 import com.thecoderscorner.groovychart.plot.PiePlotBuilder;
@@ -105,7 +105,7 @@ public class ChartBuilder extends BuilderSupport {
         processClasses.put("xystepchart", XYStepChart.class);
         
         // data sets
-        processClasses.put("defaultboxandwhiskercategorydataset", DefaultBoxAndWhiskerCategoryDatasetBuilder.class);
+        processClasses.put("defaultboxandwhiskercategorydataset", DefaultBoxAndWhiskerDatasetBuilder.class);
         processClasses.put("defaultcategorydataset", DefaultCategorySetBuilder.class);
         processClasses.put("defaultxydataset", DefaultXYDatasetBuilder.class);
         processClasses.put("defaultxyzdataset", DefaultXYZDatasetBuilder.class);

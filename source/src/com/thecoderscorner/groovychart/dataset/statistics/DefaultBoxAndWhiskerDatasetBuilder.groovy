@@ -14,36 +14,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * DefaultBoxAndWhiskerCategoryDatasetBuilder.groocy
+ * DefaultBoxAndWhiskerDatasetBuilder.groocy
  *
  * Created on March 26, 2008, 12:00 PM
  *
  */
 
-package com.thecoderscorner.groovychart.dataset.statistics;
+package com.thecoderscorner.groovychart.dataset.statistics
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import com.thecoderscorner.groovychart.dataset.*;
-import org.jfree.data.general.Dataset;
+import com.thecoderscorner.groovychart.dataset.BaseDatasetBuilder
+import java.util.logging.Level
+import java.util.logging.Logger
+import org.jfree.data.general.Dataset
 import org.jfree.data.statistics.DefaultBoxAndWhiskerCategoryDataset;
 
 /**
  *
  * @author Tiago Antao <tiagoantao@gmail.com>
  */
-public class DefaultBoxAndWhiskerCategoryDatasetBuilder extends BaseDatasetBuilder  {
-    private static final Logger logger = Logger.getLogger(DefaultBoxAndWhiskerCategoryDatasetBuilder.class.getPackage().getName())
+public class DefaultBoxAndWhiskerDatasetBuilder extends BaseDatasetBuilder  {
+    private static final Logger logger = Logger.getLogger(DefaultBoxAndWhiskerDatasetBuilder.class.getPackage().getName())
 
     private String seriesTitle
     private String categoryName
     private List<Double> values
     
-    /** Creates a new instance of DefaultBoxAndWhiskerCategoryDatasetBuilder */
-    public DefaultBoxAndWhiskerCategoryDatasetBuilder() {
+    /** Creates a new instance of DefaultBoxAndWhiskerDatasetBuilder */
+    public DefaultBoxAndWhiskerDatasetBuilder() {
     }
 
     public Dataset getDataset() {

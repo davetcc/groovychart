@@ -15,7 +15,7 @@ class PiePlotBuilder extends PlotBuilderGroovyBase {
             plot.toolTipGenerator = value as PieToolTipGenerator;
         }
         else {
-            super.processNode(name, map, value);    //To change body of overridden methods use File | Settings | File Templates.
+            super.processNode(name, map, value);
         }
     }
 
