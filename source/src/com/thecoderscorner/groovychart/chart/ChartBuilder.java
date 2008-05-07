@@ -25,6 +25,7 @@ package com.thecoderscorner.groovychart.chart;
 import com.thecoderscorner.groovychart.axis.*;
 import com.thecoderscorner.groovychart.dataset.category.DefaultCategorySetBuilder;
 import com.thecoderscorner.groovychart.dataset.pie.DefaultPieDatasetBuilder;
+import com.thecoderscorner.groovychart.dataset.series.xy.DefaultHighLowDatasetBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.DefaultXYDatasetBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.interval.TimeSeriesBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.interval.TimeSeriesCollectionBuilder;
@@ -107,6 +108,7 @@ public class ChartBuilder extends BuilderSupport {
         // data sets
         processClasses.put("defaultboxandwhiskercategorydataset", DefaultBoxAndWhiskerDatasetBuilder.class);
         processClasses.put("defaultcategorydataset", DefaultCategorySetBuilder.class);
+        processClasses.put("defaulthighlowdataset", DefaultHighLowDatasetBuilder.class);
         processClasses.put("defaultxydataset", DefaultXYDatasetBuilder.class);
         processClasses.put("defaultxyzdataset", DefaultXYZDatasetBuilder.class);
         processClasses.put("defaultpiedataset", DefaultPieDatasetBuilder.class);
