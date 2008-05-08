@@ -15,7 +15,7 @@
 
     <path id="required.libs">
         <fileset dir="extlib" includes="**/*.jar"/>
-        <pathelement location="extlib/embeddable/groovy-all-1.5.4.jar"/>
+        <fileset dir="${env.GROOVY_HOME}/embeddable" includes="groovy-all-*.jar"/>
     </path>
 
     <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc" classpathref="required.libs"/>
