@@ -12,6 +12,7 @@
     <property name="src" location="src"/>
     <property name="test-src" location="test"/>
     <property name="release.dir" location="release/groovychart-${chart-version}"/>
+    <property name="javadoc.dir" location="javadoc"/>
 
     <path id="required.libs">
         <fileset dir="extlib" includes="**/*.jar"/>
@@ -69,4 +70,21 @@
         </zip>
     </target>
 
+	  <target name="javadoc" depends="init">
+	    <delete dir="${javadoc.dir}" quiet="true"/>
+	    <mkdir dir="${javadoc.dir}"/>
+	    <javadoc
+	         packagenames="*"
+	         sourcepath="${src}"
+	         defaultexcludes="yes"
+	         destdir="${javadoc.dir}"
+	         version="true"
+	         use="true"
+	         windowtitle="GroovyChart">
+	       <classpath refid="required.libs"/>
+	       <link href="http://java.sun.com/j2se/1.5.0/docs/api"/>
+	    </javadoc>
+	  </target>
+
+	
 </project>
