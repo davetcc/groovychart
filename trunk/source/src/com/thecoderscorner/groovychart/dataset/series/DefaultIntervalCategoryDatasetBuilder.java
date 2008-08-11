@@ -22,7 +22,7 @@
  * and open the template in the editor.
  */
 
-package com.thecoderscorner.groovychart.dataset.series.xyz;
+package com.thecoderscorner.groovychart.dataset.series;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,8 +64,8 @@ public class DefaultIntervalCategoryDatasetBuilder extends BaseDatasetBuilder {
             new DefaultIntervalCategoryDataset(new Number[0][0], new Number[0][0]);
 
     /**
-     * Getter for property series.
-     * @return Value of property series.
+     * Getter for property intervalCategory.
+     * @return Value of property intervalCategory.
      */
     public  DefaultIntervalCategoryDataset getIntervalCategory() {
         if(this.intervalCategory == null) {
@@ -74,8 +74,8 @@ public class DefaultIntervalCategoryDatasetBuilder extends BaseDatasetBuilder {
     }
 
     /**
-     * Setter for property series.
-     * @param series New value of property series.
+     * Setter for property intervalCategory.
+     * @param intervalCategory New value of property intervalCategory.
      */
     public void setIntervalCategory( DefaultIntervalCategoryDataset intervalCategory) {
         this.intervalCategory = intervalCategory;
