@@ -64,14 +64,14 @@ public class DefaultXYDatasetBuilder extends BaseDatasetBuilder  {
                 
             }
             if(value == null)
-                value = map.get("value");
+                value = map.get("name");
             seriesTitle = value.toString();
         }else if(method.equalsIgnoreCase("X")) {
             List xArray = (List)value;
             x = new double[xArray.size()];
             Iterator it = ((List)value).iterator();
             for(int i = 0; it.hasNext(); i++) {
-                x[i] = ((Double)it.next()).doubleValue();
+                x[i] = ((Number)it.next()).doubleValue();
             }
             if(seriesTitle != null && y != null) {
                 addSeries();
@@ -82,7 +82,7 @@ public class DefaultXYDatasetBuilder extends BaseDatasetBuilder  {
             y = new double[yArray.size()];
             Iterator it = ((List)value).iterator();
             for(int i = 0; it.hasNext(); i++) {
-                y[i] = ((Double)it.next()).doubleValue();
+                y[i] = ((Number)it.next()).doubleValue();
             }
             if(seriesTitle != null && x != null) {
                 addSeries();
