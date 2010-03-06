@@ -41,12 +41,12 @@ public class BubbleChart extends XYChart {
         super();
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         JFreeChart chart = ChartFactory.createBubbleChart(getTitle(), getXAxisLabel(),
                 getYAxisLabel(), (XYZDataset)getDataset(),
                 getOrientation(), isLegend(), isTooltips(), isUrls());
         return setExtraProperties(chart);
 
     }
-    
+
 }

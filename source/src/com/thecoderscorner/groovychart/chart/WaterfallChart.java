@@ -41,7 +41,7 @@ public class WaterfallChart extends CategoryValueChart{
         super();
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         JFreeChart chart = ChartFactory.createWaterfallChart(this.getTitle(),
                 this.getCategoryAxisLabel(), this.getValueAxisLabel(),
                 (CategoryDataset)this.getDataset(),this.getOrientation(),
@@ -49,5 +49,5 @@ public class WaterfallChart extends CategoryValueChart{
         return setExtraProperties(chart);
 
     }
-    
+
 }

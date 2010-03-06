@@ -41,7 +41,7 @@ public class XYLineChart extends XYChart {
         super();
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         JFreeChart chart = ChartFactory.createXYLineChart(this.getTitle(),
                 this.getXAxisLabel(), this.getYAxisLabel(),
                 (XYDataset)this.getDataset(), this.getOrientation(),
@@ -49,5 +49,5 @@ public class XYLineChart extends XYChart {
         return setExtraProperties(chart);
 
     }
-    
+
 }

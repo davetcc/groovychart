@@ -1,0 +1,29 @@
+.chartpic {
+    margin-left: 10px;
+}
+
+.codeblock {
+    margin: 10px 5px 10px 20px;
+}
+
+.codeblock pre {
+    margin-left: 50px;
+}
+
+.codeblock img {
+    margin-left: 50px;
+}
+
+.codeblock p {
+    margin: 5px 5px 5px 5px;
+    padding: 2px;
+    background-color:lightblue;
+    color:black;
+    font-weight:bold;
+    text-align: center;
+}
+
+.taskdone {
+  text-decoration: line-through;
+}
+

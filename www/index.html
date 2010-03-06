@@ -4,33 +4,7 @@
   <head>
     <title>Groovy support for JFreeChart</title>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <style type="text/css">
-       .chartpic {
-           margin-left: 10px;
-       }
-
-       .codeblock {
-           margin: 10px 5px 10px 20px;
-       }
-
-       .codeblock pre {
-           margin-left: 50px;
-       }
-
-       .codeblock img {
-           margin-left: 50px;
-       }
-
-       .codeblock p {
-           margin: 5px 5px 5px 5px;
-           padding: 2px;
-           background-color:lightblue;
-           color:black;
-           font-weight:bold;
-           text-align: center;
-       }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="extras.css" media="print" />
   </head>
 
   <body>
@@ -39,23 +13,28 @@
     Groovy language. GroovyChart is based on the Groovy builder paradigm, and applies it to the well known
     <a href="http://www.jfree.org">JFreeChart</a> library.
 </p>
+<p>
+  From a code perspective, most of the underlying charting library is covered. However, there is little documentation
+  at the moment on how to use the library. Currently, the plan is to provide a series of example builders as time goes
+  by that show how to use each kind of graph, these will include as much of the cases as possible.
+</p>
 <h3>Snapshot releases</h3>
 <p>
-    We are glad to present the first snapshot release, this is what it says, a snapshot of CVS, to
-    make it easier to try the product - not a production ready package.
+  We are currently releasing snapshots that have the most recent functionality available.
 </p>
 <ul>
-    <li><a href="snapshots/groovychart-080508-snap.zip">08-May-2008 latest snapshot release</a></li>
+    <li><a href="snapshots/groovychart-100306-snap.zip">10-Mar-2010 latest snapshot release</a></li>
+    <li><a href="snapshots/groovychart-080508-snap.zip">08-May-2008 OLD snapshot release</a></li>
 </ul>
 
 <h3>Getting Started</h3>
 <img class="chartpic" align="right" alt="Example bar chart" src="images/chart.jpeg">
 <p>In order to get started you will need:</p>
 <ul>
-    <li>A Java runtime, at least version 1.5 (see <a href="http://java.sun.com">http://java.sun.com</a>)</li>
-    <li>An Installation of Groovy - we recommend 1.5 or above(see <a href="http://groovy.codehaus.org">http://groovy.codehaus.org</a>)</li>
+    <li>A Java runtime, that can support Groovy 1.6 (see <a href="http://java.sun.com">http://java.sun.com</a>)</li>
+    <li>An Installation of Groovy - we recommend 1.6 or above(see <a href="http://groovy.codehaus.org">http://groovy.codehaus.org</a>)</li>
     <li>GroovyChart package available from here, which includes <a href="http://www.jfree.org">JFreeChart</a>.</li>
-    <li><b>Optionally</b> an IDE such as IntelliJ, Eclipse or NetBeans with a groovy plugin.</li>
+    <li><b>Optionally</b> an IDE such as IntelliJ, Eclipse or NetBeans with groovy support installed.</li>
 </ul>
 
 <p>
@@ -84,57 +63,16 @@
     <a href="http://www.jfree.org/jfreechart/">JFreeChart</a>. A good starting point is to download
     the JFreeChart DeveloperGuide($$$), but this is not necessary to run GroovyChart.
 </p>
-
-<h3>Example usage of library</h3>
-
-<div class="codeblock">
-    <p>Source for a simple pie chart</p>
-
-    <!-- code here -->
-
-<pre style="font-family:monospace;background-color:#ffffff"><span style="color:#000080;background-color:#ffffff;font-weight:bold;">import</span><span style="background-color:#ffffff;"> com.thecoderscorner.groovychart.chart.ChartBuilder
-</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">import</span><span style="background-color:#ffffff;"> groovy.swing.SwingBuilder
-</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">import</span><span style="background-color:#ffffff;"> java.awt.BorderLayout </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">as</span><span style="background-color:#ffffff;"> BL
-</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">import</span><span style="background-color:#ffffff;"> javax.swing.JFrame
-</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">import</span><span style="background-color:#ffffff;"> java.awt.Color
-</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">import</span><span style="background-color:#ffffff;"> java.awt.Dimension
-</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">import</span><span style="background-color:#ffffff;"> org.jfree.chart.ChartPanel
-
-ChartBuilder cb = </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">new</span><span style="background-color:#ffffff;"> ChartBuilder();
-</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">def</span><span style="background-color:#ffffff;"> pieChart = cb.piechart3d(title: </span><span style="color:#008000;background-color:#ffffff;font-weight:bold;">"Simple Pie Chart"</span><span style="background-color:#ffffff;">) {
-    defaultPieDataset {
-        Series1(</span><span style="color:#0000ff;background-color:#ffffff;">40.0f</span><span style="background-color:#ffffff;">)
-        Series2(</span><span style="color:#0000ff;background-color:#ffffff;">30.0f</span><span style="background-color:#ffffff;">)
-        Series3(</span><span style="color:#0000ff;background-color:#ffffff;">30.0f</span><span style="background-color:#ffffff;">)
-    }
-    antiAlias = </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">true
-</span><span style="background-color:#ffffff;">    backgroundPaint(Color.</span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">WHITE)
-</span><span style="background-color:#ffffff;">}
-
-</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">def</span><span style="background-color:#ffffff;"> sb = </span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">new</span><span style="background-color:#ffffff;"> SwingBuilder()
-</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">def</span><span style="background-color:#ffffff;"> fr = sb.frame( title : </span><span style="color:#008000;background-color:#ffffff;font-weight:bold;">'Simple Pie Chart'</span><span style="background-color:#ffffff;">, size:[</span><span style="color:#0000ff;background-color:#ffffff;">600</span><span style="background-color:#ffffff;">, </span><span style="color:#0000ff;background-color:#ffffff;">400</span><span style="background-color:#ffffff;">],
-                   defaultCloseOperation: JFrame.</span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">EXIT_ON_CLOSE)</span><span style="background-color:#ffffff;"> {
-    widget(</span><span style="color:#000080;background-color:#ffffff;font-weight:bold;">new</span><span style="background-color:#ffffff;"> ChartPanel(pieChart.chart), constraints: BL.</span><span style="color:#660e7a;background-color:#ffffff;font-weight:bold;font-style:italic;">CENTER)
-</span><span style="background-color:#ffffff;">}
-fr.pack();
-fr.show();
-
-</span></pre>
-
-    <!-- end code -->
-
-    <p>Image produced from above source on Windows Vista</p>
-    <img align="middle" src="images/first_groovychart.png" alt="PieChart on Vista"/>
-</div>
+<h3>Examples of usage</h3>
+<p><a href="examples.html">Examples of using the library</a></p>
 
 <h3>To-do list</h3>
 <p>Future development:</p>
 <ul>
-    <li>Complete the implementation such that most chart types are supported</li>
-    <li>Generate a series of Groovy demo scripts</li>
-    <li>Create a full demo similar to the SwingSet demo</li>
-    <li>Focus on stability and making a releasable product</li>
-    <li>Documentation</li>
+    <li class="taskdone">Complete the implementation such that most chart types are supported</li>
+    <li>Ensure that the plot and renderer functions work for all types</li>
+    <li>Generate a complete set of Groovy demo scripts</li>
+    <li>Provide a reference map, showing all the charts, plots, renderers and compatibility</li>
 </ul>
 
 <h3>How to Contribute</h3>

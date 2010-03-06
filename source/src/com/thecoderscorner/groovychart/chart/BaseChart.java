@@ -48,6 +48,7 @@ public abstract class BaseChart extends BeanBuilder implements Chartable, Builda
     protected String name;
     protected Map chartProperties = new HashMap();
     private BeanBuilder bb = new BeanBuilder();
+    private JFreeChart theChart;
     
     /**
      * Creates a new instance of BaseChart
@@ -59,6 +60,14 @@ public abstract class BaseChart extends BeanBuilder implements Chartable, Builda
         } catch (IntrospectionException ex) {
             logger.log(Level.WARNING, ex.getMessage(), ex);
         }
+    }
+
+    @Override
+    public JFreeChart getChart() {
+        if(theChart==null) {
+            theChart = createChart();
+        }
+        return theChart;
     }
 
     /**

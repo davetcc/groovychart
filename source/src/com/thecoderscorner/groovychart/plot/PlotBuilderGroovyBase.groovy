@@ -11,12 +11,11 @@ class PlotBuilderGroovyBase implements Plotable, Buildable {
     String name;
     Object parent;
 
-    PlotBuilderGroovyBase(Plot thePlot) {
-        plot = thePlot;
+    PlotBuilderGroovyBase() {
     }
 
     public void setChartBuilder(ChartBuilder chartBuilder) {
-        // ignored
+        plot = chartBuilder.underlyingChart.chart.plot;
     }
 
     public void processNode(Object name, Map map, Object value) {

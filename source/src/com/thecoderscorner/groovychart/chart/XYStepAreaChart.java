@@ -41,7 +41,7 @@ public class XYStepAreaChart extends XYChart {
         super();
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         JFreeChart chart = ChartFactory.createXYStepAreaChart(this.getTitle(),
                 this.getXAxisLabel(), this.getYAxisLabel(),
                 (XYDataset)this.getDataset(), this.getOrientation(),
@@ -49,5 +49,5 @@ public class XYStepAreaChart extends XYChart {
         return setExtraProperties(chart);
 
     }
-    
+
 }

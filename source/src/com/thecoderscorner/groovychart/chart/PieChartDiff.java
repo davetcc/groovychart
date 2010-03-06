@@ -38,7 +38,7 @@ public class PieChartDiff extends BasicChart {
     public PieChartDiff() {
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
          return ChartFactory.createPieChart(getTitle(),
                 (PieDataset)getDataset(), getPreviousDataset(),
                  getPercentDiffForMaxScale(), isGreenForIncrease(), 
@@ -150,5 +150,5 @@ public class PieChartDiff extends BasicChart {
     public void setPreviousDataset(PieDataset previousDataset) {
         this.previousDataset = previousDataset;
     }
-    
+
 }

@@ -25,7 +25,7 @@ public class Chart extends BaseChart {
         super();
     }
     
-     public JFreeChart getChart() {
+     public JFreeChart createChart() {
 
          JFreeChart chart = new JFreeChart(this.getTitle(), this.getTitleFont(), this.getPlot(), this.isCreateLegend());
          return setExtraProperties(chart);
@@ -73,5 +73,5 @@ public class Chart extends BaseChart {
     }
 
 
-    
+
 }

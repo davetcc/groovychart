@@ -41,12 +41,12 @@ public class HistorgramChart extends XYChart {
         super();
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         JFreeChart chart = ChartFactory.createHistogram(getTitle(), getXAxisLabel(),
                 getYAxisLabel(), (IntervalXYDataset)getDataset(),
                 getOrientation(), isLegend(), isTooltips(), isUrls());
         return setExtraProperties(chart);
 
     }
-    
+
 }

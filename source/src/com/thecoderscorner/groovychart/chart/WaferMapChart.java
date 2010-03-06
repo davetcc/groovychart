@@ -41,7 +41,7 @@ public class WaferMapChart extends BasicChart {
     public WaferMapChart() {
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         JFreeChart chart = ChartFactory.createWaferMapChart(this.getTitle(),
                 (WaferMapDataset)this.getDataset(), this.getOrientation(),
                 this.isLegend(), this.isTooltips(), this.isUrls());
@@ -69,5 +69,5 @@ public class WaferMapChart extends BasicChart {
     public void setOrientation(PlotOrientation orientation) {
         this.orientation = orientation;
     }
-    
+
 }

@@ -31,7 +31,7 @@ import org.jfree.ui.Layer;
  */
 public class CategoryPlotBuilder extends BeanBuilder implements Buildable, Plotable {
    private static final Logger logger = Logger.getLogger(CategoryPlotBuilder.class.getPackage().getName());
-    private CategoryPlot plot = new CategoryPlot();
+    private CategoryPlot plot;
     
     /** Creates a new instance of CategoryPlotBuilder */
     public CategoryPlotBuilder() {
@@ -42,6 +42,7 @@ public class CategoryPlotBuilder extends BeanBuilder implements Buildable, Plota
         }        
     }
     public void setChartBuilder(ChartBuilder chartBuilder) {
+        chartBuilder.getUnderlyingChart().getChart().getPlot();
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
