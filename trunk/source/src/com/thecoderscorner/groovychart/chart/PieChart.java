@@ -40,12 +40,12 @@ public class PieChart extends BasicChart {
 
 
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         JFreeChart chart = ChartFactory.createPieChart(getTitle(),
                 (PieDataset)getDataset(), 
                 isLegend(), isTooltips(), isUrls());
         return setExtraProperties(chart);
 
     }
-    
+
 }

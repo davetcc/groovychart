@@ -24,9 +24,11 @@
 
 package com.thecoderscorner.groovychart.dataset.series.xy.interval;
 
+import java.util.HashMap;
 import java.util.Map;
 import com.thecoderscorner.groovychart.dataset.BaseDatasetBuilder;
 import org.jfree.data.general.Dataset;
+import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
 /**
@@ -34,7 +36,13 @@ import org.jfree.data.xy.XYSeriesCollection;
  * @author jclarke
  */
 public class XYSeriesCollectionBuilder extends BaseDatasetBuilder {
-    
+
+    /**
+     * Holds value of property collection.
+     */
+    private XYSeriesCollection collection = new XYSeriesCollection();
+    private Map<String, XYSeries> seriesData = new HashMap<String, XYSeries>();
+
     /** Creates a new instance of XYSeriesCollectionBuilder */
     public XYSeriesCollectionBuilder() {
     }
@@ -43,10 +51,6 @@ public class XYSeriesCollectionBuilder extends BaseDatasetBuilder {
         return getCollection();
     }    
 
-    /**
-     * Holds value of property collection.
-     */
-    private XYSeriesCollection collection;
 
     /**
      * Getter for property collection.
@@ -67,8 +71,15 @@ public class XYSeriesCollectionBuilder extends BaseDatasetBuilder {
     public void processNode(Object name, Map map, Object value) throws Exception {
         if(value != null && value instanceof XYSeriesCollection) {
             this.collection = (XYSeriesCollection)value;
-        }else {
-            // TODO
-        }              
+        } else  if(name != null && name.equals("point") && value != null && map != null) {
+            XYSeries ser = seriesData.get(value.toString());
+            if(ser == null) {
+                ser = new XYSeries(value.toString());
+                seriesData.put(value.toString(), ser);
+                collection.addSeries(ser);
+            }
+            ser.add((Number)map.get("x"), (Number)map.get("y"));
+            
+        }
     }
 }

@@ -40,12 +40,12 @@ public class PolarChart extends BasicChart {
 
 
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         JFreeChart chart = ChartFactory.createPolarChart(getTitle(),
                 (XYDataset)getDataset(), 
                 isLegend(), isTooltips(), isUrls());
         return setExtraProperties(chart);
 
     }
-    
+
 }

@@ -39,10 +39,10 @@ public class BarChart3D extends CategoryValueChart {
         super();
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         return ChartFactory.createBarChart3D(getTitle(), getCategoryAxisLabel(),
                 getValueAxisLabel(), (CategoryDataset)getDataset(),
                 getOrientation(), isLegend(), isTooltips(), isUrls());
     }
-    
+
 }

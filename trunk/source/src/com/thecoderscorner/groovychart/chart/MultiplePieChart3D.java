@@ -60,10 +60,10 @@ public class MultiplePieChart3D extends BasicChart {
         this.order = order;
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         return ChartFactory.createMultiplePieChart(getTitle(),
                 (CategoryDataset)getDataset(), getOrder(),
                 isLegend(), isTooltips(), isUrls());
     }
-    
+
 }

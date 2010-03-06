@@ -39,7 +39,7 @@ public class StackedBarChart3D extends BasicChart  {
     public StackedBarChart3D() {
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         return ChartFactory.createStackedBarChart3D(getTitle(),
                 this.getDomainAxisLabel(), this.getRangeAxisLabel(),
                 (CategoryDataset)this.getDataset(), this.getOrientation(),
@@ -108,5 +108,5 @@ public class StackedBarChart3D extends BasicChart  {
     public void setOrientation(PlotOrientation orientation) {
         this.orientation = orientation;
     }
-    
+
 }

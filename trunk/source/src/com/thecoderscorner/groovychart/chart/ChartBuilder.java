@@ -30,6 +30,7 @@ import com.thecoderscorner.groovychart.dataset.series.xy.DefaultXYDatasetBuilder
 import com.thecoderscorner.groovychart.dataset.series.xy.interval.NormalizedTimeSeriesCollectionBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.interval.TimeSeriesBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xy.interval.TimeSeriesCollectionBuilder;
+import com.thecoderscorner.groovychart.dataset.series.xy.interval.XYSeriesCollectionBuilder;
 import com.thecoderscorner.groovychart.dataset.series.xyz.DefaultXYZDatasetBuilder;
 import com.thecoderscorner.groovychart.dataset.statistics.DefaultBoxAndWhiskerDatasetBuilder;
 import com.thecoderscorner.groovychart.plot.CategoryPlotBuilder;
@@ -42,6 +43,7 @@ import com.thecoderscorner.groovychart.renderer.category.BarRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.category.BoxAndWhiskerRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.category.StackedBarRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.xy.XYBlockRendererBuilder;
+import com.thecoderscorner.groovychart.renderer.xy.XYItemRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.xy.XYLineAndShapeRendererBuilder;
 import com.thecoderscorner.groovychart.util.TextTitleBuilder;
 import groovy.util.BuilderSupport;
@@ -116,6 +118,8 @@ public class ChartBuilder extends BuilderSupport {
         processClasses.put("timeseriescollection", TimeSeriesCollectionBuilder.class);
         processClasses.put("timeseries", TimeSeriesBuilder.class);
         processClasses.put("normalizedtimeseriescollection", NormalizedTimeSeriesCollectionBuilder.class);
+        processClasses.put("xyseries", XYSeriesCollectionBuilder.class);
+        
         // plots
         processClasses.put("xyplot", XYPlotBuilder.class);
         processClasses.put("categoryplot", CategoryPlotBuilder.class);
@@ -137,6 +141,8 @@ public class ChartBuilder extends BuilderSupport {
         processClasses.put("stackedbarrenderer", StackedBarRendererBuilder.class);
         processClasses.put("barrenderer", BarRendererBuilder.class);
         processClasses.put("boxandwhiskerrenderer", BoxAndWhiskerRendererBuilder.class);
+        processClasses.put("xyitemrenderer", XYItemRendererBuilder.class);
+
         // misc.
         processClasses.put("titletext", TextTitleBuilder.class);
     }
@@ -257,4 +263,10 @@ public class ChartBuilder extends BuilderSupport {
         }
         else return null;
     }
+
+    public Chartable getUnderlyingChart()
+    {
+        return chartable;
+    }
+
 }

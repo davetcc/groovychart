@@ -40,12 +40,12 @@ public class AreaChart extends CategoryValueChart{
         super();
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         JFreeChart chart = ChartFactory.createAreaChart(getTitle(), getCategoryAxisLabel(),
                 getValueAxisLabel(), (CategoryDataset)getDataset(),
                 getOrientation(), isLegend(), isTooltips(), isUrls());
         return setExtraProperties(chart);
 
     }
-    
+
 }

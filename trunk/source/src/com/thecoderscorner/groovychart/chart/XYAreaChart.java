@@ -41,13 +41,13 @@ public class XYAreaChart extends XYChart {
         super();
     }
 
-    public JFreeChart getChart() {
-        JFreeChart chart = ChartFactory.createXYStepAreaChart(this.getTitle(),
+    public JFreeChart createChart() {
+        JFreeChart chart = ChartFactory.createXYAreaChart(this.getTitle(),
                 this.getXAxisLabel(), this.getYAxisLabel(),
                 (XYDataset)this.getDataset(), this.getOrientation(),
                 this.isLegend(), this.isTooltips(), this.isUrls());
         return setExtraProperties(chart);
 
     }
-    
+
 }

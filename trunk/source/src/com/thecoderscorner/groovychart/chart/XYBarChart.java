@@ -41,7 +41,7 @@ public class XYBarChart extends XYChart {
         super();
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         JFreeChart chart = ChartFactory.createXYBarChart(this.getTitle(),
                 this.getXAxisLabel(), this.isDateAxis(), this.getYAxisLabel(),
                 (IntervalXYDataset)this.getDataset(), this.getOrientation(),
@@ -70,5 +70,5 @@ public class XYBarChart extends XYChart {
     public void setDateAxis(boolean dateAxis) {
         this.dateAxis = dateAxis;
     }
-    
+
 }

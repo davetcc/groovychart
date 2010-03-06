@@ -16,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import com.thecoderscorner.groovychart.chart.Buildable;
 import com.thecoderscorner.groovychart.chart.ChartBuilder;
+import com.thecoderscorner.groovychart.util.AutoBeanPropertySetter;
 import org.jfree.chart.plot.Plot;
 import org.jfree.chart.plot.XYPlot;
 import com.thecoderscorner.groovychart.chart.BeanBuilder;
@@ -30,7 +31,7 @@ import org.jfree.ui.Layer;
  */
 public class XYPlotBuilder extends BeanBuilder implements Buildable, Plotable{
     private static final Logger logger = Logger.getLogger(XYPlotBuilder.class.getPackage().getName());
-    private XYPlot plot = new XYPlot();
+    private XYPlot plot;
     /** Creates a new instance of XYPlotBuilder */
     public XYPlotBuilder() {
         try {
@@ -41,6 +42,7 @@ public class XYPlotBuilder extends BeanBuilder implements Buildable, Plotable{
     }
 
     public void setChartBuilder(ChartBuilder chartBuilder) {
+        plot = (XYPlot)chartBuilder.getUnderlyingChart().getChart().getPlot();
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
@@ -102,6 +104,9 @@ public class XYPlotBuilder extends BeanBuilder implements Buildable, Plotable{
             }
             
         }
+        else {
+            AutoBeanPropertySetter.autoSetProp(plot, method, value);
+        }
     }
 
     private Object parent;
@@ -111,13 +116,11 @@ public class XYPlotBuilder extends BeanBuilder implements Buildable, Plotable{
 
     public void setParent(Object parent) {
         this.parent = parent;
+
     }
     
     public void nodeCompleted(Object parent) {
-        if(parent != null && parent instanceof Chartable) {
-            this.getXYPlot().setDataset((XYDataset)((Chartable)parent).getDataset());
-            ((Chartable)parent).setPlot(this.getPlot());
-        }  
+        // do not set the plot, we got the plot earlier.
     }
 
     private String name;

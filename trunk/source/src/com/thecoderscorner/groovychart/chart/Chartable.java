@@ -35,11 +35,13 @@ import org.jfree.data.general.Dataset;
 public interface Chartable {
     
     public JFreeChart getChart();
+
+    public JFreeChart createChart();
     
     public void setDataset(Dataset dataset);
     
     public Dataset getDataset();
     
     public void setPlot(Plot plot);
-    
+
 }

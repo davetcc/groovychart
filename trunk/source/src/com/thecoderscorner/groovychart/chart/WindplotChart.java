@@ -38,7 +38,7 @@ public class WindplotChart extends BasicChart {
     public WindplotChart() {
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         JFreeChart chart = ChartFactory.createWindPlot(this.getTitle(),
                 this.getXAxisLabel(), this.getYAxisLabel(),
                 (WindDataset)this.getDataset(),
@@ -88,5 +88,5 @@ public class WindplotChart extends BasicChart {
     public void setYAxisLabel(String yAxisLabel) {
         this.yAxisLabel = yAxisLabel;
     }
-    
+
 }

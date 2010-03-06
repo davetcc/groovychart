@@ -41,10 +41,10 @@ public class ScatterPlot extends XYChart {
         super();
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         return ChartFactory.createScatterPlot(getTitle(), getXAxisLabel(),
                 getYAxisLabel(), (XYDataset)getDataset(),
                 getOrientation(), isLegend(), isTooltips(), isUrls());
     }
-    
+
 }

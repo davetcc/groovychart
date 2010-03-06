@@ -37,10 +37,10 @@ public class PieChart3D extends BasicChart {
     public PieChart3D() {
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         return ChartFactory.createPieChart3D(getTitle(),
                 (PieDataset)getDataset(), 
                 isLegend(), isTooltips(), isUrls());
     }
-    
+
 }

@@ -102,7 +102,7 @@ public class GanttChart extends BasicChart {
         this.orientation = orientation;
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         
         JFreeChart chart = ChartFactory.createGanttChart(getTitle(),
                 getCategoryAxisLabel(), getDateAxisLabel(),
@@ -111,5 +111,5 @@ public class GanttChart extends BasicChart {
         return setExtraProperties(chart);
 
     }
-    
+
 }

@@ -41,7 +41,7 @@ public class HighLowChart extends BaseChart {
     public HighLowChart() {
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         JFreeChart chart = null;
         if(this.getTimeline() == null) {
             chart = ChartFactory.createHighLowChart(getTitle(),
@@ -140,5 +140,5 @@ public class HighLowChart extends BaseChart {
     public void setLegend(boolean legend) {
         this.legend = legend;
     }
-    
+
 }

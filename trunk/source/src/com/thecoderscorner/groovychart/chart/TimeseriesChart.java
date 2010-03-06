@@ -38,7 +38,7 @@ public class TimeseriesChart extends BasicChart {
     public TimeseriesChart() {
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         JFreeChart chart = ChartFactory.createTimeSeriesChart(this.getTitle(),
                 this.getTimeAxisLabel(), this.getValueAxisLabel(),
                 (XYDataset)this.getDataset(),this.isLegend(),
@@ -88,5 +88,5 @@ public class TimeseriesChart extends BasicChart {
     public void setValueAxisLabel(String valueAxisLabel) {
         this.valueAxisLabel = valueAxisLabel;
     }
-    
+
 }

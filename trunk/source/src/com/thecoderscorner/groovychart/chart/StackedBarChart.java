@@ -39,7 +39,7 @@ public class StackedBarChart extends BasicChart  {
     public StackedBarChart() {
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         JFreeChart chart = ChartFactory.createStackedBarChart(getTitle(),
                 this.getDomainAxisLabel(), this.getRangeAxisLabel(),
                 (CategoryDataset)this.getDataset(), this.getOrientation(),
@@ -110,5 +110,5 @@ public class StackedBarChart extends BasicChart  {
     public void setOrientation(PlotOrientation orientation) {
         this.orientation = orientation;
     }
-    
+
 }

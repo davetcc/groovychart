@@ -9,6 +9,7 @@
 
 package com.thecoderscorner.groovychart.renderer.xy;
 
+import java.awt.*;
 import java.beans.IntrospectionException;
 import java.util.Map;
 import java.util.logging.Level;
@@ -17,6 +18,8 @@ import com.thecoderscorner.groovychart.chart.BeanBuilder;
 import com.thecoderscorner.groovychart.chart.Buildable;
 import com.thecoderscorner.groovychart.chart.ChartBuilder;
 import com.thecoderscorner.groovychart.plot.Plotable;
+import com.thecoderscorner.groovychart.renderer.Renderable;
+import com.thecoderscorner.groovychart.util.AutoBeanPropertySetter;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 
@@ -24,10 +27,11 @@ import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
  *
  * @author jclarke
  */
-public class XYLineAndShapeRendererBuilder extends BeanBuilder implements Buildable{ 
+public class XYLineAndShapeRendererBuilder extends BeanBuilder implements Buildable, Renderable { 
     private static final Logger logger = Logger.getLogger(XYLineAndShapeRendererBuilder.class.getPackage().getName());
     
     XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
+    Integer index;
 
     /** Creates a new instance of XYLineAndShapeRendererBuilder */
     public XYLineAndShapeRendererBuilder() {
@@ -45,9 +49,26 @@ public class XYLineAndShapeRendererBuilder extends BeanBuilder implements Builda
         String method = name.toString();
         if(value != null && value instanceof XYLineAndShapeRenderer) {
             this.renderer = (XYLineAndShapeRenderer)value;
-        }else if(method.equalsIgnoreCase("XYLineAndShapeRenderer")) {
+        }
+        else if(method.equalsIgnoreCase("XYLineAndShapeRenderer")) {
             this.setProperties(this.renderer, map);
-        }        
+        }
+        else if(method.equalsIgnoreCase("seriesPaint") && value != null) {
+            Integer series = (Integer) value;
+            Paint col = (Paint) map.get("paint");
+            renderer.setSeriesPaint(series, col);
+        }
+        else if(method.equalsIgnoreCase("seriesShape") && value != null) {
+            Integer series = (Integer) value;
+            Shape shape = (Shape) map.get("shape");
+            renderer.setSeriesShape(series, shape);
+        }
+        else if(method.equalsIgnoreCase("index")) {
+            index = (Integer)value;
+        }
+        else {
+            AutoBeanPropertySetter.autoSetProp(renderer, method, value);
+        }
     }
     
     private Object parent;
@@ -62,8 +83,13 @@ public class XYLineAndShapeRendererBuilder extends BeanBuilder implements Builda
 
     public void nodeCompleted(Object parent) {
         if(parent != null && parent instanceof Plotable) {
-            ((XYPlot)((Plotable)parent).getPlot()).setRenderer(renderer);
-        } 
+            if(index == null) {
+                ((XYPlot)((Plotable)parent).getPlot()).setRenderer(renderer);
+            }
+            else {
+                ((XYPlot)((Plotable)parent).getPlot()).setRenderer(index, renderer);
+            }
+        }
     }
     private String name;
     

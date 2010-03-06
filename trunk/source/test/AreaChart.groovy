@@ -12,7 +12,7 @@ ChartBuilder builder = new ChartBuilder();
 def areachart = builder.areaChart(title:'This is a title', 
     categoryAxisLabel:'category',
     valueAxisLabel:'value',
-    orientation:PlotOrientation.HORIZONTAL,
+    orientation:PlotOrientation.VERTICAL,
     legend:true,
     tooltips:false,
     urls:false

@@ -40,12 +40,12 @@ public class RingChart extends BasicChart {
 
 
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         JFreeChart chart = ChartFactory.createRingChart(getTitle(),
                 (PieDataset)getDataset(), 
                 isLegend(), isTooltips(), isUrls());
         return setExtraProperties(chart);
 
     }
-    
+
 }

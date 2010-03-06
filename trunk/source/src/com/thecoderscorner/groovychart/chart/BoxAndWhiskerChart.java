@@ -40,7 +40,7 @@ public class BoxAndWhiskerChart extends BaseChart {
     public BoxAndWhiskerChart() {
     }
 
-    public JFreeChart getChart() {
+    public JFreeChart createChart() {
         JFreeChart chart;
         if (getDataset() instanceof BoxAndWhiskerXYDataset) {
             chart = ChartFactory.createBoxAndWhiskerChart(getTitle(),
@@ -117,5 +117,5 @@ public class BoxAndWhiskerChart extends BaseChart {
     public void setLegend(boolean legend) {
         this.legend = legend;
     }
-    
+
 }
