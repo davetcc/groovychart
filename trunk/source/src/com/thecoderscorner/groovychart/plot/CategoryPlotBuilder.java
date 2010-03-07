@@ -18,6 +18,7 @@ import com.thecoderscorner.groovychart.chart.BeanBuilder;
 import com.thecoderscorner.groovychart.chart.Buildable;
 import com.thecoderscorner.groovychart.chart.ChartBuilder;
 import com.thecoderscorner.groovychart.chart.Chartable;
+import com.thecoderscorner.groovychart.util.AutoBeanPropertySetter;
 import org.jfree.chart.plot.CategoryMarker;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.Marker;
@@ -42,7 +43,7 @@ public class CategoryPlotBuilder extends BeanBuilder implements Buildable, Plota
         }        
     }
     public void setChartBuilder(ChartBuilder chartBuilder) {
-        chartBuilder.getUnderlyingChart().getChart().getPlot();
+        plot = (CategoryPlot) chartBuilder.getUnderlyingChart().getChart().getPlot();
     }
 
     public void processNode(Object name, Map map, Object value) throws Exception {
@@ -92,7 +93,9 @@ public class CategoryPlotBuilder extends BeanBuilder implements Buildable, Plota
                     }
                 }
             }
-            
+        }
+        else {
+            AutoBeanPropertySetter.autoSetProp(plot, method, value);
         }
     }
 

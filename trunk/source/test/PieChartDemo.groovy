@@ -8,7 +8,7 @@ import javax.swing.JFrame
 import org.jfree.chart.ChartPanel
 import org.jfree.chart.labels.PieToolTipGenerator
 
-def largeFont = new Font("Arial", Font.BOLD, 30);
+def largeFont = new Font("Arial", Font.BOLD, 15);
 
 ChartBuilder cb = new ChartBuilder();
 def pieChart = cb.piechart3d(title: "Simple Pie Chart") {
@@ -20,9 +20,16 @@ def pieChart = cb.piechart3d(title: "Simple Pie Chart") {
     antiAlias = true
     backgroundPaint(Color.WHITE)
 
-    piePlot3d ( sectionOutlinesVisible: true, labelFont: largeFont, labelGap: 0.02,
-                toolTipGenerator : { dataset, key -> return "[${dataset} ${key}]" } as PieToolTipGenerator
-    )
+    pieplot {
+        sectionOutlinesVisible false
+        labelFont largeFont
+        labelGap 0.02
+        toolTipGenerator ({ dataset, key -> return "[${dataset} ${key}]" as String } as PieToolTipGenerator)
+
+        sectionPaint('Series1', paint: new Color(255,0,0))
+        sectionPaint('Series2', paint: new Color(0,255,0))
+        sectionPaint('Series3', paint: new Color(0,0,255))
+    }
 }
 
 def sb = new SwingBuilder()
