@@ -1,23 +1,38 @@
 package com.thecoderscorner.groovychart.plot
 
-import org.jfree.chart.labels.PieToolTipGenerator
-import org.jfree.chart.plot.PiePlot
+import com.thecoderscorner.groovychart.chart.Buildable
+import com.thecoderscorner.groovychart.chart.ChartBuilder
+import java.awt.Paint
+import org.jfree.chart.plot.Plot
 
-class PiePlotBuilder extends PlotBuilderGroovyBase {
+class PiePlotBuilder implements Buildable, Plotable {
+    String name
+    Object parent
+    Plot plot;
 
-    public PiePlotBuilder() {
-        super(new PiePlot())
+    void setChartBuilder(ChartBuilder chartBuilder) {
+        plot = chartBuilder.underlyingChart.chart.plot;
     }
 
-    public void processNode(Object name, Map map, Object value)
-    {
-        if(name == "toolTipGenerator") {
-            plot.toolTipGenerator = value as PieToolTipGenerator;
+    void processNode(Object name, Map map, Object value) {
+        if(name=="pieplot") {
+            map?.each {k,v->
+                plot[k] =v;
+            }
+        }
+        else if(name=="sectionPaint") {
+            plot.setSectionPaint(value as Comparable, map.paint as Paint);
+        }
+        else if(name=="sectionOutlinePaint") {
+            plot.setSectionOutlinePaint(value as Comparable, map.paint as Paint);
         }
         else {
-            super.processNode(name, map, value);
+            plot[name] = value;
         }
     }
 
+    void nodeCompleted(Object parent) {
+        // do nothing here please.
+    }
 
 }

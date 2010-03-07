@@ -34,7 +34,6 @@ import com.thecoderscorner.groovychart.dataset.series.xy.interval.XYSeriesCollec
 import com.thecoderscorner.groovychart.dataset.series.xyz.DefaultXYZDatasetBuilder;
 import com.thecoderscorner.groovychart.dataset.statistics.DefaultBoxAndWhiskerDatasetBuilder;
 import com.thecoderscorner.groovychart.plot.CategoryPlotBuilder;
-import com.thecoderscorner.groovychart.plot.PiePlot3DBuilder;
 import com.thecoderscorner.groovychart.plot.PiePlotBuilder;
 import com.thecoderscorner.groovychart.plot.XYPlotBuilder;
 import com.thecoderscorner.groovychart.renderer.GrayPaintScaleBuilder;
@@ -124,7 +123,6 @@ public class ChartBuilder extends BuilderSupport {
         processClasses.put("xyplot", XYPlotBuilder.class);
         processClasses.put("categoryplot", CategoryPlotBuilder.class);
         processClasses.put("pieplot", PiePlotBuilder.class);
-        processClasses.put("pieplot3d", PiePlot3DBuilder.class);
 
         // axis
         processClasses.put("dateaxis", DateAxisBuilder.class);

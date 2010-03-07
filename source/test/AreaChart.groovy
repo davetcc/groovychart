@@ -49,6 +49,10 @@ def areachart = builder.areaChart(title:'This is a title',
         addValue(3.0, row:'Series 3', column:'Type 8')
 
     }
+
+    categoryplot {
+        foregroundAlpha 0.7
+    }
 }
 
 def chartPanel = new ChartPanel(areachart.chart, false);
