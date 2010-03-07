@@ -19,9 +19,11 @@ class DefaultPieDatasetBuilder extends BaseDatasetBuilder {
                 dataset.setValue (key, val)
             }
         }
-        else {
+        else if(!name.toString().equalsIgnoreCase('defaultpiedataset')) {
+
             defaultPieDataset.setValue(name, value as Number);
         }
+
     }
 
     public Dataset getDataset() {
