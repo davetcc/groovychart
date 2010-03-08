@@ -16,26 +16,22 @@ import com.thecoderscorner.groovychart.chart.Buildable;
 import com.thecoderscorner.groovychart.chart.ChartBuilder;
 import com.thecoderscorner.groovychart.plot.Plotable;
 import org.jfree.chart.plot.XYPlot;
-import org.jfree.chart.renderer.xy.XYBlockRenderer;
+import org.jfree.chart.renderer.xy.XYBlockRenderer
+import com.thecoderscorner.groovychart.renderer.Renderable
+import org.jfree.chart.renderer.AbstractRenderer;
 
 /**
  *
  * @author Tiago Antao <tiagoantao@gmail.com>
  */
-class XYBlockRendererBuilder extends BeanBuilder implements Buildable{ 
+class XYBlockRendererBuilder implements Buildable, Renderable {
     private static final Logger logger = Logger.getLogger(XYBlockRendererBuilder.class.getPackage().getName())
-    
-    XYBlockRenderer renderer = new XYBlockRenderer()
+
+    Object parent
+    String name
+    private XYBlockRenderer renderer = new XYBlockRenderer()
 
     /** Creates a new instance of XYBlockRendererBuilder */
-    XYBlockRendererBuilder() {
-        try {
-            setBeanClass(XYBlockRenderer.class);
-        } catch (IntrospectionException ex) {
-            logger.log(Level.WARNING, ex.getMessage(), ex)
-        }        
-    }
-
     void setChartBuilder(ChartBuilder chartBuilder) {
     }
 
@@ -43,19 +39,15 @@ class XYBlockRendererBuilder extends BeanBuilder implements Buildable{
         String method = name.toString()
         if(value != null && value instanceof XYBlockRenderer) {
             this.renderer = (XYBlockRenderer)value
-        }else if(method.equalsIgnoreCase("XYBlockRenderer")) {
-            this.setProperties(this.renderer, map)
-        }        
-    }
-    
-    private Object parent
-
-    Object getParent() {
-        return parent
-    }
-
-    void setParent(Object parent) {
-        this.parent = parent
+        }
+        else if(method.equalsIgnoreCase("XYBlockRenderer")) {
+            map?.each{ k, v ->
+                renderer[k] = v;
+            }
+        }
+        else {
+            renderer[k] = v;
+        }
     }
 
     public void nodeCompleted(Object parent) {
@@ -64,17 +56,8 @@ class XYBlockRendererBuilder extends BeanBuilder implements Buildable{
         } 
     }
 
-    private String name
-    
-    public String getName() {
-        return this.name
-    }
 
-    public void setName(String name) {
-        this.name = name
-    }
-    
-    public XYBlockRenderer getRenderer() {
+    public AbstractRenderer getRenderer() {
         return renderer
     }
     

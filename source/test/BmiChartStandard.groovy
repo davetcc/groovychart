@@ -46,7 +46,7 @@ def areachart = builder.xyareachart(title:'BMI Index Graph',
             lowerBound 0.75
         }
 
-        xyitemrenderer {
+        renderer {
             outlinePaint(Color.BLACK)
             outlineStroke(new BasicStroke())
             seriesPaint(0, paint: new Color(0xff, 0, 0))
