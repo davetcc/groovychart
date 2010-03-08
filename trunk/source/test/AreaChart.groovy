@@ -4,6 +4,8 @@ import java.awt.BorderLayout
 import java.awt.Dimension
 import org.jfree.chart.ChartPanel
 import org.jfree.chart.plot.PlotOrientation
+import java.awt.Color
+import org.jfree.chart.plot.CategoryPlot
 
 java.sql.Connection conn = null
 
@@ -52,6 +54,12 @@ def areachart = builder.areaChart(title:'This is a title',
 
     categoryplot {
         foregroundAlpha 0.7
+
+        renderer {
+            seriesPaint(0, paint:new Color(255, 0, 0));
+            seriesPaint(1, paint:new Color(0, 255, 0));
+            seriesPaint(2, paint:new Color(0, 0, 255));
+        }
     }
 }
 

@@ -9,18 +9,18 @@ import java.awt.Paint
 import java.awt.Shape
 import org.jfree.chart.renderer.AbstractRenderer
 
-class XYItemRendererBuilder implements Buildable, Renderable {
-    XYItemRenderer theRenderer
+class InbuiltRendererBuilder implements Buildable, Renderable {
+    def theRenderer
     String name
     Object parent;
 
     public void setChartBuilder(ChartBuilder chartBuilder) {
-        theRenderer = ((XYPlot)chartBuilder.underlyingChart.chart.plot).getRenderer();
+        theRenderer = chartBuilder.underlyingChart.chart.plot.renderer;
     }
 
     void processNode(Object name, Map map, Object value) {
        String method = name.toString();
-        if(method.equalsIgnoreCase("xyitemrenderer")) {
+        if(method.equalsIgnoreCase("renderer")) {
             map.each { key, val ->
                 theRenderer[key] = val;
             }

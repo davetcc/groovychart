@@ -145,7 +145,6 @@ public class TimeSeriesBuilder extends BeanBuilder implements Buildable {
                    boolean notify = false;
                    if(addValue.containsKey(("notify")))
                        notify = Boolean.valueOf((String)addValue.get("notify"));
-                   System.out.println("Seires " + addValue.get("period") + " = " + addValue.get("value"));
                    this.series.add((RegularTimePeriod)addValue.get("period"), ((Number)addValue.get("value")).doubleValue(), notify);
                    addValue = null;
             }

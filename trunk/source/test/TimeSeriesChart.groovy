@@ -9,24 +9,20 @@ java.sql.Connection conn = null
 
 ChartBuilder builder = new ChartBuilder();
 
-def series = builder.timeSeries(name:'trades', timePeriodClass:'org.jfree.data.time.Day') {
-            add(period:new Day(1,1,2007), value:181.8)
-            add(period:new Day(1,2,2007), value:167.3)
-            add(period:new Day(1,3,2007), value:200)
-        }
- 
-println("Series DONE ****************************************************************")
-def chart = builder.timeserieschart(title:'This is a title', 
+def chart = builder.timeserieschart(title:'This is a title',
     timeAxisLabel:'date',
     valueAxisLabel:'seconds',
     legend:true,
     tooltips:false,
     urls:false
 ) {
-    timeSeriesCollection() {
-        timeSeries(series.timeSeries)
+    timeSeriesCollection {
+        timeSeries(name:'trades', timePeriodClass:'org.jfree.data.time.Day') {
+            add(period:new Day(1,1,2007), value:181.8)
+            add(period:new Day(1,2,2007), value:167.3)
+            add(period:new Day(1,3,2007), value:200)
+        }
     }
-
 }
 
 def chartPanel = new ChartPanel(chart.chart, false);

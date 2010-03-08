@@ -41,8 +41,8 @@ import com.thecoderscorner.groovychart.renderer.LookupPaintScaleBuilder;
 import com.thecoderscorner.groovychart.renderer.category.BarRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.category.BoxAndWhiskerRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.category.StackedBarRendererBuilder;
+import com.thecoderscorner.groovychart.renderer.xy.InbuiltRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.xy.XYBlockRendererBuilder;
-import com.thecoderscorner.groovychart.renderer.xy.XYItemRendererBuilder;
 import com.thecoderscorner.groovychart.renderer.xy.XYLineAndShapeRendererBuilder;
 import com.thecoderscorner.groovychart.util.TextTitleBuilder;
 import groovy.util.BuilderSupport;
@@ -139,7 +139,7 @@ public class ChartBuilder extends BuilderSupport {
         processClasses.put("stackedbarrenderer", StackedBarRendererBuilder.class);
         processClasses.put("barrenderer", BarRendererBuilder.class);
         processClasses.put("boxandwhiskerrenderer", BoxAndWhiskerRendererBuilder.class);
-        processClasses.put("xyitemrenderer", XYItemRendererBuilder.class);
+        processClasses.put("renderer", InbuiltRendererBuilder.class);
 
         // misc.
         processClasses.put("titletext", TextTitleBuilder.class);
