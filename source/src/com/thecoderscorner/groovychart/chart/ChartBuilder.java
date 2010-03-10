@@ -48,9 +48,13 @@ import com.thecoderscorner.groovychart.util.TextTitleBuilder;
 import groovy.util.BuilderSupport;
 import org.jfree.chart.ChartPanel;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -239,19 +243,9 @@ public class ChartBuilder extends BuilderSupport {
         }
     }
 
-    public BufferedImage buildImage(int width, int height) {
-        // TODO, this may be dead code - Idea thinks its not used.
-        return chartable.getChart().createBufferedImage(width, height);
-    }
-
-    public JPanel asPanel(Map parameters) {
-        // TODO, this may be dead code - Idea thinks its not used
-        ChartPanel cp = new ChartPanel(chartable.getChart());
-        if(parameters.get("size") != null)
-        {
-            cp.setPreferredSize((Dimension) parameters.get("size"));
-        }
-        return cp;
+    public void chartAsPNG(OutputStream out, int width, int height) throws IOException {
+        BufferedImage img = chartable.getChart().createBufferedImage(width, height);
+        ImageIO.write(img, "png", out);
     }
 
     public Object getLastNode()
