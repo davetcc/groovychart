@@ -17,7 +17,7 @@ def pieChart = cb.piechart3d(title: "Simple Pie Chart") {
         Series2(30.0f)
         Series3(30.0f)
     }
-    antiAlias = true
+    antiAlias true
     backgroundPaint(Color.WHITE)
 
     pieplot {
