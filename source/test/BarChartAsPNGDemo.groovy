@@ -4,6 +4,8 @@ import java.awt.Color
 import java.awt.GradientPaint
 import org.jfree.chart.plot.CategoryMarker
 import java.awt.BasicStroke
+import org.jfree.chart.axis.NumberAxis
+import java.awt.Shape
 
 ChartBuilder builder = new ChartBuilder();
 
@@ -18,7 +20,7 @@ builder.barchart(title:'This is a title',
     urls:false
 ) {
     defaultcategorydataset {
-        addValue(4.0, row:"Series", column:"A")
+        addValue(4.0, row:"Series", column:"A")                     
         addValue(3.0, row:"Series", column:"B")
         addValue(5.0, row:"Series", column:"C")
         addValue(6.0, row:"Series", column:"D")
@@ -26,24 +28,24 @@ builder.barchart(title:'This is a title',
         addValue(14.0, row:"Series", column:"F")
         addValue(12.0, row:"Series", column:"G")
         addValue(4.0, row:"Series", column:"H")
-
     }
 
     categoryplot {
         rangeGridlinePaint Color.GRAY
         domainGridlinePaint Color.GRAY
-        foregroundAlpha 0.6f
+        foregroundAlpha 1.0f
 
         rangeaxis {
             upperBound 20.0
             lowerBound 2.0
+            standardTickUnits NumberAxis.createIntegerTickUnits()
         }
 
         renderer {
-            seriesPaint(0, paint: new GradientPaint(0,0, Color.RED, 100, 100, Color.BLUE))
+            seriesPaint(0, paint: new GradientPaint(0,0, Color.BLUE, 0, 100, Color.BLUE.brighter()))
+            seriesOutlinePaint(0, paint: Color.BLACK)
+  //          autoPopulateSeriesOutlinePaint false
         }
-
-        domainMarker new CategoryMarker("A", Color.LIGHT_GRAY, new BasicStroke())
     }
 }
 

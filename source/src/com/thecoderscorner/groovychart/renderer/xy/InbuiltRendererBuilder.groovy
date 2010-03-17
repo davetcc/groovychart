@@ -35,6 +35,16 @@ class InbuiltRendererBuilder implements Buildable, Renderable {
             Shape shape = (Shape) map.get("shape");
             theRenderer.setSeriesShape(series, shape);
         }
+        else if(method.equalsIgnoreCase("seriesOutlinePaint") && value != null) {
+            Integer series = (Integer) value;
+            Paint col = (Paint) map.get("paint");
+            theRenderer.setSeriesOutlinePaint(series, col);
+        }
+        else if(method.equalsIgnoreCase("seriesOutlineShape") && value != null) {
+            Integer series = (Integer) value;
+            Shape shape = (Shape) map.get("shape");
+            theRenderer.setSeriesOutlineShape(series, shape);
+        }
         else {
             theRenderer[name] = value;
         }
