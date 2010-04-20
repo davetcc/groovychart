@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="groovychart" default="dist" basedir=".">
+<project name="groovychart" default="snapshot" basedir=".">
 
     <property environment="env"/>
 
     <tstamp>
         <format property="BUILD_TIME" pattern="yyMMdd"/>
     </tstamp>
-    <property name="chart-version" value="${BUILD_TIME}-snap"/>
     <property name="classes-test" location="classes-testant"/>
     <property name="classes" location="classes-ant"/>
     <property name="src" location="src"/>
     <property name="test-src" location="test"/>
-    <property name="release.dir" location="release/groovychart-${chart-version}"/>
     <property name="javadoc.dir" location="javadoc"/>
 
     <path id="required.libs">
@@ -86,5 +84,17 @@
 	    </javadoc>
 	  </target>
 
+  <target name="snapshot">
+    <property name="chart-version" value="${BUILD_TIME}-snap"/>
+    <property name="release.dir" location="release/groovychart-${chart-version}"/>
+    <antcall inheritall="true" target="dist"/>
+  </target>
+
+  <target name="release">
+    <property name="chart-version" value="${version}"/>
+    <property name="release.dir" location="release/groovychart-${chart-version}"/>
+    <echo message="release dir set to: ${release.dir}"></echo>
+    <antcall inheritall="true" target="dist"/>
+  </target>
 	
 </project>
