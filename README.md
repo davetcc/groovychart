@@ -3,8 +3,7 @@ Groovy chart is a wrapper to make using the great JFreeChart easier in the groov
 If you are not familiar with JFreeChart I recommend you take a look at the JFreeChart source
 website.
 
-http://www.jfree.org/jfreechart/
-http://www.thecoderscorner.com/groovy
+http://www.jfree.org/jfreechart/ and http://www.thecoderscorner.com/groovy
 
 Also see:
 
@@ -13,7 +12,7 @@ http://www.kellyrob99.com/blog/2012/03/18/jfreechart-with-groovy-and-apache-poi/
 
 An example of using the library to produce a simple chart:
 
-<code>
+```groovy
 import java.awt.BorderLayout as BL
 
 import com.thecoderscorner.groovychart.chart.ChartBuilder
@@ -55,4 +54,4 @@ def fr = sb.frame( title : 'Simple Pie Chart', size:[600, 400], defaultCloseOper
 
 fr.pack();
 fr.show();
-</code>
+```
