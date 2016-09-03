@@ -13,7 +13,7 @@ http://www.kellyrob99.com/blog/2012/03/18/jfreechart-with-groovy-and-apache-poi/
 
 An example of using the library to produce a simple chart:
 
-== 8< start source 8< ==
+<code>
 import java.awt.BorderLayout as BL
 
 import com.thecoderscorner.groovychart.chart.ChartBuilder
@@ -52,7 +52,7 @@ def sb = new SwingBuilder()
 def fr = sb.frame( title : 'Simple Pie Chart', size:[600, 400], defaultCloseOperation: JFrame.EXIT_ON_CLOSE) {
     widget(new ChartPanel(pieChart.chart), constraints: BL.CENTER)
 }
+
 fr.pack();
 fr.show();
-
-== >8 end source >8 ==
+</code>
