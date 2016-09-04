@@ -1,16 +1,21 @@
 # groovychart
+# Wraps JFreeChart with a groovy builder DSL.
+
 Groovy chart is a wrapper to make using the great JFreeChart easier in the groovy language.
 If you are not familiar with JFreeChart I recommend you take a look at the JFreeChart source
-website.
+website. There are a few examples contained within the src/test/groovy package that show how
+to use it for the most common types of graph.
 
-http://www.jfree.org/jfreechart/ and http://www.thecoderscorner.com/groovy
+JFreeChart library homepage that this project is built upon, the book available here of very useful:
+http://www.jfree.org/jfreechart/
 
-Also see:
+A few bits and pieces about groovy on my blog:
+http://www.thecoderscorner.com/groovy
 
+Another example of usage here:
 http://www.kellyrob99.com/blog/2012/03/18/jfreechart-with-groovy-and-apache-poi/
 
-
-An example of using the library to produce a simple chart:
+Below is an example of using the library to produce a simple 3d bar chart:
 
 ```groovy
 import java.awt.BorderLayout as BL
