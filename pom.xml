@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.thecoderscorner</groupId>
     <artifactId>groovychart</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1</version>
     <contributors>
         <contributor><name>Dave Cherry</name></contributor>
         <contributor><name>Tiago Antao</name></contributor>
@@ -19,6 +17,7 @@
     <scm>
         <connection>scm:git:git@github.com:davetcc/groovychart.git</connection>
         <url>scm:git:git@github.com:davetcc/davetcc.git</url>
+      <tag>groovychart-0.1</tag>
     </scm>
 
     <repositories>
@@ -53,6 +52,8 @@
                 <version>3.1</version>
                 <configuration>
                     <compilerId>groovy-eclipse-compiler</compilerId>
+                    <source>1.7</source>
+                    <target>1.7</target>
                 </configuration>
                 <dependencies>
                     <dependency>
