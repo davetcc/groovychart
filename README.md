@@ -10,7 +10,7 @@ JFreeChart library homepage that this project is built upon, the book available 
 http://www.jfree.org/jfreechart/
 
 A few bits and pieces about groovy on my blog:
-http://www.thecoderscorner.com/groovy
+https://www.thecoderscorner.com/groovy
 
 Another example of usage here:
 http://www.kellyrob99.com/blog/2012/03/18/jfreechart-with-groovy-and-apache-poi/
