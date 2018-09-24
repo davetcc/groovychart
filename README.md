@@ -1,5 +1,8 @@
 # groovychart
+
 Wraps JFreeChart with a groovy builder DSL. Moved from it's original location on java.net due to project closure.
+This was the original project on Java.net started by J. Clarke, I've realistically just kept the plates spinning
+making a few minor modifications here and there.
 
 Groovy chart is a wrapper to make using the great JFreeChart easier in the groovy language.
 If you are not familiar with JFreeChart I recommend you take a look at the JFreeChart source
